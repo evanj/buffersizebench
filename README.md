@@ -6,6 +6,10 @@ On a GCP T2D instance with Kernel 6.2.0-1005-gcp from Ubuntu 23.04
 
 AMD EPYC 7B13 MHz: 2449.998
 
+## Unix sockets
+
+For really large buffers, reads will often be "short" due to the kernel buffers. Arguably this is "realistic", since we are using a real writer and reader. This basically means there are diminishing returns to larger application buffers, which is what we are looking for anyway.
+
 
 ## /dev/zero
 
