@@ -36,6 +36,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut devzero = File::open("/dev/zero")?;
     run_benchmark(&mut devzero, &mut buffer)?;
 
+    println!("\n/dev/urandom:");
     let mut devurandom = File::open("/dev/urandom")?;
     run_benchmark(&mut devurandom, &mut buffer)?;
 
