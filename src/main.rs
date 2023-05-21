@@ -1,5 +1,6 @@
 use std::cmp::max;
 use std::io::Write;
+use std::net::{TcpListener, TcpStream};
 use std::os::unix::net::UnixStream;
 use std::{
     error::Error,
@@ -16,9 +17,18 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     println!("UNIX socket:");
     let (writer_sock, mut reader_sock) = UnixStream::pair()?;
-    let writer_thread = std::thread::spawn(|| unix_writer(writer_sock));
+    let writer_thread = std::thread::spawn(|| socket_writer(writer_sock));
     run_benchmark(&mut reader_sock, &mut buffer)?;
     // close the reader end of the socket: cause the writer to exit
+    drop(reader_sock);
+    writer_thread.join().expect("BUG");
+
+    println!("Localhost TCP:");
+    let tcp_listener = TcpListener::bind("localhost:0")?;
+    let listener_addr = tcp_listener.local_addr()?;
+    let writer_thread = std::thread::spawn(|| tcp_writer(tcp_listener));
+    let mut reader_sock = TcpStream::connect(listener_addr)?;
+    run_benchmark(&mut reader_sock, &mut buffer)?;
     drop(reader_sock);
     writer_thread.join().expect("BUG");
 
@@ -32,7 +42,15 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn unix_writer(mut sock: UnixStream) {
+fn tcp_writer(tcp_listener: TcpListener) {
+    let (stream, _) = tcp_listener.accept().expect("tcp_writer BUG");
+    println!("accepted new connection");
+    socket_writer(stream);
+    // avoids clippy::needless-pass-by-value warning
+    drop(tcp_listener);
+}
+
+fn socket_writer<W: Write>(mut sock: W) {
     let buffer = vec![0; MAX_BUF_SIZE];
     loop {
         match sock.write(&buffer) {
@@ -41,7 +59,7 @@ fn unix_writer(mut sock: UnixStream) {
                 // we get these partial writes when writing with huge buffers; with small buffers
                 // this doesn't seem to happen
                 if num_bytes < buffer.len() {
-                    println!("short write {num_bytes} total bytes; {} bytes short; expecting EPEPE on next write ...",
+                    println!("short write {num_bytes} total bytes; {} bytes short; expecting EPIPE on next write ...",
                         buffer.len() - num_bytes);
                     match sock.write(&buffer[..MAX_BUF_SIZE]) {
                         Ok(_) => {
@@ -50,14 +68,14 @@ fn unix_writer(mut sock: UnixStream) {
 
                         Err(err) => {
                             match err.kind() {
-                                // std::io::ErrorKind::ConnectionReset => {
-                                //     // assume the benchmark ended correctly
-                                //     println!("ECONNRESET at end of benchmark");
-                                //     return;
-                                // }
+                                std::io::ErrorKind::ConnectionReset => {
+                                    // assume the benchmark ended correctly
+                                    println!("ECONNRESET at end of benchmark after partial write");
+                                    return;
+                                }
                                 std::io::ErrorKind::BrokenPipe => {
                                     // assume the benchmark ended correctly
-                                    println!("EPIPE at end of benchmark");
+                                    println!("EPIPE at end of benchmark after partial write");
                                     return;
                                 }
                                 _ => {
@@ -70,14 +88,16 @@ fn unix_writer(mut sock: UnixStream) {
             }
             Err(err) => {
                 match err.kind() {
+                    std::io::ErrorKind::ConnectionReset => {
+                        // assume the benchmark ended correctly
+                        println!("ECONNRESET at end of benchmark");
+                        return;
+                    }
                     std::io::ErrorKind::BrokenPipe => {
                         // assume the benchmark ended correctly
                         println!("EPIPE at end of benchmark");
                         return;
-                    } //     std::io::ErrorKind::ConnectionReset => {
-                    //         // assume the benchmark ended correctly
-                    //         return;
-                    //     }
+                    }
                     _ => {
                         panic!("unexpected unix socket error: {err:?}");
                     }
