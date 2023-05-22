@@ -10,6 +10,10 @@ AMD EPYC 7B13 MHz: 2449.998
 
 For really large buffers, reads will often be "short" due to the kernel buffers. Arguably this is "realistic", since we are using a real writer and reader. This basically means there are diminishing returns to larger application buffers, which is what we are looking for anyway.
 
+### Mac OS X
+
+The default unix buffer is 8192 bytes, and results in really slow default performance. Localhost TCP is much faster by default. Calling `setsockopt(sock, SOL_SOCKET, SO_SNDBUF, ...)` to increase the buffer size makes local Unix sockets work much more efficiently. TODO: include some results.
+
 
 ## /dev/zero
 

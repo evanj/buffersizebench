@@ -1,6 +1,7 @@
 use std::cmp::max;
 use std::io::Write;
 use std::net::{TcpListener, TcpStream};
+use std::os::fd::AsRawFd;
 use std::os::unix::net::UnixStream;
 use std::{
     error::Error,
@@ -9,14 +10,33 @@ use std::{
     time::{Duration, Instant},
 };
 
+use argh::FromArgs;
+use nix::sys::socket::SetSockOpt;
+
 const MAX_BUF_SIZE: usize = 16 * 1024 * 1024;
 const TARGET_TIMING: Duration = Duration::from_secs(2);
 
+#[derive(FromArgs)]
+/// buffersizebench benchmarks system calls with different buffer sizes.
+struct Args {
+    #[argh(option, description = "bytes for setsockopt(SO_SNDBUF)", default = "0")]
+    unix_so_sndbuf: usize,
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
+    let args: Args = argh::from_env();
     let mut buffer = vec![1; MAX_BUF_SIZE];
 
     println!("UNIX socket:");
     let (writer_sock, mut reader_sock) = UnixStream::pair()?;
+    if args.unix_so_sndbuf != 0 {
+        println!(
+            "Calling setsockopt(SO_SNDBUF, {}) for local unix socket ...",
+            args.unix_so_sndbuf
+        );
+        nix::sys::socket::sockopt::SndBuf.set(writer_sock.as_raw_fd(), &args.unix_so_sndbuf)?;
+    }
+
     let writer_thread = std::thread::spawn(|| socket_writer(writer_sock));
     run_benchmark(&mut reader_sock, &mut buffer)?;
     // close the reader end of the socket: cause the writer to exit
