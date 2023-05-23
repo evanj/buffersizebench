@@ -3,6 +3,7 @@ use std::io::Write;
 use std::net::{TcpListener, TcpStream};
 use std::os::fd::AsRawFd;
 use std::os::unix::net::UnixStream;
+use std::thread::JoinHandle;
 use std::{
     error::Error,
     fs::File,
@@ -11,7 +12,7 @@ use std::{
 };
 
 use argh::FromArgs;
-use nix::sys::socket::SetSockOpt;
+use nix::sys::socket::{GetSockOpt, SetSockOpt};
 
 const MAX_BUF_SIZE: usize = 16 * 1024 * 1024;
 const TARGET_TIMING: Duration = Duration::from_secs(2);
@@ -21,11 +22,32 @@ const TARGET_TIMING: Duration = Duration::from_secs(2);
 struct Args {
     #[argh(option, description = "bytes for setsockopt(SO_SNDBUF)", default = "0")]
     unix_so_sndbuf: usize,
+
+    #[argh(option, description = "only run the TCP writer", default = "0")]
+    writer_only_port: u16,
+
+    #[argh(
+        option,
+        description = "address to connect to for the TCP tests",
+        default = "String::new()"
+    )]
+    writer_addr: String,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Args = argh::from_env();
     let mut buffer = vec![1; MAX_BUF_SIZE];
+
+    if args.writer_only_port != 0 {
+        println!(
+            "Listening for TCP connections on port {} ...",
+            args.writer_only_port
+        );
+        let listen_addr = format!("0.0.0.0:{}", args.writer_only_port);
+        let tcp_listener = TcpListener::bind(listen_addr)?;
+        tcp_writer(tcp_listener);
+        return Ok(());
+    }
 
     println!("UNIX socket:");
     let (writer_sock, mut reader_sock) = UnixStream::pair()?;
@@ -43,14 +65,30 @@ fn main() -> Result<(), Box<dyn Error>> {
     drop(reader_sock);
     writer_thread.join().expect("BUG");
 
-    println!("Localhost TCP:");
-    let tcp_listener = TcpListener::bind("localhost:0")?;
-    let listener_addr = tcp_listener.local_addr()?;
-    let writer_thread = std::thread::spawn(|| tcp_writer(tcp_listener));
-    let mut reader_sock = TcpStream::connect(listener_addr)?;
+    let mut maybe_writer_thread: Option<JoinHandle<()>> = None;
+    let writer_addr = if args.writer_addr.is_empty() {
+        let tcp_listener = TcpListener::bind("localhost:0")?;
+        let writer_addr = tcp_listener.local_addr()?;
+        maybe_writer_thread = Some(std::thread::spawn(|| tcp_writer(tcp_listener)));
+        writer_addr
+    } else {
+        args.writer_addr.parse()?
+    };
+
+    let mut reader_sock = TcpStream::connect(writer_addr)?;
+    let rcvbuf = nix::sys::socket::sockopt::RcvBuf
+        .get(reader_sock.as_raw_fd())
+        .expect("BUG");
+    println!("\nTCP writer_addr={writer_addr}; reader_sock SO_RCVBUF={rcvbuf}:",);
+    // nix::sys::socket::sockopt::RcvBuf
+    //     .set(reader_sock.as_raw_fd(), &(1048576 * 8))
+    //     .expect("BUG");
+    println!("TCP reader sock; SO_RCVBUF={rcvbuf}");
     run_benchmark(&mut reader_sock, &mut buffer)?;
     drop(reader_sock);
-    writer_thread.join().expect("BUG");
+    if let Some(writer_thread) = maybe_writer_thread {
+        writer_thread.join().expect("BUG");
+    }
 
     println!("\n/dev/zero:");
     let mut devzero = File::open("/dev/zero")?;
@@ -65,7 +103,15 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 fn tcp_writer(tcp_listener: TcpListener) {
     let (stream, _) = tcp_listener.accept().expect("tcp_writer BUG");
-    println!("accepted new connection");
+
+    let sndbuf = nix::sys::socket::sockopt::SndBuf
+        .get(stream.as_raw_fd())
+        .expect("BUG");
+    println!("TCP accepted new connection; writer SO_SNDBUF={sndbuf}");
+    // nix::sys::socket::sockopt::SndBuf
+    //     .set(stream.as_raw_fd(), &1048576)
+    //     .expect("BUG");
+
     socket_writer(stream);
     // avoids clippy::needless-pass-by-value warning
     drop(tcp_listener);
