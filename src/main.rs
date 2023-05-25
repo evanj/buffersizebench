@@ -14,7 +14,7 @@ use std::{
 use argh::FromArgs;
 use nix::sys::socket::{GetSockOpt, SetSockOpt};
 
-const MAX_BUF_SIZE: usize = 16 * 1024 * 1024;
+const MAX_BUFFER_BYTES: usize = 16 * 1024 * 1024;
 const TARGET_TIMING: Duration = Duration::from_secs(2);
 
 #[derive(FromArgs)]
@@ -32,11 +32,16 @@ struct Args {
         default = "String::new()"
     )]
     writer_addr: String,
+
+    #[argh(option, description = "bytes ", default = "16777216")]
+    writer_buffer_bytes: usize,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Args = argh::from_env();
-    let mut buffer = vec![1; MAX_BUF_SIZE];
+    assert!(args.writer_buffer_bytes <= MAX_BUFFER_BYTES);
+
+    let mut read_buffer = vec![1; MAX_BUFFER_BYTES];
 
     if args.writer_only_port != 0 {
         println!(
@@ -45,7 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         );
         let listen_addr = format!("0.0.0.0:{}", args.writer_only_port);
         let tcp_listener = TcpListener::bind(listen_addr)?;
-        tcp_writer(tcp_listener);
+        tcp_writer(tcp_listener, args.writer_buffer_bytes);
         return Ok(());
     }
 
@@ -59,8 +64,9 @@ fn main() -> Result<(), Box<dyn Error>> {
         nix::sys::socket::sockopt::SndBuf.set(writer_sock.as_raw_fd(), &args.unix_so_sndbuf)?;
     }
 
-    let writer_thread = std::thread::spawn(|| socket_writer(writer_sock));
-    run_benchmark(&mut reader_sock, &mut buffer)?;
+    let writer_thread =
+        std::thread::spawn(move || socket_writer(writer_sock, args.writer_buffer_bytes));
+    run_benchmark(&mut reader_sock, &mut read_buffer)?;
     // close the reader end of the socket: cause the writer to exit
     drop(reader_sock);
     writer_thread.join().expect("BUG");
@@ -69,7 +75,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     let writer_addr = if args.writer_addr.is_empty() {
         let tcp_listener = TcpListener::bind("localhost:0")?;
         let writer_addr = tcp_listener.local_addr()?;
-        maybe_writer_thread = Some(std::thread::spawn(|| tcp_writer(tcp_listener)));
+        maybe_writer_thread = Some(std::thread::spawn(move || {
+            tcp_writer(tcp_listener, args.writer_buffer_bytes)
+        }));
         writer_addr
     } else {
         args.writer_addr.parse()?
@@ -84,7 +92,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     //     .set(reader_sock.as_raw_fd(), &(1048576 * 8))
     //     .expect("BUG");
     println!("TCP reader sock; SO_RCVBUF={rcvbuf}");
-    run_benchmark(&mut reader_sock, &mut buffer)?;
+    run_benchmark(&mut reader_sock, &mut read_buffer)?;
     drop(reader_sock);
     if let Some(writer_thread) = maybe_writer_thread {
         writer_thread.join().expect("BUG");
@@ -92,16 +100,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     println!("\n/dev/zero:");
     let mut devzero = File::open("/dev/zero")?;
-    run_benchmark(&mut devzero, &mut buffer)?;
+    run_benchmark(&mut devzero, &mut read_buffer)?;
 
     println!("\n/dev/urandom:");
     let mut devurandom = File::open("/dev/urandom")?;
-    run_benchmark(&mut devurandom, &mut buffer)?;
+    run_benchmark(&mut devurandom, &mut read_buffer)?;
 
     Ok(())
 }
 
-fn tcp_writer(tcp_listener: TcpListener) {
+fn tcp_writer(tcp_listener: TcpListener, writer_buffer_bytes: usize) {
     let (stream, _) = tcp_listener.accept().expect("tcp_writer BUG");
 
     let sndbuf = nix::sys::socket::sockopt::SndBuf
@@ -112,13 +120,13 @@ fn tcp_writer(tcp_listener: TcpListener) {
     //     .set(stream.as_raw_fd(), &1048576)
     //     .expect("BUG");
 
-    socket_writer(stream);
+    socket_writer(stream, writer_buffer_bytes);
     // avoids clippy::needless-pass-by-value warning
     drop(tcp_listener);
 }
 
-fn socket_writer<W: Write>(mut sock: W) {
-    let buffer = vec![0; MAX_BUF_SIZE];
+fn socket_writer<W: Write>(mut sock: W, writer_buffer_bytes: usize) {
+    let buffer = vec![0; writer_buffer_bytes];
     loop {
         match sock.write(&buffer) {
             Ok(num_bytes) => {
@@ -128,7 +136,7 @@ fn socket_writer<W: Write>(mut sock: W) {
                 if num_bytes < buffer.len() {
                     println!("short write {num_bytes} total bytes; {} bytes short; expecting EPIPE on next write ...",
                         buffer.len() - num_bytes);
-                    match sock.write(&buffer[..MAX_BUF_SIZE]) {
+                    match sock.write(&buffer) {
                         Ok(_) => {
                             panic!("unexpected")
                         }
@@ -179,7 +187,7 @@ fn run_benchmark<R: Read>(f: &mut R, buffer: &mut [u8]) -> Result<(), std::io::E
     _ = time_reads(f, &mut buffer[0..1024], 1024 * 4)?;
 
     let mut buf_size = 1;
-    while buf_size <= MAX_BUF_SIZE {
+    while buf_size <= MAX_BUFFER_BYTES {
         const TIMING_ESTIMATE_SYSCALLS: usize = 100;
         let sized_buf: &mut [u8] = &mut buffer[0..buf_size];
         let estimate_results = time_reads(f, sized_buf, TIMING_ESTIMATE_SYSCALLS * buf_size)?;

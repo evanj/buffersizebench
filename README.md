@@ -16,18 +16,18 @@ Results are from a 16 core GCP T2D instance with Kernel 6.2.0-1005-gcp from Ubun
 * The results vary a lot for sender/receiver pairs at high throughput. I suspect the kernel scheduling has a very large impact. You can see this in the "short reads" counts. If the kernel happens to schedule things so the read() call returns full payloads, throughput is good. If it returns smaller payloads, throughput is less good.
 
 
-
 ## GCP Network Bandwidth
 
 "The maximum egress bandwidth is generally 2 Gbps per vCPU" from https://cloud.google.com/compute/docs/network-bandwidth#vm-out
 
 Need 16 cores to hit the 32 Gbps limit
 
+
 ## Unix sockets
 
 For really large buffers, reads will often be "short" due to the kernel buffers. Arguably this is "realistic", since we are using a real writer and reader. This basically means there are diminishing returns to larger application buffers, which is what we are looking for anyway.
 
-Best 16 kiB 8817.2 MiB/s
+Best = 16 kiB = 8817.2 MiB/s
 
 ```
 buf_size=1; duration=1.508913262s; num_syscalls=6583278; 4.2 MiB/s; 4362926.7 syscalls/s; short_reads=0
@@ -59,7 +59,7 @@ buf_size=16777216; duration=2.113753235s; num_syscalls=203752; 7825.3 MiB/s; 963
 
 ## TCP Localhost
 
-Best = 4 kiB 6511.7 MiB/s
+Best = 4 kiB = 6511.7 MiB/s
 
 ```
 buf_size=1; duration=1.512511567s; num_syscalls=5274261; 3.3 MiB/s; 3487088.0 syscalls/s; short_reads=0
@@ -89,10 +89,46 @@ buf_size=8388608; duration=1.979897295s; num_syscalls=50809; 1598.0 MiB/s; 25662
 buf_size=16777216; duration=1.872009035s; num_syscalls=51228; 1705.5 MiB/s; 27365.3 syscalls/s; short_reads=51228
 ```
 
+## TCP Remote
+
+Best = 1 KiB = 1449.7 MiB/s
+
+16 core GCP VM documented as having a 32 Gbps limit = 3814 MiB/s. Using `iperf` reaches that limit with 3 or 4 TCP flows. With 1 TCP flow it hits 1425 MiB/s, which is basically the same as this test.
+
+```
+TCP writer_addr=10.128.0.39:12345; reader_sock SO_RCVBUF=131072:
+TCP reader sock; SO_RCVBUF=131072
+buf_size=1; duration=1.47981648s; num_syscalls=4925987; 3.2 MiB/s; 3328782.4 syscalls/s; short_reads=0
+buf_size=2; duration=2.076351134s; num_syscalls=6858711; 6.3 MiB/s; 3303252.0 syscalls/s; short_reads=1
+buf_size=4; duration=2.233437932s; num_syscalls=7307271; 12.5 MiB/s; 3271759.2 syscalls/s; short_reads=0
+buf_size=8; duration=2.087131985s; num_syscalls=6624711; 24.2 MiB/s; 3174073.8 syscalls/s; short_reads=0
+buf_size=16; duration=1.957479169s; num_syscalls=6016848; 46.9 MiB/s; 3073773.7 syscalls/s; short_reads=0
+buf_size=32; duration=2.065826752s; num_syscalls=6682259; 98.7 MiB/s; 3234665.7 syscalls/s; short_reads=0
+buf_size=64; duration=1.994596384s; num_syscalls=6416427; 196.3 MiB/s; 3216905.0 syscalls/s; short_reads=0
+buf_size=128; duration=2.322409574s; num_syscalls=7079647; 372.1 MiB/s; 3048405.9 syscalls/s; short_reads=0
+buf_size=256; duration=1.834770973s; num_syscalls=5393745; 717.7 MiB/s; 2939737.5 syscalls/s; short_reads=1
+buf_size=512; duration=2.324527454s; num_syscalls=6238505; 1310.4 MiB/s; 2683773.4 syscalls/s; short_reads=405
+buf_size=1024; duration=3.809051675s; num_syscalls=5662564; 1449.7 MiB/s; 1486607.3 syscalls/s; short_reads=15409
+buf_size=2048; duration=3.68525519s; num_syscalls=2416487; 1272.6 MiB/s; 655717.7 syscalls/s; short_reads=29849
+buf_size=4096; duration=4.371437904s; num_syscalls=1516051; 1339.2 MiB/s; 346808.3 syscalls/s; short_reads=40294
+buf_size=8192; duration=2.336217766s; num_syscalls=375118; 1237.5 MiB/s; 160566.4 syscalls/s; short_reads=21637
+buf_size=16384; duration=2.766287328s; num_syscalls=225472; 1247.1 MiB/s; 81507.1 syscalls/s; short_reads=27068
+buf_size=32768; duration=2.329937586s; num_syscalls=98858; 1285.8 MiB/s; 42429.5 syscalls/s; short_reads=23013
+buf_size=65536; duration=1.993754226s; num_syscalls=41473; 1239.0 MiB/s; 20801.5 syscalls/s; short_reads=19601
+buf_size=131072; duration=1.955282285s; num_syscalls=25381; 1249.6 MiB/s; 12980.7 syscalls/s; short_reads=19628
+buf_size=262144; duration=2.009988546s; num_syscalls=20611; 1273.1 MiB/s; 10254.3 syscalls/s; short_reads=20431
+buf_size=524288; duration=1.959299935s; num_syscalls=20253; 1299.7 MiB/s; 10336.9 syscalls/s; short_reads=20245
+buf_size=1048576; duration=2.034348116s; num_syscalls=20612; 1259.5 MiB/s; 10132.0 syscalls/s; short_reads=20612
+buf_size=2097152; duration=1.988108456s; num_syscalls=20918; 1318.3 MiB/s; 10521.6 syscalls/s; short_reads=20917
+buf_size=4194304; duration=1.991821416s; num_syscalls=20695; 1280.5 MiB/s; 10390.0 syscalls/s; short_reads=20695
+buf_size=8388608; duration=2.004051336s; num_syscalls=20221; 1270.4 MiB/s; 10090.1 syscalls/s; short_reads=20221
+buf_size=16777216; duration=1.968465835s; num_syscalls=19967; 1306.0 MiB/s; 10143.4 syscalls/s; short_reads=19967
+```
+
 
 ## /dev/zero
 
-Best = 256 KiB 42252.9 MiB/s ; Sometimes the best was 128Ki
+Best = 256 KiB = 42252.9 MiB/s ; Sometimes the best was 128KiB
 
 ```
 buf_size=1; duration=2.109977484s; num_syscalls=13218770; 6.0 MiB/s; 6264886.8 syscalls/s; short_reads=0
@@ -125,7 +161,7 @@ buf_size=16777216; duration=1.88241312s; num_syscalls=4192; 35627.1 MiB/s; 2226.
 
 ## /dev/urandom
 
-Best = 16 KiB 437.6 MiB/s; 8 KiB is very close 430.7 MiB/s
+Best = 16 KiB = 437.6 MiB/s; 8 KiB is very close 430.7 MiB/s
 
 ```
 buf_size=1; duration=2.084364827s; num_syscalls=5932957; 2.7 MiB/s; 2846410.1 syscalls/s; short_reads=0
