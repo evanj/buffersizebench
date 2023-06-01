@@ -5,6 +5,10 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+# Enable debuginfo for profiling
+[profile.release]
+debug = 1
+
 [dependencies]
 nix = "0"
 argh = "0"

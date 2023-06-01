@@ -2,7 +2,7 @@
 
 This is attempting to determine how much the buffer size passed to the `read()` system call matters for different data sources on a "bulk transfer" workload. I did very little tuning, so this should represent "out of the box" performance, but the results will vary substantially from kernel to kernel and machine to machine.
 
-*Rough Conclusion*: 16 KiB is a reasonable default. 8 KiB might even be enough.
+*Rough Conclusion*: Read buffers: 16 KiB is a reasonable default. 8 KiB might even be enough. Write buffers: Bigger seems better. Waiting on more data.
 
 Results are from a 16 core GCP T2D instance with Kernel 6.2.0-1005-gcp from Ubuntu 23.04
 /proc/cpuinfo reports "AMD EPYC 7B13 MHz: 2449.998"
