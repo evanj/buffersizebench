@@ -1,0 +1,1708 @@
+
+## use_buffer=false; write_buffer_bytes=4096
+use_buffer=false; write_buffer_bytes=4096; type=unix:
+buf_size=1; duration=2.089699285s; num_syscalls=10702627; 4.9 MiB/s; 5121611.1 syscalls/s; short_reads=0
+buf_size=2; duration=1.981285349s; num_syscalls=10205644; 9.8 MiB/s; 5151021.8 syscalls/s; short_reads=0
+buf_size=4; duration=1.806831051s; num_syscalls=9648319; 20.4 MiB/s; 5339912.1 syscalls/s; short_reads=0
+buf_size=8; duration=2.08278929s; num_syscalls=10804387; 39.6 MiB/s; 5187460.4 syscalls/s; short_reads=0
+buf_size=16; duration=2.016284039s; num_syscalls=10634904; 80.5 MiB/s; 5274506.9 syscalls/s; short_reads=0
+buf_size=32; duration=2.130282021s; num_syscalls=10700910; 153.3 MiB/s; 5023236.3 syscalls/s; short_reads=0
+buf_size=64; duration=1.758048439s; num_syscalls=8604742; 298.7 MiB/s; 4894485.2 syscalls/s; short_reads=1
+buf_size=128; duration=1.881228531s; num_syscalls=8895611; 577.2 MiB/s; 4728618.0 syscalls/s; short_reads=0
+buf_size=256; duration=2.203314583s; num_syscalls=9133255; 1012.0 MiB/s; 4145234.2 syscalls/s; short_reads=1
+buf_size=512; duration=1.238693742s; num_syscalls=4002162; 1577.6 MiB/s; 3230953.6 syscalls/s; short_reads=1
+buf_size=1024; duration=1.504702892s; num_syscalls=3750376; 2434.0 MiB/s; 2492436.2 syscalls/s; short_reads=1
+buf_size=2048; duration=1.755291223s; num_syscalls=2855512; 3177.3 MiB/s; 1626802.4 syscalls/s; short_reads=0
+buf_size=4096; duration=1.912391184s; num_syscalls=1818894; 3715.3 MiB/s; 951109.8 syscalls/s; short_reads=1
+buf_size=8192; duration=2.046292018s; num_syscalls=993503; 3761.5 MiB/s; 485513.8 syscalls/s; short_reads=16543
+buf_size=16384; duration=1.075502976s; num_syscalls=260198; 3692.4 MiB/s; 241931.5 syscalls/s; short_reads=9988
+buf_size=32768; duration=1.674506471s; num_syscalls=201363; 3357.3 MiB/s; 120252.1 syscalls/s; short_reads=30690
+buf_size=65536; duration=1.805913283s; num_syscalls=178623; 3159.1 MiB/s; 98910.1 syscalls/s; short_reads=103459
+buf_size=131072; duration=1.963743545s; num_syscalls=113629; 3791.6 MiB/s; 57863.5 syscalls/s; short_reads=63673
+buf_size=262144; duration=2.082536113s; num_syscalls=70366; 3827.1 MiB/s; 33788.6 syscalls/s; short_reads=46847
+buf_size=524288; duration=2.143141319s; num_syscalls=72427; 3636.3 MiB/s; 33794.8 syscalls/s; short_reads=60976
+buf_size=1048576; duration=1.729532702s; num_syscalls=113091; 3452.5 MiB/s; 65388.2 syscalls/s; short_reads=109570
+buf_size=2097152; duration=2.1820959s; num_syscalls=124499; 3313.3 MiB/s; 57054.8 syscalls/s; short_reads=122529
+buf_size=4194304; duration=2.222483044s; num_syscalls=112300; 3078.7 MiB/s; 50529.1 syscalls/s; short_reads=111601
+buf_size=8388608; duration=1.730340965s; num_syscalls=29373; 3518.1 MiB/s; 16975.3 syscalls/s; short_reads=29191
+buf_size=16777216; duration=1.912516917s; num_syscalls=26634; 3173.7 MiB/s; 13926.2 syscalls/s; short_reads=26479
+  BEST: buf_size=262144 3827.085667588688 ; max no decreases buf_size=8192 3761.5 MiB/s; ignore use_buffer=false sum=0
+EPIPE at end of benchmark
+
+use_buffer=false; write_buffer_bytes=4096; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=4096; use_buffer=false
+buf_size=1; duration=1.157693995s; num_syscalls=4601297; 3.8 MiB/s; 3974536.5 syscalls/s; short_reads=0
+buf_size=2; duration=2.086815159s; num_syscalls=8268222; 7.6 MiB/s; 3962124.8 syscalls/s; short_reads=1
+buf_size=4; duration=2.103457505s; num_syscalls=8232147; 14.9 MiB/s; 3913626.5 syscalls/s; short_reads=0
+buf_size=8; duration=1.426959039s; num_syscalls=5575846; 29.8 MiB/s; 3907502.5 syscalls/s; short_reads=1
+buf_size=16; duration=1.958705062s; num_syscalls=7559437; 58.9 MiB/s; 3859405.5 syscalls/s; short_reads=0
+buf_size=32; duration=1.980861522s; num_syscalls=7671654; 118.2 MiB/s; 3872887.6 syscalls/s; short_reads=1
+buf_size=64; duration=2.149143294s; num_syscalls=7519646; 213.6 MiB/s; 3498904.0 syscalls/s; short_reads=0
+buf_size=128; duration=2.221700382s; num_syscalls=7282526; 400.1 MiB/s; 3277906.4 syscalls/s; short_reads=0
+buf_size=256; duration=2.183537509s; num_syscalls=6513173; 728.2 MiB/s; 2982853.7 syscalls/s; short_reads=0
+buf_size=512; duration=1.843086313s; num_syscalls=4560797; 1208.3 MiB/s; 2474543.4 syscalls/s; short_reads=2
+buf_size=1024; duration=1.427297333s; num_syscalls=3464884; 2370.7 MiB/s; 2427583.9 syscalls/s; short_reads=0
+buf_size=2048; duration=1.299604236s; num_syscalls=2842161; 4271.4 MiB/s; 2186943.5 syscalls/s; short_reads=0
+buf_size=4096; duration=1.706399406s; num_syscalls=2189484; 5012.1 MiB/s; 1283101.7 syscalls/s; short_reads=11
+buf_size=8192; duration=2.066990826s; num_syscalls=1241859; 4567.8 MiB/s; 600805.3 syscalls/s; short_reads=66698
+buf_size=16384; duration=1.999579817s; num_syscalls=597113; 4151.6 MiB/s; 298619.2 syscalls/s; short_reads=137867
+buf_size=32768; duration=1.741894126s; num_syscalls=286357; 4215.5 MiB/s; 164394.0 syscalls/s; short_reads=107532
+buf_size=65536; duration=2.105151609s; num_syscalls=239342; 4415.3 MiB/s; 113693.5 syscalls/s; short_reads=236578
+buf_size=131072; duration=1.9602124s; num_syscalls=237480; 4678.4 MiB/s; 121150.1 syscalls/s; short_reads=237445
+buf_size=262144; duration=2.462743415s; num_syscalls=254226; 3816.9 MiB/s; 103228.8 syscalls/s; short_reads=254219
+buf_size=524288; duration=1.892755962s; num_syscalls=188074; 3737.9 MiB/s; 99365.2 syscalls/s; short_reads=188069
+buf_size=1048576; duration=1.768456699s; num_syscalls=177245; 3772.0 MiB/s; 100225.8 syscalls/s; short_reads=177245
+buf_size=2097152; duration=1.787046099s; num_syscalls=179622; 3789.3 MiB/s; 100513.4 syscalls/s; short_reads=179622
+buf_size=4194304; duration=1.853853934s; num_syscalls=186494; 3795.4 MiB/s; 100598.0 syscalls/s; short_reads=186494
+buf_size=8388608; duration=1.923640923s; num_syscalls=193975; 3803.4 MiB/s; 100837.4 syscalls/s; short_reads=193975
+buf_size=16777216; duration=1.960686846s; num_syscalls=197431; 3797.4 MiB/s; 100694.8 syscalls/s; short_reads=197431
+  BEST: buf_size=4096 5012.1008907233 ; max no decreases buf_size=4096 5012.1 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=8192
+use_buffer=false; write_buffer_bytes=8192; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=1.532867698s; num_syscalls=7679017; 4.8 MiB/s; 5009575.8 syscalls/s; short_reads=0
+buf_size=2; duration=1.966466685s; num_syscalls=9596929; 9.3 MiB/s; 4880290.7 syscalls/s; short_reads=0
+buf_size=4; duration=1.959254544s; num_syscalls=9363296; 18.2 MiB/s; 4779009.5 syscalls/s; short_reads=0
+buf_size=8; duration=2.026285687s; num_syscalls=9645992; 36.3 MiB/s; 4760430.4 syscalls/s; short_reads=0
+buf_size=16; duration=1.975435844s; num_syscalls=9320534; 72.0 MiB/s; 4718216.5 syscalls/s; short_reads=0
+buf_size=32; duration=2.046592413s; num_syscalls=9484517; 141.4 MiB/s; 4634297.0 syscalls/s; short_reads=0
+buf_size=64; duration=2.033377008s; num_syscalls=9082653; 272.6 MiB/s; 4466782.6 syscalls/s; short_reads=0
+buf_size=128; duration=1.844764249s; num_syscalls=7673715; 507.8 MiB/s; 4159726.6 syscalls/s; short_reads=1
+buf_size=256; duration=1.931555364s; num_syscalls=7448235; 941.4 MiB/s; 3856081.5 syscalls/s; short_reads=0
+buf_size=512; duration=1.867186882s; num_syscalls=6050705; 1582.3 MiB/s; 3240546.0 syscalls/s; short_reads=0
+buf_size=1024; duration=1.897210836s; num_syscalls=4721213; 2430.2 MiB/s; 2488502.0 syscalls/s; short_reads=0
+buf_size=2048; duration=1.862186536s; num_syscalls=3238605; 3396.8 MiB/s; 1739141.0 syscalls/s; short_reads=1
+buf_size=4096; duration=1.646057481s; num_syscalls=2065114; 4900.7 MiB/s; 1254581.9 syscalls/s; short_reads=0
+buf_size=8192; duration=1.839438527s; num_syscalls=1672577; 7103.8 MiB/s; 909286.7 syscalls/s; short_reads=0
+buf_size=16384; duration=1.911592562s; num_syscalls=854970; 6982.6 MiB/s; 447255.3 syscalls/s; short_reads=1407
+buf_size=32768; duration=1.8948862s; num_syscalls=419159; 6912.6 MiB/s; 221205.4 syscalls/s; short_reads=6
+buf_size=65536; duration=2.021880285s; num_syscalls=222214; 6868.9 MiB/s; 109904.6 syscalls/s; short_reads=10
+buf_size=131072; duration=1.986016628s; num_syscalls=107657; 6775.6 MiB/s; 54207.5 syscalls/s; short_reads=6
+buf_size=262144; duration=2.024589563s; num_syscalls=52817; 6521.2 MiB/s; 26087.8 syscalls/s; short_reads=8
+buf_size=524288; duration=2.447500983s; num_syscalls=26377; 5387.9 MiB/s; 10777.1 syscalls/s; short_reads=8
+buf_size=1048576; duration=2.096987806s; num_syscalls=10477; 4992.9 MiB/s; 4996.2 syscalls/s; short_reads=12
+buf_size=2097152; duration=2.103933833s; num_syscalls=5335; 5070.5 MiB/s; 2535.7 syscalls/s; short_reads=1
+buf_size=4194304; duration=1.941439146s; num_syscalls=2507; 5157.9 MiB/s; 1291.3 syscalls/s; short_reads=4
+buf_size=8388608; duration=2.024608104s; num_syscalls=1710; 6694.5 MiB/s; 844.6 syscalls/s; short_reads=19
+buf_size=16777216; duration=1.953242962s; num_syscalls=797; 6478.5 MiB/s; 408.0 syscalls/s; short_reads=9
+  BEST: buf_size=8192 7103.800001734458 ; max no decreases buf_size=8192 7103.8 MiB/s; ignore use_buffer=false sum=0
+EPIPE at end of benchmark
+
+use_buffer=false; write_buffer_bytes=8192; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=8192; use_buffer=false
+buf_size=1; duration=1.339545716s; num_syscalls=5299557; 3.8 MiB/s; 3956234.5 syscalls/s; short_reads=0
+buf_size=2; duration=2.032474646s; num_syscalls=8085055; 7.6 MiB/s; 3977936.5 syscalls/s; short_reads=1
+buf_size=4; duration=1.93465882s; num_syscalls=7698526; 15.2 MiB/s; 3979268.0 syscalls/s; short_reads=1
+buf_size=8; duration=1.941345501s; num_syscalls=7759157; 30.5 MiB/s; 3996793.5 syscalls/s; short_reads=1
+buf_size=16; duration=1.769634954s; num_syscalls=7071137; 61.0 MiB/s; 3995816.8 syscalls/s; short_reads=1
+buf_size=32; duration=2.044964575s; num_syscalls=7855769; 117.2 MiB/s; 3841518.4 syscalls/s; short_reads=0
+buf_size=64; duration=2.014586895s; num_syscalls=7325203; 221.9 MiB/s; 3636081.9 syscalls/s; short_reads=0
+buf_size=128; duration=1.861088599s; num_syscalls=6525073; 428.0 MiB/s; 3506051.8 syscalls/s; short_reads=0
+buf_size=256; duration=2.178000422s; num_syscalls=7117692; 797.8 MiB/s; 3267993.9 syscalls/s; short_reads=0
+buf_size=512; duration=1.840819391s; num_syscalls=5328361; 1413.4 MiB/s; 2894559.4 syscalls/s; short_reads=0
+buf_size=1024; duration=2.233967152s; num_syscalls=5394908; 2358.3 MiB/s; 2414945.1 syscalls/s; short_reads=0
+buf_size=2048; duration=1.925902475s; num_syscalls=3443942; 3492.6 MiB/s; 1788222.4 syscalls/s; short_reads=0
+buf_size=4096; duration=2.161022748s; num_syscalls=2414324; 4364.1 MiB/s; 1117213.6 syscalls/s; short_reads=3
+buf_size=8192; duration=1.94757145s; num_syscalls=1487510; 5967.0 MiB/s; 763776.9 syscalls/s; short_reads=24
+buf_size=16384; duration=2.010322722s; num_syscalls=804884; 5938.8 MiB/s; 400375.5 syscalls/s; short_reads=81598
+buf_size=32768; duration=1.961679547s; num_syscalls=446465; 6010.4 MiB/s; 227593.2 syscalls/s; short_reads=128916
+buf_size=65536; duration=2.007292132s; num_syscalls=255610; 6205.9 MiB/s; 127340.7 syscalls/s; short_reads=254671
+buf_size=131072; duration=2.046677484s; num_syscalls=268426; 6421.1 MiB/s; 131152.1 syscalls/s; short_reads=268375
+buf_size=262144; duration=2.076043818s; num_syscalls=263535; 6237.1 MiB/s; 126941.0 syscalls/s; short_reads=263498
+buf_size=524288; duration=2.491244911s; num_syscalls=253830; 5048.2 MiB/s; 101888.8 syscalls/s; short_reads=253824
+buf_size=1048576; duration=2.08797038s; num_syscalls=207830; 4929.3 MiB/s; 99536.9 syscalls/s; short_reads=207829
+buf_size=2097152; duration=2.085113585s; num_syscalls=207295; 4901.8 MiB/s; 99416.6 syscalls/s; short_reads=207295
+buf_size=4194304; duration=1.94166549s; num_syscalls=193533; 4901.0 MiB/s; 99673.7 syscalls/s; short_reads=193533
+buf_size=8388608; duration=1.982716167s; num_syscalls=197258; 4899.4 MiB/s; 99488.8 syscalls/s; short_reads=197258
+buf_size=16777216; duration=1.970084998s; num_syscalls=195053; 4854.7 MiB/s; 99007.4 syscalls/s; short_reads=195053
+  BEST: buf_size=131072 6421.064359983066 ; max no decreases buf_size=8192 5967.0 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=16384
+use_buffer=false; write_buffer_bytes=16384; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=1.610146551s; num_syscalls=7920164; 4.7 MiB/s; 4918908.8 syscalls/s; short_reads=0
+buf_size=2; duration=2.013011914s; num_syscalls=9681011; 9.2 MiB/s; 4809216.9 syscalls/s; short_reads=0
+buf_size=4; duration=2.019249194s; num_syscalls=9672583; 18.3 MiB/s; 4790187.9 syscalls/s; short_reads=0
+buf_size=8; duration=1.985860178s; num_syscalls=9497578; 36.5 MiB/s; 4782601.6 syscalls/s; short_reads=0
+buf_size=16; duration=2.272383588s; num_syscalls=9387909; 63.0 MiB/s; 4131304.7 syscalls/s; short_reads=0
+buf_size=32; duration=2.031773442s; num_syscalls=10110202; 151.9 MiB/s; 4976047.9 syscalls/s; short_reads=0
+buf_size=64; duration=2.002861171s; num_syscalls=9723371; 296.3 MiB/s; 4854740.4 syscalls/s; short_reads=0
+buf_size=128; duration=2.006760893s; num_syscalls=9597391; 583.8 MiB/s; 4782528.4 syscalls/s; short_reads=1
+buf_size=256; duration=1.94652425s; num_syscalls=8805919; 1104.5 MiB/s; 4523919.5 syscalls/s; short_reads=1
+buf_size=512; duration=1.794389069s; num_syscalls=7271406; 1978.7 MiB/s; 4052301.8 syscalls/s; short_reads=0
+buf_size=1024; duration=497.728791ms; num_syscalls=1730913; 3396.1 MiB/s; 3477622.8 syscalls/s; short_reads=0
+buf_size=2048; duration=1.764991563s; num_syscalls=4837813; 5353.5 MiB/s; 2740983.6 syscalls/s; short_reads=0
+buf_size=4096; duration=669.102154ms; num_syscalls=1049093; 6124.7 MiB/s; 1567911.6 syscalls/s; short_reads=0
+buf_size=8192; duration=2.202844136s; num_syscalls=1821528; 6460.1 MiB/s; 826898.3 syscalls/s; short_reads=1
+buf_size=16384; duration=1.967556056s; num_syscalls=813571; 6460.8 MiB/s; 413493.2 syscalls/s; short_reads=0
+buf_size=32768; duration=1.984568666s; num_syscalls=411037; 6471.3 MiB/s; 207116.5 syscalls/s; short_reads=133
+buf_size=65536; duration=1.873218225s; num_syscalls=197833; 6595.0 MiB/s; 105611.3 syscalls/s; short_reads=426
+buf_size=131072; duration=1.915345519s; num_syscalls=101274; 6582.0 MiB/s; 52875.1 syscalls/s; short_reads=1198
+buf_size=262144; duration=2.067146384s; num_syscalls=55005; 6589.9 MiB/s; 26609.1 syscalls/s; short_reads=1627
+buf_size=524288; duration=2.086392947s; num_syscalls=28242; 6589.1 MiB/s; 13536.3 syscalls/s; short_reads=1699
+buf_size=1048576; duration=2.125192505s; num_syscalls=14227; 6440.7 MiB/s; 6694.5 syscalls/s; short_reads=989
+buf_size=2097152; duration=2.188394046s; num_syscalls=7335; 6506.7 MiB/s; 3351.8 syscalls/s; short_reads=337
+buf_size=4194304; duration=2.02852629s; num_syscalls=3458; 6507.3 MiB/s; 1704.7 syscalls/s; short_reads=244
+buf_size=8388608; duration=1.964396877s; num_syscalls=1824; 6494.1 MiB/s; 928.5 syscalls/s; short_reads=354
+buf_size=16777216; duration=2.014137359s; num_syscalls=1049; 6489.6 MiB/s; 520.8 syscalls/s; short_reads=352
+  BEST: buf_size=65536 6594.976134590123 ; max no decreases buf_size=65536 6595.0 MiB/s; ignore use_buffer=false sum=0
+EPIPE at end of benchmark
+
+use_buffer=false; write_buffer_bytes=16384; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=16384; use_buffer=false
+buf_size=1; duration=1.711636798s; num_syscalls=6658676; 3.7 MiB/s; 3890238.9 syscalls/s; short_reads=0
+buf_size=2; duration=2.038667278s; num_syscalls=7788465; 7.3 MiB/s; 3820370.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.285445195s; num_syscalls=7545177; 12.6 MiB/s; 3301403.6 syscalls/s; short_reads=1
+buf_size=8; duration=1.986294461s; num_syscalls=8056071; 30.9 MiB/s; 4055829.2 syscalls/s; short_reads=1
+buf_size=16; duration=1.912136212s; num_syscalls=7689647; 61.4 MiB/s; 4021495.4 syscalls/s; short_reads=1
+buf_size=32; duration=1.981991499s; num_syscalls=7910142; 121.8 MiB/s; 3991007.0 syscalls/s; short_reads=1
+buf_size=64; duration=2.064265291s; num_syscalls=7868750; 232.7 MiB/s; 3811888.9 syscalls/s; short_reads=1
+buf_size=128; duration=2.035229569s; num_syscalls=7729170; 463.6 MiB/s; 3797689.5 syscalls/s; short_reads=0
+buf_size=256; duration=2.012330543s; num_syscalls=7348349; 891.5 MiB/s; 3651661.0 syscalls/s; short_reads=0
+buf_size=512; duration=2.163878476s; num_syscalls=7095470; 1601.1 MiB/s; 3279052.0 syscalls/s; short_reads=0
+buf_size=1024; duration=2.320155996s; num_syscalls=6127076; 2578.9 MiB/s; 2640803.5 syscalls/s; short_reads=0
+buf_size=2048; duration=1.910432464s; num_syscalls=3705077; 3787.9 MiB/s; 1939391.8 syscalls/s; short_reads=1
+buf_size=4096; duration=1.772276196s; num_syscalls=2161490; 4764.1 MiB/s; 1219612.4 syscalls/s; short_reads=9
+buf_size=8192; duration=2.106250592s; num_syscalls=1281208; 4752.0 MiB/s; 608288.5 syscalls/s; short_reads=136
+buf_size=16384; duration=2.264039037s; num_syscalls=737302; 5088.3 MiB/s; 325657.8 syscalls/s; short_reads=43
+buf_size=32768; duration=2.008481614s; num_syscalls=387307; 5251.5 MiB/s; 192835.7 syscalls/s; short_reads=99676
+buf_size=65536; duration=1.927229246s; num_syscalls=232804; 5178.6 MiB/s; 120797.3 syscalls/s; short_reads=187018
+buf_size=131072; duration=2.139182255s; num_syscalls=216770; 5195.2 MiB/s; 101333.1 syscalls/s; short_reads=216757
+buf_size=262144; duration=2.229902443s; num_syscalls=226072; 5199.4 MiB/s; 101382.0 syscalls/s; short_reads=226046
+buf_size=524288; duration=2.049368111s; num_syscalls=207632; 5195.5 MiB/s; 101315.1 syscalls/s; short_reads=207632
+buf_size=1048576; duration=2.055211304s; num_syscalls=207210; 5220.0 MiB/s; 100821.7 syscalls/s; short_reads=207210
+buf_size=2097152; duration=2.045072351s; num_syscalls=206051; 5222.5 MiB/s; 100754.9 syscalls/s; short_reads=206051
+buf_size=4194304; duration=1.903829006s; num_syscalls=196970; 5277.5 MiB/s; 103459.9 syscalls/s; short_reads=196970
+buf_size=8388608; duration=1.893952613s; num_syscalls=197025; 5296.5 MiB/s; 104028.5 syscalls/s; short_reads=197025
+buf_size=16777216; duration=1.953466762s; num_syscalls=202526; 5292.8 MiB/s; 103675.2 syscalls/s; short_reads=202526
+  BEST: buf_size=8388608 5296.4899837565845 ; max no decreases buf_size=4096 4764.1 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=32768
+use_buffer=false; write_buffer_bytes=32768; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=1.672854275s; num_syscalls=8148963; 4.6 MiB/s; 4871292.8 syscalls/s; short_reads=0
+buf_size=2; duration=2.017976725s; num_syscalls=9687106; 9.2 MiB/s; 4800405.2 syscalls/s; short_reads=0
+buf_size=4; duration=2.281759318s; num_syscalls=9482268; 15.9 MiB/s; 4155682.8 syscalls/s; short_reads=0
+buf_size=8; duration=1.949314647s; num_syscalls=9912277; 38.8 MiB/s; 5085006.2 syscalls/s; short_reads=0
+buf_size=16; duration=1.996402284s; num_syscalls=10104072; 77.2 MiB/s; 5061140.3 syscalls/s; short_reads=0
+buf_size=32; duration=2.004667308s; num_syscalls=10086238; 153.5 MiB/s; 5031377.5 syscalls/s; short_reads=0
+buf_size=64; duration=1.954704091s; num_syscalls=9763242; 304.9 MiB/s; 4994741.7 syscalls/s; short_reads=1
+buf_size=128; duration=2.127342535s; num_syscalls=10036131; 575.9 MiB/s; 4717684.5 syscalls/s; short_reads=1
+buf_size=256; duration=2.080107827s; num_syscalls=9928515; 1165.3 MiB/s; 4773077.1 syscalls/s; short_reads=0
+buf_size=512; duration=2.096921686s; num_syscalls=8629990; 2009.5 MiB/s; 4115551.9 syscalls/s; short_reads=0
+buf_size=1024; duration=1.748348818s; num_syscalls=5860807; 3273.6 MiB/s; 3352195.5 syscalls/s; short_reads=1
+buf_size=2048; duration=1.950840921s; num_syscalls=5069452; 5075.4 MiB/s; 2598598.4 syscalls/s; short_reads=0
+buf_size=4096; duration=2.123551997s; num_syscalls=3769247; 6933.5 MiB/s; 1774972.8 syscalls/s; short_reads=0
+buf_size=8192; duration=2.214038004s; num_syscalls=2160714; 7624.3 MiB/s; 975915.5 syscalls/s; short_reads=0
+buf_size=16384; duration=1.972003323s; num_syscalls=920641; 7294.6 MiB/s; 466855.7 syscalls/s; short_reads=0
+buf_size=32768; duration=2.035681081s; num_syscalls=468546; 7192.7 MiB/s; 230166.7 syscalls/s; short_reads=0
+buf_size=65536; duration=2.106502808s; num_syscalls=297545; 7122.2 MiB/s; 141250.7 syscalls/s; short_reads=114996
+buf_size=131072; duration=2.236258977s; num_syscalls=316240; 7144.6 MiB/s; 141414.7 syscalls/s; short_reads=316225
+buf_size=262144; duration=2.224404211s; num_syscalls=302338; 6949.8 MiB/s; 135918.6 syscalls/s; short_reads=302331
+buf_size=524288; duration=2.002552187s; num_syscalls=269656; 6908.9 MiB/s; 134656.2 syscalls/s; short_reads=269655
+buf_size=1048576; duration=2.050204707s; num_syscalls=291584; 7148.9 MiB/s; 142221.9 syscalls/s; short_reads=291584
+buf_size=2097152; duration=2.092520259s; num_syscalls=297248; 7129.3 MiB/s; 142052.6 syscalls/s; short_reads=297248
+buf_size=4194304; duration=2.065457746s; num_syscalls=291364; 7114.6 MiB/s; 141065.1 syscalls/s; short_reads=291364
+buf_size=8388608; duration=2.017694244s; num_syscalls=284370; 7111.5 MiB/s; 140938.1 syscalls/s; short_reads=284370
+buf_size=16777216; duration=1.985980887s; num_syscalls=277030; 7079.1 MiB/s; 139492.8 syscalls/s; short_reads=277030
+  BEST: buf_size=8192 7624.339470025369 ; max no decreases buf_size=8192 7624.3 MiB/s; ignore use_buffer=false sum=0
+EPIPE at end of benchmark
+
+use_buffer=false; write_buffer_bytes=32768; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=32768; use_buffer=false
+buf_size=1; duration=1.536497s; num_syscalls=5879413; 3.6 MiB/s; 3826504.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.974937663s; num_syscalls=7393715; 7.1 MiB/s; 3743771.3 syscalls/s; short_reads=0
+buf_size=4; duration=2.310003709s; num_syscalls=7317430; 12.1 MiB/s; 3167713.5 syscalls/s; short_reads=0
+buf_size=8; duration=2.033481112s; num_syscalls=8009291; 30.0 MiB/s; 3938709.3 syscalls/s; short_reads=0
+buf_size=16; duration=1.993401396s; num_syscalls=7770914; 59.5 MiB/s; 3898318.7 syscalls/s; short_reads=0
+buf_size=32; duration=1.954202405s; num_syscalls=7542616; 117.8 MiB/s; 3859690.3 syscalls/s; short_reads=0
+buf_size=64; duration=2.010709144s; num_syscalls=7600517; 230.7 MiB/s; 3780018.1 syscalls/s; short_reads=0
+buf_size=128; duration=1.984222095s; num_syscalls=7530121; 463.3 MiB/s; 3794999.1 syscalls/s; short_reads=0
+buf_size=256; duration=2.056612811s; num_syscalls=7503283; 890.7 MiB/s; 3648369.3 syscalls/s; short_reads=0
+buf_size=512; duration=2.183168323s; num_syscalls=7159734; 1601.3 MiB/s; 3279515.3 syscalls/s; short_reads=0
+buf_size=1024; duration=1.619083862s; num_syscalls=4312018; 2600.8 MiB/s; 2663245.6 syscalls/s; short_reads=0
+buf_size=2048; duration=2.370348428s; num_syscalls=4660158; 3839.9 MiB/s; 1966022.4 syscalls/s; short_reads=0
+buf_size=4096; duration=2.093265487s; num_syscalls=2908753; 5428.0 MiB/s; 1389576.7 syscalls/s; short_reads=0
+buf_size=8192; duration=3.255973872s; num_syscalls=2024069; 4856.6 MiB/s; 621647.8 syscalls/s; short_reads=5
+buf_size=16384; duration=1.928062235s; num_syscalls=635984; 5145.7 MiB/s; 329856.6 syscalls/s; short_reads=2058
+buf_size=32768; duration=2.169378216s; num_syscalls=355599; 5119.3 MiB/s; 163917.5 syscalls/s; short_reads=438
+buf_size=65536; duration=2.266133267s; num_syscalls=195231; 4878.2 MiB/s; 86151.6 syscalls/s; short_reads=36816
+buf_size=131072; duration=1.883928457s; num_syscalls=141255; 4824.3 MiB/s; 74979.0 syscalls/s; short_reads=141215
+buf_size=262144; duration=2.057345885s; num_syscalls=154238; 4848.2 MiB/s; 74969.4 syscalls/s; short_reads=154016
+buf_size=524288; duration=2.105279316s; num_syscalls=165130; 4876.6 MiB/s; 78436.1 syscalls/s; short_reads=165122
+buf_size=1048576; duration=1.877926855s; num_syscalls=151899; 5035.9 MiB/s; 80886.5 syscalls/s; short_reads=151899
+buf_size=2097152; duration=2.036007544s; num_syscalls=163216; 4981.6 MiB/s; 80164.7 syscalls/s; short_reads=163216
+buf_size=4194304; duration=2.006112666s; num_syscalls=166394; 5172.7 MiB/s; 82943.5 syscalls/s; short_reads=166394
+buf_size=8388608; duration=1.985299055s; num_syscalls=165719; 5171.1 MiB/s; 83473.1 syscalls/s; short_reads=165719
+buf_size=16777216; duration=2.005030208s; num_syscalls=166429; 5173.5 MiB/s; 83005.7 syscalls/s; short_reads=166429
+  BEST: buf_size=4096 5428.03302964997 ; max no decreases buf_size=4096 5428.0 MiB/s; ignore use_buffer=false sum=0
+ECONNRESET at end of benchmark
+
+## use_buffer=false; write_buffer_bytes=65536
+use_buffer=false; write_buffer_bytes=65536; type=unix:
+buf_size=1; duration=1.672778032s; num_syscalls=8141002; 4.6 MiB/s; 4866755.7 syscalls/s; short_reads=0
+buf_size=2; duration=2.011900491s; num_syscalls=9601997; 9.1 MiB/s; 4772600.4 syscalls/s; short_reads=0
+buf_size=4; duration=2.305912041s; num_syscalls=9386146; 15.5 MiB/s; 4070470.1 syscalls/s; short_reads=0
+buf_size=8; duration=2.002147453s; num_syscalls=9869233; 37.6 MiB/s; 4929323.8 syscalls/s; short_reads=0
+buf_size=16; duration=1.987436726s; num_syscalls=9736151; 74.8 MiB/s; 4898848.3 syscalls/s; short_reads=0
+buf_size=32; duration=1.898270362s; num_syscalls=9240864; 148.6 MiB/s; 4868044.2 syscalls/s; short_reads=0
+buf_size=64; duration=1.977991932s; num_syscalls=9531980; 294.1 MiB/s; 4819018.6 syscalls/s; short_reads=0
+buf_size=128; duration=2.078508995s; num_syscalls=9407845; 552.4 MiB/s; 4526247.0 syscalls/s; short_reads=2784
+buf_size=256; duration=1.623296826s; num_syscalls=7398142; 1112.7 MiB/s; 4557479.5 syscalls/s; short_reads=100
+buf_size=512; duration=2.033523757s; num_syscalls=8241646; 1978.9 MiB/s; 4052889.0 syscalls/s; short_reads=1
+buf_size=1024; duration=2.105599507s; num_syscalls=7036067; 3263.3 MiB/s; 3341598.0 syscalls/s; short_reads=13
+buf_size=2048; duration=2.174694563s; num_syscalls=4972559; 4465.8 MiB/s; 2286555.1 syscalls/s; short_reads=310
+buf_size=4096; duration=2.328204245s; num_syscalls=3578648; 6002.3 MiB/s; 1537085.1 syscalls/s; short_reads=2299
+buf_size=8192; duration=2.002427435s; num_syscalls=1812526; 7049.7 MiB/s; 905164.4 syscalls/s; short_reads=11224
+buf_size=16384; duration=2.234197174s; num_syscalls=992929; 6822.4 MiB/s; 444423.2 syscalls/s; short_reads=34818
+buf_size=32768; duration=2.068350984s; num_syscalls=458031; 6661.8 MiB/s; 221447.4 syscalls/s; short_reads=34210
+buf_size=65536; duration=2.156870683s; num_syscalls=298588; 6458.3 MiB/s; 138435.7 syscalls/s; short_reads=151426
+buf_size=131072; duration=2.223661097s; num_syscalls=274741; 6541.8 MiB/s; 123553.4 syscalls/s; short_reads=269552
+buf_size=262144; duration=2.321080945s; num_syscalls=275042; 6557.5 MiB/s; 118497.4 syscalls/s; short_reads=274984
+buf_size=524288; duration=2.231994493s; num_syscalls=279588; 6539.8 MiB/s; 125263.7 syscalls/s; short_reads=279580
+buf_size=1048576; duration=2.088335685s; num_syscalls=267587; 6445.3 MiB/s; 128134.1 syscalls/s; short_reads=267557
+buf_size=2097152; duration=1.631322406s; num_syscalls=261285; 9478.5 MiB/s; 160167.6 syscalls/s; short_reads=261285
+buf_size=4194304; duration=1.990678585s; num_syscalls=314739; 9455.1 MiB/s; 158106.4 syscalls/s; short_reads=314739
+buf_size=8388608; duration=2.000237974s; num_syscalls=311640; 9423.4 MiB/s; 155801.5 syscalls/s; short_reads=311640
+buf_size=16777216; duration=2.002106176s; num_syscalls=311177; 9384.6 MiB/s; 155424.8 syscalls/s; short_reads=311177
+  BEST: buf_size=2097152 9478.472038140419 ; max no decreases buf_size=8192 7049.7 MiB/s; ignore use_buffer=false sum=0
+short write 36544 total bytes; 28992 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=65536; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=65536; use_buffer=false
+buf_size=1; duration=1.238049071s; num_syscalls=4770992; 3.7 MiB/s; 3853637.2 syscalls/s; short_reads=0
+buf_size=2; duration=1.456170149s; num_syscalls=5589559; 7.3 MiB/s; 3838534.3 syscalls/s; short_reads=0
+buf_size=4; duration=1.284150983s; num_syscalls=4886273; 14.5 MiB/s; 3805061.1 syscalls/s; short_reads=1
+buf_size=8; duration=1.550065426s; num_syscalls=5837542; 28.7 MiB/s; 3765997.2 syscalls/s; short_reads=1
+buf_size=16; duration=1.490900247s; num_syscalls=5607425; 57.4 MiB/s; 3761100.1 syscalls/s; short_reads=1
+buf_size=32; duration=1.426907883s; num_syscalls=5196021; 111.1 MiB/s; 3641455.1 syscalls/s; short_reads=1
+buf_size=64; duration=1.446531149s; num_syscalls=5143107; 217.0 MiB/s; 3555476.1 syscalls/s; short_reads=0
+buf_size=128; duration=1.563269715s; num_syscalls=5420936; 423.3 MiB/s; 3467690.8 syscalls/s; short_reads=0
+buf_size=256; duration=1.945384451s; num_syscalls=4985294; 625.6 MiB/s; 2562626.6 syscalls/s; short_reads=0
+buf_size=512; duration=1.614463707s; num_syscalls=3305786; 999.8 MiB/s; 2047606.3 syscalls/s; short_reads=0
+buf_size=1024; duration=1.798397829s; num_syscalls=3986764; 2164.9 MiB/s; 2216842.1 syscalls/s; short_reads=0
+buf_size=2048; duration=2.505017498s; num_syscalls=5325239; 4152.0 MiB/s; 2125829.1 syscalls/s; short_reads=0
+buf_size=4096; duration=1.747581221s; num_syscalls=2718869; 6077.3 MiB/s; 1555789.8 syscalls/s; short_reads=0
+buf_size=8192; duration=2.578716517s; num_syscalls=2118997; 6419.7 MiB/s; 821725.5 syscalls/s; short_reads=31
+buf_size=16384; duration=2.060955303s; num_syscalls=831841; 6306.4 MiB/s; 403619.1 syscalls/s; short_reads=30
+buf_size=32768; duration=2.048496581s; num_syscalls=425964; 6497.8 MiB/s; 207939.8 syscalls/s; short_reads=40
+buf_size=65536; duration=2.262096411s; num_syscalls=214503; 5925.3 MiB/s; 94824.9 syscalls/s; short_reads=86
+buf_size=131072; duration=1.814122544s; num_syscalls=151469; 5219.0 MiB/s; 83494.4 syscalls/s; short_reads=151442
+buf_size=262144; duration=2.222903851s; num_syscalls=182521; 5135.9 MiB/s; 82109.3 syscalls/s; short_reads=182498
+buf_size=524288; duration=1.956735789s; num_syscalls=158356; 5082.6 MiB/s; 80928.7 syscalls/s; short_reads=158269
+buf_size=1048576; duration=1.943405966s; num_syscalls=158383; 5132.9 MiB/s; 81497.6 syscalls/s; short_reads=158303
+buf_size=2097152; duration=2.010683244s; num_syscalls=166214; 5167.1 MiB/s; 82665.4 syscalls/s; short_reads=166214
+buf_size=4194304; duration=1.987586385s; num_syscalls=160986; 5065.4 MiB/s; 80995.7 syscalls/s; short_reads=160986
+buf_size=8388608; duration=2.011380066s; num_syscalls=163202; 5072.9 MiB/s; 81139.3 syscalls/s; short_reads=163202
+buf_size=16777216; duration=1.985718759s; num_syscalls=161858; 5097.2 MiB/s; 81511.0 syscalls/s; short_reads=161858
+  BEST: buf_size=32768 6497.804322431075 ; max no decreases buf_size=8192 6419.7 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=131072
+use_buffer=false; write_buffer_bytes=131072; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=1.734468998s; num_syscalls=8021819; 4.4 MiB/s; 4624942.3 syscalls/s; short_reads=0
+buf_size=2; duration=1.972918816s; num_syscalls=9176417; 8.9 MiB/s; 4651188.3 syscalls/s; short_reads=0
+buf_size=4; duration=2.604880852s; num_syscalls=9182737; 13.4 MiB/s; 3525204.2 syscalls/s; short_reads=0
+buf_size=8; duration=1.990801884s; num_syscalls=6100351; 23.4 MiB/s; 3064268.2 syscalls/s; short_reads=0
+buf_size=16; duration=1.883698899s; num_syscalls=5744321; 46.5 MiB/s; 3049490.0 syscalls/s; short_reads=0
+buf_size=32; duration=1.747441258s; num_syscalls=6021376; 105.2 MiB/s; 3445824.6 syscalls/s; short_reads=0
+buf_size=64; duration=2.019657372s; num_syscalls=9485417; 286.7 MiB/s; 4696547.6 syscalls/s; short_reads=1
+buf_size=128; duration=2.010152229s; num_syscalls=8876744; 539.0 MiB/s; 4415956.1 syscalls/s; short_reads=2533
+buf_size=256; duration=2.093120238s; num_syscalls=9127840; 1064.7 MiB/s; 4360877.0 syscalls/s; short_reads=6
+buf_size=512; duration=2.069336826s; num_syscalls=8097166; 1910.6 MiB/s; 3912928.0 syscalls/s; short_reads=0
+buf_size=1024; duration=1.998106792s; num_syscalls=6938904; 3391.3 MiB/s; 3472739.3 syscalls/s; short_reads=2
+buf_size=2048; duration=1.742248996s; num_syscalls=4701811; 5270.9 MiB/s; 2698702.1 syscalls/s; short_reads=43
+buf_size=4096; duration=2.199804173s; num_syscalls=4076564; 7235.6 MiB/s; 1853148.6 syscalls/s; short_reads=3673
+buf_size=8192; duration=2.106332888s; num_syscalls=2188032; 8059.4 MiB/s; 1038787.4 syscalls/s; short_reads=27059
+buf_size=16384; duration=1.509699902s; num_syscalls=802922; 7699.7 MiB/s; 531842.1 syscalls/s; short_reads=99497
+buf_size=32768; duration=2.163085682s; num_syscalls=578744; 7656.3 MiB/s; 267554.8 syscalls/s; short_reads=94730
+buf_size=65536; duration=2.212854556s; num_syscalls=353979; 7371.3 MiB/s; 159964.9 syscalls/s; short_reads=190933
+buf_size=131072; duration=2.303890537s; num_syscalls=257763; 6793.9 MiB/s; 111881.6 syscalls/s; short_reads=256521
+buf_size=262144; duration=2.156538255s; num_syscalls=239030; 6809.4 MiB/s; 110839.7 syscalls/s; short_reads=238986
+buf_size=524288; duration=2.102085681s; num_syscalls=234445; 6880.9 MiB/s; 111529.7 syscalls/s; short_reads=234444
+buf_size=1048576; duration=2.008903935s; num_syscalls=229358; 7123.2 MiB/s; 114170.7 syscalls/s; short_reads=229358
+buf_size=2097152; duration=1.9629695s; num_syscalls=224523; 7233.2 MiB/s; 114379.3 syscalls/s; short_reads=224503
+buf_size=4194304; duration=2.034568526s; num_syscalls=231311; 7086.6 MiB/s; 113690.4 syscalls/s; short_reads=231311
+buf_size=8388608; duration=2.011393051s; num_syscalls=228078; 7019.4 MiB/s; 113393.1 syscalls/s; short_reads=228078
+buf_size=16777216; duration=1.842936764s; num_syscalls=206234; 7003.0 MiB/s; 111905.1 syscalls/s; short_reads=206234
+  BEST: buf_size=8192 8059.3914786261485 ; max no decreases buf_size=8192 8059.4 MiB/s; ignore use_buffer=false sum=0
+short write 73088 total bytes; 57984 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=131072; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=131072; use_buffer=false
+buf_size=1; duration=1.291277017s; num_syscalls=4768148; 3.5 MiB/s; 3692583.3 syscalls/s; short_reads=0
+buf_size=2; duration=1.983644211s; num_syscalls=7405487; 7.1 MiB/s; 3733273.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.625803682s; num_syscalls=7343493; 10.7 MiB/s; 2796664.9 syscalls/s; short_reads=1
+buf_size=8; duration=1.993834545s; num_syscalls=7486711; 28.6 MiB/s; 3754930.9 syscalls/s; short_reads=0
+buf_size=16; duration=2.007226322s; num_syscalls=7445740; 56.6 MiB/s; 3709467.1 syscalls/s; short_reads=1
+buf_size=32; duration=2.072292672s; num_syscalls=7406860; 109.1 MiB/s; 3574234.5 syscalls/s; short_reads=1
+buf_size=64; duration=1.964936545s; num_syscalls=6917783; 214.9 MiB/s; 3520613.9 syscalls/s; short_reads=0
+buf_size=128; duration=1.986879239s; num_syscalls=6999860; 430.1 MiB/s; 3523042.5 syscalls/s; short_reads=0
+buf_size=256; duration=2.032468513s; num_syscalls=6853775; 823.3 MiB/s; 3372143.3 syscalls/s; short_reads=0
+buf_size=512; duration=2.100266494s; num_syscalls=6334928; 1472.8 MiB/s; 3016249.6 syscalls/s; short_reads=0
+buf_size=1024; duration=2.321482956s; num_syscalls=6019564; 2532.2 MiB/s; 2592982.2 syscalls/s; short_reads=0
+buf_size=2048; duration=2.465531556s; num_syscalls=4454443; 3528.7 MiB/s; 1806686.7 syscalls/s; short_reads=0
+buf_size=4096; duration=1.851839177s; num_syscalls=2482439; 5231.9 MiB/s; 1340526.2 syscalls/s; short_reads=4252
+buf_size=8192; duration=3.165995579s; num_syscalls=2134832; 5068.7 MiB/s; 674300.4 syscalls/s; short_reads=161614
+buf_size=16384; duration=2.05458855s; num_syscalls=732264; 4950.5 MiB/s; 356404.2 syscalls/s; short_reads=162935
+buf_size=32768; duration=1.975490354s; num_syscalls=394678; 4994.7 MiB/s; 199787.4 syscalls/s; short_reads=158295
+buf_size=65536; duration=1.933416034s; num_syscalls=237204; 5113.6 MiB/s; 122686.5 syscalls/s; short_reads=158450
+buf_size=131072; duration=1.89886353s; num_syscalls=168235; 5536.3 MiB/s; 88597.7 syscalls/s; short_reads=168217
+buf_size=262144; duration=1.968840159s; num_syscalls=174101; 5527.8 MiB/s; 88428.2 syscalls/s; short_reads=174094
+buf_size=524288; duration=1.825440867s; num_syscalls=162050; 5557.6 MiB/s; 88773.1 syscalls/s; short_reads=162017
+buf_size=1048576; duration=2.061541991s; num_syscalls=184213; 5589.2 MiB/s; 89356.9 syscalls/s; short_reads=184209
+buf_size=2097152; duration=2.011706563s; num_syscalls=177790; 5527.9 MiB/s; 88377.7 syscalls/s; short_reads=177790
+buf_size=4194304; duration=2.05976679s; num_syscalls=176722; 5365.8 MiB/s; 85797.1 syscalls/s; short_reads=176722
+buf_size=8388608; duration=1.973518795s; num_syscalls=170516; 5404.6 MiB/s; 86402.0 syscalls/s; short_reads=170516
+buf_size=16777216; duration=1.978216614s; num_syscalls=174852; 5525.8 MiB/s; 88388.7 syscalls/s; short_reads=174852
+  BEST: buf_size=1048576 5589.174050171178 ; max no decreases buf_size=4096 5231.9 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=262144
+use_buffer=false; write_buffer_bytes=262144; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=1.540960041s; num_syscalls=7379256; 4.6 MiB/s; 4788739.4 syscalls/s; short_reads=0
+buf_size=2; duration=1.315522608s; num_syscalls=6313331; 9.2 MiB/s; 4799104.9 syscalls/s; short_reads=0
+buf_size=4; duration=2.359720219s; num_syscalls=9652510; 15.6 MiB/s; 4090531.5 syscalls/s; short_reads=0
+buf_size=8; duration=2.023985535s; num_syscalls=9694150; 36.5 MiB/s; 4789634.0 syscalls/s; short_reads=0
+buf_size=16; duration=1.962385519s; num_syscalls=9447332; 73.5 MiB/s; 4814208.0 syscalls/s; short_reads=0
+buf_size=32; duration=2.004697s; num_syscalls=9585890; 145.9 MiB/s; 4781715.1 syscalls/s; short_reads=0
+buf_size=64; duration=1.957779188s; num_syscalls=9181472; 286.2 MiB/s; 4689738.3 syscalls/s; short_reads=0
+buf_size=128; duration=2.079310123s; num_syscalls=9515341; 558.6 MiB/s; 4576201.0 syscalls/s; short_reads=2091
+buf_size=256; duration=2.063255463s; num_syscalls=9113321; 1078.4 MiB/s; 4416962.0 syscalls/s; short_reads=65
+buf_size=512; duration=1.921092177s; num_syscalls=7821056; 1987.9 MiB/s; 4071150.8 syscalls/s; short_reads=5
+buf_size=1024; duration=2.157940665s; num_syscalls=7103322; 3214.5 MiB/s; 3291713.3 syscalls/s; short_reads=73
+buf_size=2048; duration=1.919975438s; num_syscalls=4561951; 4640.7 MiB/s; 2376046.5 syscalls/s; short_reads=19
+buf_size=4096; duration=1.935058636s; num_syscalls=3157455; 6373.8 MiB/s; 1631710.2 syscalls/s; short_reads=98
+buf_size=8192; duration=1.743799392s; num_syscalls=1773191; 7942.7 MiB/s; 1016854.9 syscalls/s; short_reads=657
+buf_size=16384; duration=1.92075949s; num_syscalls=992615; 8066.7 MiB/s; 516782.6 syscalls/s; short_reads=2003
+buf_size=32768; duration=1.900011091s; num_syscalls=489265; 8033.7 MiB/s; 257506.4 syscalls/s; short_reads=1814
+buf_size=65536; duration=2.241125481s; num_syscalls=284145; 7841.3 MiB/s; 126786.7 syscalls/s; short_reads=7263
+buf_size=131072; duration=2.126604092s; num_syscalls=127841; 6925.4 MiB/s; 60115.1 syscalls/s; short_reads=20541
+buf_size=262144; duration=1.992320855s; num_syscalls=74603; 7211.5 MiB/s; 37445.3 syscalls/s; short_reads=32407
+buf_size=524288; duration=2.057354533s; num_syscalls=66222; 7969.9 MiB/s; 32187.9 syscalls/s; short_reads=56683
+buf_size=1048576; duration=2.111621308s; num_syscalls=65542; 7912.7 MiB/s; 31038.7 syscalls/s; short_reads=62453
+buf_size=2097152; duration=2.216491493s; num_syscalls=33455; 8091.1 MiB/s; 15093.7 syscalls/s; short_reads=28992
+buf_size=4194304; duration=2.019757651s; num_syscalls=50266; 8033.8 MiB/s; 24887.1 syscalls/s; short_reads=49535
+buf_size=8388608; duration=1.97366259s; num_syscalls=4880; 8609.4 MiB/s; 2472.6 syscalls/s; short_reads=4031
+buf_size=16777216; duration=1.995467049s; num_syscalls=4262; 8632.3 MiB/s; 2135.8 syscalls/s; short_reads=4258
+  BEST: buf_size=16777216 8632.263963915522 ; max no decreases buf_size=16384 8066.7 MiB/s; ignore use_buffer=false sum=0
+EPIPE at end of benchmark
+
+use_buffer=false; write_buffer_bytes=262144; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=262144; use_buffer=false
+buf_size=1; duration=1.494349959s; num_syscalls=5734109; 3.7 MiB/s; 3837192.9 syscalls/s; short_reads=0
+buf_size=2; duration=1.490342243s; num_syscalls=5746136; 7.4 MiB/s; 3855581.5 syscalls/s; short_reads=1
+buf_size=4; duration=2.697608214s; num_syscalls=7658727; 10.8 MiB/s; 2839080.5 syscalls/s; short_reads=0
+buf_size=8; duration=2.038678926s; num_syscalls=7950390; 29.8 MiB/s; 3899775.4 syscalls/s; short_reads=1
+buf_size=16; duration=2.030033503s; num_syscalls=7868131; 59.1 MiB/s; 3875862.6 syscalls/s; short_reads=0
+buf_size=32; duration=2.080947207s; num_syscalls=7734551; 113.4 MiB/s; 3716841.5 syscalls/s; short_reads=0
+buf_size=64; duration=1.92134193s; num_syscalls=6934332; 220.3 MiB/s; 3609108.8 syscalls/s; short_reads=0
+buf_size=128; duration=1.947033338s; num_syscalls=7045975; 441.8 MiB/s; 3618826.1 syscalls/s; short_reads=0
+buf_size=256; duration=2.024337015s; num_syscalls=7077893; 853.6 MiB/s; 3496400.5 syscalls/s; short_reads=0
+buf_size=512; duration=1.50269753s; num_syscalls=4807693; 1562.2 MiB/s; 3199375.1 syscalls/s; short_reads=0
+buf_size=1024; duration=1.505983515s; num_syscalls=4151101; 2691.8 MiB/s; 2756405.3 syscalls/s; short_reads=0
+buf_size=2048; duration=1.744784171s; num_syscalls=3488638; 3905.2 MiB/s; 1999466.8 syscalls/s; short_reads=3
+buf_size=4096; duration=1.722642262s; num_syscalls=2435342; 5522.4 MiB/s; 1413724.7 syscalls/s; short_reads=0
+buf_size=8192; duration=2.331772292s; num_syscalls=1979706; 6474.1 MiB/s; 849013.4 syscalls/s; short_reads=123100
+buf_size=16384; duration=2.088760952s; num_syscalls=902199; 6354.5 MiB/s; 431930.2 syscalls/s; short_reads=158058
+buf_size=32768; duration=2.35139916s; num_syscalls=536041; 6336.5 MiB/s; 227966.8 syscalls/s; short_reads=183465
+buf_size=65536; duration=2.102321211s; num_syscalls=273348; 6502.9 MiB/s; 130022.0 syscalls/s; short_reads=218426
+buf_size=131072; duration=2.249146364s; num_syscalls=234966; 6533.9 MiB/s; 104469.0 syscalls/s; short_reads=234773
+buf_size=262144; duration=1.979559945s; num_syscalls=207027; 6543.2 MiB/s; 104582.3 syscalls/s; short_reads=206956
+buf_size=524288; duration=2.033906382s; num_syscalls=212424; 6532.4 MiB/s; 104441.4 syscalls/s; short_reads=212403
+buf_size=1048576; duration=2.149234401s; num_syscalls=221970; 6500.2 MiB/s; 103278.6 syscalls/s; short_reads=221872
+buf_size=2097152; duration=1.959887007s; num_syscalls=199142; 6358.5 MiB/s; 101608.9 syscalls/s; short_reads=199136
+buf_size=4194304; duration=2.099400549s; num_syscalls=203866; 6070.8 MiB/s; 97106.8 syscalls/s; short_reads=203866
+buf_size=8388608; duration=1.958899659s; num_syscalls=190424; 6076.9 MiB/s; 97209.7 syscalls/s; short_reads=190424
+buf_size=16777216; duration=2.117377308s; num_syscalls=192419; 5681.2 MiB/s; 90876.1 syscalls/s; short_reads=192419
+  BEST: buf_size=262144 6543.203316110602 ; max no decreases buf_size=8192 6474.1 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=524288
+use_buffer=false; write_buffer_bytes=524288; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=894.86476ms; num_syscalls=3943839; 4.2 MiB/s; 4407190.0 syscalls/s; short_reads=0
+buf_size=2; duration=1.976437234s; num_syscalls=9274717; 9.0 MiB/s; 4692644.3 syscalls/s; short_reads=0
+buf_size=4; duration=2.310701684s; num_syscalls=9319230; 15.4 MiB/s; 4033073.6 syscalls/s; short_reads=0
+buf_size=8; duration=1.991349622s; num_syscalls=9431738; 36.1 MiB/s; 4736354.6 syscalls/s; short_reads=0
+buf_size=16; duration=1.999456389s; num_syscalls=9416196; 71.9 MiB/s; 4709378.0 syscalls/s; short_reads=0
+buf_size=32; duration=1.998657216s; num_syscalls=9319231; 142.3 MiB/s; 4662746.0 syscalls/s; short_reads=0
+buf_size=64; duration=2.020454216s; num_syscalls=9204713; 278.1 MiB/s; 4555764.2 syscalls/s; short_reads=0
+buf_size=128; duration=2.069681356s; num_syscalls=9334454; 550.5 MiB/s; 4510092.3 syscalls/s; short_reads=0
+buf_size=256; duration=1.820090635s; num_syscalls=7786377; 1044.4 MiB/s; 4278016.1 syscalls/s; short_reads=67
+buf_size=512; duration=1.675746541s; num_syscalls=6477758; 1887.5 MiB/s; 3865595.3 syscalls/s; short_reads=35
+buf_size=1024; duration=1.891846389s; num_syscalls=6421372; 3314.7 MiB/s; 3394235.4 syscalls/s; short_reads=6
+buf_size=2048; duration=345.786301ms; num_syscalls=837422; 4729.9 MiB/s; 2421790.6 syscalls/s; short_reads=51
+buf_size=4096; duration=1.752410785s; num_syscalls=2939757; 6549.8 MiB/s; 1677550.2 syscalls/s; short_reads=2922
+buf_size=8192; duration=1.784701983s; num_syscalls=1822014; 7972.4 MiB/s; 1020906.6 syscalls/s; short_reads=1605
+buf_size=16384; duration=2.423487402s; num_syscalls=1276704; 8220.2 MiB/s; 526804.5 syscalls/s; short_reads=3876
+buf_size=32768; duration=2.018839629s; num_syscalls=530873; 8167.9 MiB/s; 262959.5 syscalls/s; short_reads=8014
+buf_size=65536; duration=1.947728138s; num_syscalls=279499; 8149.7 MiB/s; 143500.0 syscalls/s; short_reads=55145
+buf_size=131072; duration=2.101181864s; num_syscalls=157706; 8196.6 MiB/s; 75055.9 syscalls/s; short_reads=44505
+buf_size=262144; duration=2.260056003s; num_syscalls=104915; 8205.2 MiB/s; 46421.4 syscalls/s; short_reads=57965
+buf_size=524288; duration=1.963053864s; num_syscalls=73023; 8136.8 MiB/s; 37198.7 syscalls/s; short_reads=64991
+buf_size=1048576; duration=2.035539123s; num_syscalls=76730; 8136.0 MiB/s; 37695.2 syscalls/s; short_reads=76015
+buf_size=2097152; duration=2.091725311s; num_syscalls=89161; 8125.7 MiB/s; 42625.6 syscalls/s; short_reads=89128
+buf_size=4194304; duration=2.065275372s; num_syscalls=87442; 8196.5 MiB/s; 42339.1 syscalls/s; short_reads=87437
+buf_size=8388608; duration=2.075944547s; num_syscalls=90892; 8226.9 MiB/s; 43783.4 syscalls/s; short_reads=90891
+buf_size=16777216; duration=2.04989603s; num_syscalls=89532; 8204.7 MiB/s; 43676.4 syscalls/s; short_reads=89532
+  BEST: buf_size=8388608 8226.935372425653 ; max no decreases buf_size=16384 8220.2 MiB/s; ignore use_buffer=false sum=0
+short write 475072 total bytes; 49216 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=524288; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=524288; use_buffer=false
+buf_size=1; duration=1.910895427s; num_syscalls=6011602; 3.0 MiB/s; 3145960.7 syscalls/s; short_reads=0
+buf_size=2; duration=2.006103158s; num_syscalls=7839755; 7.5 MiB/s; 3907952.1 syscalls/s; short_reads=0
+buf_size=4; duration=1.999689986s; num_syscalls=7805792; 14.9 MiB/s; 3903501.1 syscalls/s; short_reads=0
+buf_size=8; duration=1.996469652s; num_syscalls=7830548; 29.9 MiB/s; 3922197.4 syscalls/s; short_reads=1
+buf_size=16; duration=2.006474144s; num_syscalls=7812806; 59.4 MiB/s; 3893798.5 syscalls/s; short_reads=0
+buf_size=32; duration=2.086359446s; num_syscalls=7729170; 113.1 MiB/s; 3704620.5 syscalls/s; short_reads=0
+buf_size=64; duration=2.005678693s; num_syscalls=7261374; 221.0 MiB/s; 3620407.4 syscalls/s; short_reads=0
+buf_size=128; duration=2.04834703s; num_syscalls=7384707; 440.1 MiB/s; 3605203.1 syscalls/s; short_reads=0
+buf_size=256; duration=2.061873575s; num_syscalls=7242441; 857.6 MiB/s; 3512553.4 syscalls/s; short_reads=0
+buf_size=512; duration=2.174436594s; num_syscalls=6481722; 1455.5 MiB/s; 2980874.2 syscalls/s; short_reads=0
+buf_size=1024; duration=2.225209175s; num_syscalls=5491790; 2410.1 MiB/s; 2467988.2 syscalls/s; short_reads=0
+buf_size=2048; duration=2.025010102s; num_syscalls=3793483; 3658.8 MiB/s; 1873315.6 syscalls/s; short_reads=0
+buf_size=4096; duration=1.905495723s; num_syscalls=2532704; 5192.0 MiB/s; 1329157.5 syscalls/s; short_reads=0
+buf_size=8192; duration=2.901728488s; num_syscalls=2358843; 6258.3 MiB/s; 812909.6 syscalls/s; short_reads=164983
+buf_size=16384; duration=1.986728667s; num_syscalls=797274; 6080.3 MiB/s; 401299.9 syscalls/s; short_reads=176243
+buf_size=32768; duration=2.267990459s; num_syscalls=458601; 5947.4 MiB/s; 202205.9 syscalls/s; short_reads=219749
+buf_size=65536; duration=2.076887278s; num_syscalls=233495; 6246.3 MiB/s; 112425.5 syscalls/s; short_reads=218949
+buf_size=131072; duration=1.93558122s; num_syscalls=205434; 6236.2 MiB/s; 106135.6 syscalls/s; short_reads=205429
+buf_size=262144; duration=1.975535229s; num_syscalls=211640; 6297.8 MiB/s; 107130.5 syscalls/s; short_reads=211633
+buf_size=524288; duration=2.248088238s; num_syscalls=239434; 6271.7 MiB/s; 106505.6 syscalls/s; short_reads=239428
+buf_size=1048576; duration=2.126479081s; num_syscalls=225518; 6269.2 MiB/s; 106052.3 syscalls/s; short_reads=225509
+buf_size=2097152; duration=2.088813135s; num_syscalls=220572; 6270.1 MiB/s; 105596.8 syscalls/s; short_reads=220569
+buf_size=4194304; duration=2.048738917s; num_syscalls=215478; 6243.9 MiB/s; 105175.9 syscalls/s; short_reads=215478
+buf_size=8388608; duration=2.03927999s; num_syscalls=216271; 6241.4 MiB/s; 106052.6 syscalls/s; short_reads=216271
+buf_size=16777216; duration=2.014857442s; num_syscalls=214915; 6261.4 MiB/s; 106665.1 syscalls/s; short_reads=214915
+  BEST: buf_size=262144 6297.766619451854 ; max no decreases buf_size=8192 6258.3 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=1048576
+use_buffer=false; write_buffer_bytes=1048576; type=unix:
+ECONNRESET at end of benchmark
+buf_size=1; duration=1.333999914s; num_syscalls=6284367; 4.5 MiB/s; 4710920.1 syscalls/s; short_reads=0
+buf_size=2; duration=2.020995827s; num_syscalls=9622324; 9.1 MiB/s; 4761179.5 syscalls/s; short_reads=0
+buf_size=4; duration=2.303947704s; num_syscalls=9334889; 15.5 MiB/s; 4051693.1 syscalls/s; short_reads=0
+buf_size=8; duration=1.980745136s; num_syscalls=9435298; 36.3 MiB/s; 4763509.4 syscalls/s; short_reads=0
+buf_size=16; duration=1.976842403s; num_syscalls=9368560; 72.3 MiB/s; 4739153.7 syscalls/s; short_reads=0
+buf_size=32; duration=1.985356883s; num_syscalls=9324879; 143.3 MiB/s; 4696827.6 syscalls/s; short_reads=0
+buf_size=64; duration=1.995547864s; num_syscalls=9182315; 280.8 MiB/s; 4601400.5 syscalls/s; short_reads=0
+buf_size=128; duration=2.125828225s; num_syscalls=9680074; 555.9 MiB/s; 4553554.2 syscalls/s; short_reads=0
+buf_size=256; duration=1.57269961s; num_syscalls=6793940; 1054.7 MiB/s; 4319922.2 syscalls/s; short_reads=0
+buf_size=512; duration=2.132305111s; num_syscalls=8466713; 1938.8 MiB/s; 3970685.5 syscalls/s; short_reads=40
+buf_size=1024; duration=1.877629986s; num_syscalls=6425703; 3342.0 MiB/s; 3422241.4 syscalls/s; short_reads=1
+buf_size=2048; duration=2.080565663s; num_syscalls=4881384; 4582.4 MiB/s; 2346181.2 syscalls/s; short_reads=2
+buf_size=4096; duration=1.842334088s; num_syscalls=3126293; 6627.4 MiB/s; 1696919.7 syscalls/s; short_reads=1298
+buf_size=8192; duration=902.261976ms; num_syscalls=931773; 8059.8 MiB/s; 1032707.8 syscalls/s; short_reads=2044
+buf_size=16384; duration=1.842823078s; num_syscalls=989014; 8348.7 MiB/s; 536684.2 syscalls/s; short_reads=9598
+buf_size=32768; duration=1.969316664s; num_syscalls=537591; 8365.5 MiB/s; 272983.5 syscalls/s; short_reads=21473
+buf_size=65536; duration=2.193440624s; num_syscalls=314888; 8363.5 MiB/s; 143558.9 syscalls/s; short_reads=55855
+buf_size=131072; duration=2.325784087s; num_syscalls=192223; 8321.2 MiB/s; 82648.7 syscalls/s; short_reads=79261
+buf_size=262144; duration=2.292144558s; num_syscalls=134101; 8331.1 MiB/s; 58504.6 syscalls/s; short_reads=98828
+buf_size=524288; duration=2.215455145s; num_syscalls=98316; 8290.6 MiB/s; 44377.3 syscalls/s; short_reads=94913
+buf_size=1048576; duration=2.045667394s; num_syscalls=91491; 8288.3 MiB/s; 44724.3 syscalls/s; short_reads=91397
+buf_size=2097152; duration=2.070897198s; num_syscalls=99739; 8280.8 MiB/s; 48162.2 syscalls/s; short_reads=99734
+buf_size=4194304; duration=2.004467594s; num_syscalls=95158; 8219.4 MiB/s; 47473.0 syscalls/s; short_reads=95157
+buf_size=8388608; duration=1.93352149s; num_syscalls=93197; 8254.0 MiB/s; 48200.7 syscalls/s; short_reads=93196
+buf_size=16777216; duration=1.951801597s; num_syscalls=87536; 8241.2 MiB/s; 44848.8 syscalls/s; short_reads=87536
+  BEST: buf_size=32768 8365.530049369396 ; max no decreases buf_size=32768 8365.5 MiB/s; ignore use_buffer=false sum=0
+short write 328896 total bytes; 719680 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=1048576; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=1048576; use_buffer=false
+buf_size=1; duration=1.674123763s; num_syscalls=6355864; 3.6 MiB/s; 3796531.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.941375573s; num_syscalls=7395629; 7.3 MiB/s; 3809478.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.626583271s; num_syscalls=7398913; 10.7 MiB/s; 2816934.5 syscalls/s; short_reads=1
+buf_size=8; duration=1.994538406s; num_syscalls=7627184; 29.2 MiB/s; 3824034.7 syscalls/s; short_reads=0
+buf_size=16; duration=1.99725225s; num_syscalls=7573750; 57.9 MiB/s; 3792084.9 syscalls/s; short_reads=0
+buf_size=32; duration=2.064857794s; num_syscalls=7447126; 110.1 MiB/s; 3606604.8 syscalls/s; short_reads=1
+buf_size=64; duration=2.016269722s; num_syscalls=7185973; 217.5 MiB/s; 3563993.9 syscalls/s; short_reads=0
+buf_size=128; duration=2.044749116s; num_syscalls=7263747; 433.6 MiB/s; 3552390.3 syscalls/s; short_reads=0
+buf_size=256; duration=1.267278406s; num_syscalls=4317324; 831.7 MiB/s; 3406768.4 syscalls/s; short_reads=0
+buf_size=512; duration=2.122286584s; num_syscalls=6626906; 1524.7 MiB/s; 3122531.2 syscalls/s; short_reads=0
+buf_size=1024; duration=2.264781316s; num_syscalls=6129329; 2642.9 MiB/s; 2706366.8 syscalls/s; short_reads=0
+buf_size=2048; duration=2.114844936s; num_syscalls=3959377; 3656.6 MiB/s; 1872183.1 syscalls/s; short_reads=0
+buf_size=4096; duration=2.231366985s; num_syscalls=2981471; 5219.4 MiB/s; 1336163.4 syscalls/s; short_reads=0
+buf_size=8192; duration=1.952931998s; num_syscalls=1592765; 6345.6 MiB/s; 815576.3 syscalls/s; short_reads=85950
+buf_size=16384; duration=2.341368592s; num_syscalls=877813; 5767.9 MiB/s; 374914.5 syscalls/s; short_reads=216902
+buf_size=32768; duration=2.100996436s; num_syscalls=401568; 5793.2 MiB/s; 191132.2 syscalls/s; short_reads=198287
+buf_size=65536; duration=2.332043449s; num_syscalls=234829; 5925.6 MiB/s; 100696.7 syscalls/s; short_reads=233305
+buf_size=131072; duration=1.997850701s; num_syscalls=202447; 5962.2 MiB/s; 101332.4 syscalls/s; short_reads=202418
+buf_size=262144; duration=2.23162259s; num_syscalls=224611; 5925.5 MiB/s; 100649.2 syscalls/s; short_reads=224565
+buf_size=524288; duration=2.02283858s; num_syscalls=205130; 5975.9 MiB/s; 101407.0 syscalls/s; short_reads=205089
+buf_size=1048576; duration=2.221772426s; num_syscalls=222628; 5905.4 MiB/s; 100202.9 syscalls/s; short_reads=222607
+buf_size=2097152; duration=1.945091965s; num_syscalls=193252; 5871.1 MiB/s; 99353.7 syscalls/s; short_reads=193227
+buf_size=4194304; duration=2.005045463s; num_syscalls=204606; 6003.9 MiB/s; 102045.6 syscalls/s; short_reads=204606
+buf_size=8388608; duration=1.996847351s; num_syscalls=203085; 5984.5 MiB/s; 101702.8 syscalls/s; short_reads=203085
+buf_size=16777216; duration=1.972371591s; num_syscalls=199120; 5941.3 MiB/s; 100954.6 syscalls/s; short_reads=199120
+  BEST: buf_size=8192 6345.6034183913835 ; max no decreases buf_size=8192 6345.6 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=2097152
+use_buffer=false; write_buffer_bytes=2097152; type=unix:
+short write 1047728 total bytes; 848 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.605290337s; num_syscalls=7299536; 4.3 MiB/s; 4547174.9 syscalls/s; short_reads=0
+buf_size=2; duration=1.988969886s; num_syscalls=9253262; 8.9 MiB/s; 4652288.6 syscalls/s; short_reads=0
+buf_size=4; duration=2.376588062s; num_syscalls=9413094; 15.1 MiB/s; 3960759.6 syscalls/s; short_reads=0
+buf_size=8; duration=1.950696513s; num_syscalls=9118264; 35.7 MiB/s; 4674363.2 syscalls/s; short_reads=0
+buf_size=16; duration=2.019635258s; num_syscalls=9388790; 70.9 MiB/s; 4648755.2 syscalls/s; short_reads=0
+buf_size=32; duration=2.031459046s; num_syscalls=9358477; 140.6 MiB/s; 4606776.1 syscalls/s; short_reads=0
+buf_size=64; duration=1.96619017s; num_syscalls=8912259; 276.7 MiB/s; 4532755.3 syscalls/s; short_reads=0
+buf_size=128; duration=2.076461235s; num_syscalls=9099932; 534.9 MiB/s; 4382423.3 syscalls/s; short_reads=673
+buf_size=256; duration=2.051821617s; num_syscalls=8885345; 1057.2 MiB/s; 4330466.6 syscalls/s; short_reads=20
+buf_size=512; duration=1.884648581s; num_syscalls=7347281; 1903.6 MiB/s; 3898488.6 syscalls/s; short_reads=19
+buf_size=1024; duration=1.858353517s; num_syscalls=6156878; 3235.4 MiB/s; 3313082.2 syscalls/s; short_reads=0
+buf_size=2048; duration=1.606507416s; num_syscalls=3857207; 4689.4 MiB/s; 2400989.2 syscalls/s; short_reads=0
+buf_size=4096; duration=1.828885818s; num_syscalls=3092031; 6603.1 MiB/s; 1690663.8 syscalls/s; short_reads=1396
+buf_size=8192; duration=2.233728495s; num_syscalls=2348259; 8203.2 MiB/s; 1051273.2 syscalls/s; short_reads=6146
+buf_size=16384; duration=2.032941924s; num_syscalls=1126567; 8638.2 MiB/s; 554156.0 syscalls/s; short_reads=8852
+buf_size=32768; duration=1.999495136s; num_syscalls=555411; 8514.2 MiB/s; 277775.6 syscalls/s; short_reads=25802
+buf_size=65536; duration=2.179128303s; num_syscalls=320444; 8473.1 MiB/s; 147051.5 syscalls/s; short_reads=64640
+buf_size=131072; duration=2.122965342s; num_syscalls=181838; 8492.2 MiB/s; 85652.8 syscalls/s; short_reads=73991
+buf_size=262144; duration=2.219597225s; num_syscalls=119325; 8468.8 MiB/s; 53759.8 syscalls/s; short_reads=85124
+buf_size=524288; duration=2.280912475s; num_syscalls=83665; 8341.4 MiB/s; 36680.5 syscalls/s; short_reads=80520
+buf_size=1048576; duration=2.065260862s; num_syscalls=75555; 8278.9 MiB/s; 36583.8 syscalls/s; short_reads=75318
+buf_size=2097152; duration=2.05588156s; num_syscalls=76123; 8395.6 MiB/s; 37026.9 syscalls/s; short_reads=76122
+buf_size=4194304; duration=2.07415227s; num_syscalls=77908; 8382.1 MiB/s; 37561.4 syscalls/s; short_reads=77908
+buf_size=8388608; duration=1.993740322s; num_syscalls=73294; 8432.7 MiB/s; 36762.1 syscalls/s; short_reads=73294
+buf_size=16777216; duration=1.996427868s; num_syscalls=71522; 8391.8 MiB/s; 35825.0 syscalls/s; short_reads=71522
+  BEST: buf_size=16384 8638.178540646108 ; max no decreases buf_size=16384 8638.2 MiB/s; ignore use_buffer=false sum=0
+short write 621248 total bytes; 1475904 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=2097152; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=2097152; use_buffer=false
+buf_size=1; duration=1.88268784s; num_syscalls=5937889; 3.0 MiB/s; 3153942.4 syscalls/s; short_reads=0
+buf_size=2; duration=1.313127262s; num_syscalls=4992761; 7.3 MiB/s; 3802191.3 syscalls/s; short_reads=1
+buf_size=4; duration=1.999450121s; num_syscalls=7682853; 14.7 MiB/s; 3842483.0 syscalls/s; short_reads=1
+buf_size=8; duration=1.992722893s; num_syscalls=7621371; 29.2 MiB/s; 3824601.5 syscalls/s; short_reads=0
+buf_size=16; duration=1.991729291s; num_syscalls=7575759; 58.0 MiB/s; 3803608.8 syscalls/s; short_reads=1
+buf_size=32; duration=1.850594454s; num_syscalls=6943722; 114.5 MiB/s; 3752157.6 syscalls/s; short_reads=0
+buf_size=64; duration=1.785312592s; num_syscalls=6394680; 218.6 MiB/s; 3581826.5 syscalls/s; short_reads=0
+buf_size=128; duration=1.992597927s; num_syscalls=7114147; 435.8 MiB/s; 3570287.3 syscalls/s; short_reads=0
+buf_size=256; duration=1.991554878s; num_syscalls=6806889; 834.4 MiB/s; 3417876.7 syscalls/s; short_reads=0
+buf_size=512; duration=2.116007586s; num_syscalls=6540865; 1509.3 MiB/s; 3091134.9 syscalls/s; short_reads=0
+buf_size=1024; duration=2.572218306s; num_syscalls=6414369; 2435.3 MiB/s; 2493711.0 syscalls/s; short_reads=0
+buf_size=2048; duration=2.523697593s; num_syscalls=4710427; 3645.5 MiB/s; 1866478.4 syscalls/s; short_reads=0
+buf_size=4096; duration=2.635163145s; num_syscalls=3508403; 5200.7 MiB/s; 1331379.8 syscalls/s; short_reads=0
+buf_size=8192; duration=2.419468005s; num_syscalls=1849569; 5949.9 MiB/s; 764452.8 syscalls/s; short_reads=192160
+buf_size=16384; duration=2.074917719s; num_syscalls=781413; 5838.8 MiB/s; 376599.5 syscalls/s; short_reads=194608
+buf_size=32768; duration=2.02349s; num_syscalls=384859; 5852.2 MiB/s; 190195.7 syscalls/s; short_reads=192668
+buf_size=65536; duration=2.408640808s; num_syscalls=236204; 5943.5 MiB/s; 98065.3 syscalls/s; short_reads=236036
+buf_size=131072; duration=2.107121097s; num_syscalls=207367; 5965.8 MiB/s; 98412.5 syscalls/s; short_reads=207332
+buf_size=262144; duration=2.225107901s; num_syscalls=220280; 6002.2 MiB/s; 98997.4 syscalls/s; short_reads=220266
+buf_size=524288; duration=1.902143447s; num_syscalls=189358; 6035.2 MiB/s; 99549.8 syscalls/s; short_reads=189353
+buf_size=1048576; duration=2.085811885s; num_syscalls=206609; 6054.6 MiB/s; 99054.5 syscalls/s; short_reads=206500
+buf_size=2097152; duration=2.119028564s; num_syscalls=211475; 6051.4 MiB/s; 99798.1 syscalls/s; short_reads=211475
+buf_size=4194304; duration=2.005970189s; num_syscalls=201440; 6087.3 MiB/s; 100420.2 syscalls/s; short_reads=201440
+buf_size=8388608; duration=2.009627603s; num_syscalls=197646; 5964.4 MiB/s; 98349.6 syscalls/s; short_reads=197646
+buf_size=16777216; duration=1.958587242s; num_syscalls=193324; 5988.9 MiB/s; 98705.8 syscalls/s; short_reads=193324
+  BEST: buf_size=4194304 6087.342579768959 ; max no decreases buf_size=8192 5949.9 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=4194304
+use_buffer=false; write_buffer_bytes=4194304; type=unix:
+short write 1047728 total bytes; 1049424 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.96420404s; num_syscalls=7815858; 3.8 MiB/s; 3979147.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.977366974s; num_syscalls=9949259; 9.6 MiB/s; 5031569.3 syscalls/s; short_reads=0
+buf_size=4; duration=2.039818399s; num_syscalls=10234891; 19.1 MiB/s; 5017550.1 syscalls/s; short_reads=0
+buf_size=8; duration=1.983807913s; num_syscalls=9933446; 38.2 MiB/s; 5007262.0 syscalls/s; short_reads=0
+buf_size=16; duration=1.992376308s; num_syscalls=9914242; 75.9 MiB/s; 4976089.1 syscalls/s; short_reads=0
+buf_size=32; duration=1.992785205s; num_syscalls=9822701; 150.4 MiB/s; 4929131.8 syscalls/s; short_reads=0
+buf_size=64; duration=1.994056834s; num_syscalls=9748965; 298.4 MiB/s; 4889010.6 syscalls/s; short_reads=0
+buf_size=128; duration=2.097510153s; num_syscalls=9814289; 571.2 MiB/s; 4679018.6 syscalls/s; short_reads=529
+buf_size=256; duration=2.180943519s; num_syscalls=9726232; 1088.8 MiB/s; 4459644.1 syscalls/s; short_reads=48
+buf_size=512; duration=2.175851928s; num_syscalls=8017011; 1799.1 MiB/s; 3684538.9 syscalls/s; short_reads=24
+buf_size=1024; duration=1.910342774s; num_syscalls=6100729; 3118.7 MiB/s; 3193525.8 syscalls/s; short_reads=8
+buf_size=2048; duration=2.185045382s; num_syscalls=5243295; 4686.8 MiB/s; 2399627.5 syscalls/s; short_reads=8
+buf_size=4096; duration=1.87639762s; num_syscalls=3150438; 6556.4 MiB/s; 1678982.1 syscalls/s; short_reads=2196
+buf_size=8192; duration=1.758987684s; num_syscalls=1845106; 8185.5 MiB/s; 1048959.0 syscalls/s; short_reads=4599
+buf_size=16384; duration=1.876850873s; num_syscalls=1030014; 8541.3 MiB/s; 548799.1 syscalls/s; short_reads=13947
+buf_size=32768; duration=1.901521205s; num_syscalls=524784; 8421.9 MiB/s; 275981.1 syscalls/s; short_reads=28777
+buf_size=65536; duration=2.081955218s; num_syscalls=305143; 8422.1 MiB/s; 146565.6 syscalls/s; short_reads=63298
+buf_size=131072; duration=2.266859868s; num_syscalls=193355; 8343.3 MiB/s; 85296.4 syscalls/s; short_reads=83084
+buf_size=262144; duration=2.29186291s; num_syscalls=128249; 8433.1 MiB/s; 55958.4 syscalls/s; short_reads=102596
+buf_size=524288; duration=2.247599305s; num_syscalls=99824; 8413.2 MiB/s; 44413.6 syscalls/s; short_reads=99248
+buf_size=1048576; duration=2.099500019s; num_syscalls=93604; 8397.8 MiB/s; 44583.9 syscalls/s; short_reads=93524
+buf_size=2097152; duration=2.188965937s; num_syscalls=99275; 8438.3 MiB/s; 45352.5 syscalls/s; short_reads=99273
+buf_size=4194304; duration=2.155991133s; num_syscalls=94470; 8434.8 MiB/s; 43817.4 syscalls/s; short_reads=94469
+buf_size=8388608; duration=2.017594778s; num_syscalls=88157; 8426.6 MiB/s; 43694.1 syscalls/s; short_reads=88157
+buf_size=16777216; duration=2.009048781s; num_syscalls=90146; 8407.1 MiB/s; 44870.0 syscalls/s; short_reads=90146
+  BEST: buf_size=16384 8541.251717575999 ; max no decreases buf_size=16384 8541.3 MiB/s; ignore use_buffer=false sum=0
+short write 657792 total bytes; 3536512 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=4194304; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=4194304; use_buffer=false
+buf_size=1; duration=1.656973638s; num_syscalls=6332520; 3.6 MiB/s; 3821738.5 syscalls/s; short_reads=0
+buf_size=2; duration=1.992053107s; num_syscalls=7632423; 7.3 MiB/s; 3831435.5 syscalls/s; short_reads=0
+buf_size=4; duration=2.686722394s; num_syscalls=7608324; 10.8 MiB/s; 2831823.6 syscalls/s; short_reads=1
+buf_size=8; duration=1.813391929s; num_syscalls=6945651; 29.2 MiB/s; 3830198.5 syscalls/s; short_reads=0
+buf_size=16; duration=2.002441599s; num_syscalls=7629803; 58.1 MiB/s; 3810249.9 syscalls/s; short_reads=1
+buf_size=32; duration=2.073526161s; num_syscalls=7567732; 111.4 MiB/s; 3649692.1 syscalls/s; short_reads=0
+buf_size=64; duration=2.052226586s; num_syscalls=7303002; 217.2 MiB/s; 3558574.9 syscalls/s; short_reads=0
+buf_size=128; duration=1.966644324s; num_syscalls=7000351; 434.5 MiB/s; 3559540.9 syscalls/s; short_reads=0
+buf_size=256; duration=2.099698913s; num_syscalls=7170772; 833.8 MiB/s; 3415143.0 syscalls/s; short_reads=0
+buf_size=512; duration=2.128819669s; num_syscalls=6511689; 1493.6 MiB/s; 3058826.0 syscalls/s; short_reads=0
+buf_size=1024; duration=1.641891542s; num_syscalls=4416571; 2626.9 MiB/s; 2689928.6 syscalls/s; short_reads=0
+buf_size=2048; duration=1.933738429s; num_syscalls=3600490; 3636.6 MiB/s; 1861932.3 syscalls/s; short_reads=0
+buf_size=4096; duration=1.973988187s; num_syscalls=2621129; 5186.9 MiB/s; 1327834.2 syscalls/s; short_reads=0
+buf_size=8192; duration=2.325328404s; num_syscalls=1841009; 6174.6 MiB/s; 791720.0 syscalls/s; short_reads=129955
+buf_size=16384; duration=1.790119039s; num_syscalls=693349; 6028.4 MiB/s; 387320.1 syscalls/s; short_reads=166341
+buf_size=32768; duration=2.32081938s; num_syscalls=452347; 6043.9 MiB/s; 194908.3 syscalls/s; short_reads=225681
+buf_size=65536; duration=2.218696211s; num_syscalls=226862; 6292.3 MiB/s; 102250.1 syscalls/s; short_reads=226772
+buf_size=131072; duration=1.893736754s; num_syscalls=194767; 6331.2 MiB/s; 102848.0 syscalls/s; short_reads=194737
+buf_size=262144; duration=2.168251889s; num_syscalls=224612; 6379.2 MiB/s; 103591.3 syscalls/s; short_reads=224574
+buf_size=524288; duration=1.967099781s; num_syscalls=202694; 6344.1 MiB/s; 103042.1 syscalls/s; short_reads=202692
+buf_size=1048576; duration=2.10682382s; num_syscalls=216630; 6340.5 MiB/s; 102823.0 syscalls/s; short_reads=216608
+buf_size=2097152; duration=2.05563896s; num_syscalls=204131; 6146.2 MiB/s; 99302.9 syscalls/s; short_reads=204112
+buf_size=4194304; duration=1.990834346s; num_syscalls=207243; 6408.9 MiB/s; 104098.6 syscalls/s; short_reads=207243
+buf_size=8388608; duration=2.060989743s; num_syscalls=211010; 6305.7 MiB/s; 102382.8 syscalls/s; short_reads=211010
+buf_size=16777216; duration=2.00193214s; num_syscalls=207601; 6382.7 MiB/s; 103700.3 syscalls/s; short_reads=207601
+  BEST: buf_size=4194304 6408.914454733506 ; max no decreases buf_size=8192 6174.6 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=8388608
+use_buffer=false; write_buffer_bytes=8388608; type=unix:
+short write 2095456 total bytes; 2098848 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.545668313s; num_syscalls=7469654; 4.6 MiB/s; 4832637.1 syscalls/s; short_reads=0
+buf_size=2; duration=1.404949107s; num_syscalls=6767502; 9.2 MiB/s; 4816901.9 syscalls/s; short_reads=0
+buf_size=4; duration=1.837862959s; num_syscalls=7178751; 14.9 MiB/s; 3906031.7 syscalls/s; short_reads=0
+buf_size=8; duration=1.286342817s; num_syscalls=6440395; 38.2 MiB/s; 5006748.5 syscalls/s; short_reads=0
+buf_size=16; duration=1.594764967s; num_syscalls=7929586; 75.9 MiB/s; 4972260.0 syscalls/s; short_reads=0
+buf_size=32; duration=2.034108075s; num_syscalls=10041169; 150.6 MiB/s; 4936399.0 syscalls/s; short_reads=0
+buf_size=64; duration=2.005646837s; num_syscalls=9707796; 295.4 MiB/s; 4840232.0 syscalls/s; short_reads=0
+buf_size=128; duration=2.08926496s; num_syscalls=9923617; 579.8 MiB/s; 4749812.6 syscalls/s; short_reads=56
+buf_size=256; duration=1.951081146s; num_syscalls=8993250; 1125.3 MiB/s; 4609367.5 syscalls/s; short_reads=76
+buf_size=512; duration=1.988266807s; num_syscalls=8377315; 2057.3 MiB/s; 4213375.7 syscalls/s; short_reads=0
+buf_size=1024; duration=2.072055578s; num_syscalls=7401653; 3488.4 MiB/s; 3572130.5 syscalls/s; short_reads=6
+buf_size=2048; duration=1.956952047s; num_syscalls=5028665; 5018.8 MiB/s; 2569641.4 syscalls/s; short_reads=4
+buf_size=4096; duration=1.975249538s; num_syscalls=3713391; 7342.8 MiB/s; 1879960.4 syscalls/s; short_reads=1091
+buf_size=8192; duration=1.870577306s; num_syscalls=2131466; 8892.1 MiB/s; 1139469.6 syscalls/s; short_reads=5146
+buf_size=16384; duration=2.294528746s; num_syscalls=1373192; 9332.6 MiB/s; 598463.6 syscalls/s; short_reads=14403
+buf_size=32768; duration=2.208413131s; num_syscalls=667801; 9288.8 MiB/s; 302389.5 syscalls/s; short_reads=31675
+buf_size=65536; duration=2.025727279s; num_syscalls=323127; 9262.2 MiB/s; 159511.6 syscalls/s; short_reads=59452
+buf_size=131072; duration=2.308348026s; num_syscalls=211919; 9161.0 MiB/s; 91805.5 syscalls/s; short_reads=80467
+buf_size=262144; duration=2.187825658s; num_syscalls=120060; 9189.7 MiB/s; 54876.4 syscalls/s; short_reads=79029
+buf_size=524288; duration=2.126388571s; num_syscalls=74578; 9122.0 MiB/s; 35072.6 syscalls/s; short_reads=74137
+buf_size=1048576; duration=2.057927433s; num_syscalls=74534; 9193.0 MiB/s; 36218.0 syscalls/s; short_reads=74461
+buf_size=2097152; duration=2.059400201s; num_syscalls=77873; 9199.6 MiB/s; 37813.4 syscalls/s; short_reads=77873
+buf_size=4194304; duration=2.023207413s; num_syscalls=78794; 9126.7 MiB/s; 38945.1 syscalls/s; short_reads=78794
+buf_size=8388608; duration=1.962137644s; num_syscalls=76871; 9151.1 MiB/s; 39177.2 syscalls/s; short_reads=76869
+buf_size=16777216; duration=1.969434213s; num_syscalls=76506; 9156.1 MiB/s; 38846.7 syscalls/s; short_reads=76503
+  BEST: buf_size=16384 9332.607651724127 ; max no decreases buf_size=16384 9332.6 MiB/s; ignore use_buffer=false sum=0
+short write 3398592 total bytes; 4990016 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=8388608; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=8388608; use_buffer=false
+buf_size=1; duration=1.796556234s; num_syscalls=6949028; 3.7 MiB/s; 3867971.3 syscalls/s; short_reads=0
+buf_size=2; duration=2.042492727s; num_syscalls=7791196; 7.3 MiB/s; 3814552.6 syscalls/s; short_reads=0
+buf_size=4; duration=2.675958616s; num_syscalls=7584664; 10.8 MiB/s; 2834372.7 syscalls/s; short_reads=0
+buf_size=8; duration=1.977633937s; num_syscalls=7733055; 29.8 MiB/s; 3910256.0 syscalls/s; short_reads=0
+buf_size=16; duration=2.012159066s; num_syscalls=7793625; 59.1 MiB/s; 3873264.9 syscalls/s; short_reads=0
+buf_size=32; duration=2.079502703s; num_syscalls=7697341; 113.0 MiB/s; 3701529.7 syscalls/s; short_reads=0
+buf_size=64; duration=1.985081105s; num_syscalls=7155380; 220.0 MiB/s; 3604578.2 syscalls/s; short_reads=0
+buf_size=128; duration=2.007610883s; num_syscalls=7177206; 436.4 MiB/s; 3574998.6 syscalls/s; short_reads=0
+buf_size=256; duration=2.123340941s; num_syscalls=7420325; 853.2 MiB/s; 3494646.0 syscalls/s; short_reads=0
+buf_size=512; duration=2.076038633s; num_syscalls=6531039; 1536.1 MiB/s; 3145914.0 syscalls/s; short_reads=0
+buf_size=1024; duration=1.467187599s; num_syscalls=3930586; 2616.2 MiB/s; 2678993.5 syscalls/s; short_reads=0
+buf_size=2048; duration=2.053499052s; num_syscalls=4055068; 3856.9 MiB/s; 1974711.4 syscalls/s; short_reads=0
+buf_size=4096; duration=2.056718248s; num_syscalls=2837886; 5389.9 MiB/s; 1379812.7 syscalls/s; short_reads=0
+buf_size=8192; duration=1.906209282s; num_syscalls=1595468; 6532.6 MiB/s; 836984.7 syscalls/s; short_reads=122975
+buf_size=16384; duration=1.950178983s; num_syscalls=804010; 6429.2 MiB/s; 412275.0 syscalls/s; short_reads=193339
+buf_size=32768; duration=2.225870755s; num_syscalls=453328; 6339.8 MiB/s; 203663.2 syscalls/s; short_reads=225599
+buf_size=65536; duration=2.100798661s; num_syscalls=226994; 6701.1 MiB/s; 108051.3 syscalls/s; short_reads=225665
+buf_size=131072; duration=2.175149472s; num_syscalls=236135; 6737.4 MiB/s; 108560.4 syscalls/s; short_reads=235989
+buf_size=262144; duration=2.151668088s; num_syscalls=230637; 6654.3 MiB/s; 107189.9 syscalls/s; short_reads=230569
+buf_size=524288; duration=2.090746099s; num_syscalls=223749; 6668.5 MiB/s; 107018.7 syscalls/s; short_reads=223618
+buf_size=1048576; duration=2.044510511s; num_syscalls=220204; 6698.8 MiB/s; 107705.0 syscalls/s; short_reads=220188
+buf_size=2097152; duration=2.026629722s; num_syscalls=217634; 6679.1 MiB/s; 107387.2 syscalls/s; short_reads=217628
+buf_size=4194304; duration=1.991093129s; num_syscalls=215321; 6718.0 MiB/s; 108142.1 syscalls/s; short_reads=215321
+buf_size=8388608; duration=2.010887989s; num_syscalls=197665; 6105.3 MiB/s; 98297.4 syscalls/s; short_reads=197665
+buf_size=16777216; duration=2.021310794s; num_syscalls=207045; 6358.8 MiB/s; 102431.1 syscalls/s; short_reads=207045
+  BEST: buf_size=131072 6737.438089124185 ; max no decreases buf_size=8192 6532.6 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=false; write_buffer_bytes=16777216
+use_buffer=false; write_buffer_bytes=16777216; type=unix:
+short write 7334096 total bytes; 1054512 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.587043004s; num_syscalls=7358081; 4.4 MiB/s; 4636346.3 syscalls/s; short_reads=0
+buf_size=2; duration=1.98460366s; num_syscalls=9239582; 8.9 MiB/s; 4655630.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.618398613s; num_syscalls=9069884; 13.2 MiB/s; 3463905.0 syscalls/s; short_reads=0
+buf_size=8; duration=1.981850011s; num_syscalls=9378224; 36.1 MiB/s; 4732055.4 syscalls/s; short_reads=0
+buf_size=16; duration=1.998628763s; num_syscalls=9379104; 71.6 MiB/s; 4692769.4 syscalls/s; short_reads=0
+buf_size=32; duration=2.035814624s; num_syscalls=9412651; 141.1 MiB/s; 4623530.5 syscalls/s; short_reads=1
+buf_size=64; duration=1.90049832s; num_syscalls=8666638; 278.3 MiB/s; 4560192.4 syscalls/s; short_reads=0
+buf_size=128; duration=2.13533704s; num_syscalls=9381560; 536.3 MiB/s; 4393479.7 syscalls/s; short_reads=514
+buf_size=256; duration=1.954232991s; num_syscalls=8417219; 1051.5 MiB/s; 4307172.7 syscalls/s; short_reads=128
+buf_size=512; duration=1.746616339s; num_syscalls=6694337; 1871.5 MiB/s; 3832746.1 syscalls/s; short_reads=1
+buf_size=1024; duration=2.013086679s; num_syscalls=6836925; 3316.6 MiB/s; 3396239.8 syscalls/s; short_reads=44
+buf_size=2048; duration=1.678326223s; num_syscalls=4092270; 4762.3 MiB/s; 2438304.3 syscalls/s; short_reads=72
+buf_size=4096; duration=1.899974723s; num_syscalls=3167375; 6509.6 MiB/s; 1667061.7 syscalls/s; short_reads=2595
+buf_size=8192; duration=1.922181128s; num_syscalls=2003359; 8136.4 MiB/s; 1042232.2 syscalls/s; short_reads=3162
+buf_size=16384; duration=2.325367516s; num_syscalls=1262926; 8441.0 MiB/s; 543108.1 syscalls/s; short_reads=35220
+buf_size=32768; duration=2.161528758s; num_syscalls=597983; 8348.6 MiB/s; 276648.2 syscalls/s; short_reads=44545
+buf_size=65536; duration=2.162118685s; num_syscalls=315750; 8231.8 MiB/s; 146037.3 syscalls/s; short_reads=79119
+buf_size=131072; duration=2.244850642s; num_syscalls=196940; 8284.8 MiB/s; 87729.7 syscalls/s; short_reads=96209
+buf_size=262144; duration=2.36260673s; num_syscalls=149190; 8013.9 MiB/s; 63146.4 syscalls/s; short_reads=133840
+buf_size=524288; duration=2.252336583s; num_syscalls=133980; 7914.6 MiB/s; 59484.9 syscalls/s; short_reads=133823
+buf_size=1048576; duration=2.127507933s; num_syscalls=126773; 7909.7 MiB/s; 59587.6 syscalls/s; short_reads=126693
+buf_size=2097152; duration=2.115443474s; num_syscalls=127400; 7897.8 MiB/s; 60223.8 syscalls/s; short_reads=127368
+buf_size=4194304; duration=1.994821432s; num_syscalls=120555; 7904.1 MiB/s; 60434.0 syscalls/s; short_reads=120555
+buf_size=8388608; duration=1.993621994s; num_syscalls=118208; 7896.7 MiB/s; 59293.1 syscalls/s; short_reads=118208
+buf_size=16777216; duration=2.030102774s; num_syscalls=124100; 7888.7 MiB/s; 61129.9 syscalls/s; short_reads=124100
+  BEST: buf_size=16384 8440.992874062958 ; max no decreases buf_size=16384 8441.0 MiB/s; ignore use_buffer=false sum=0
+short write 657792 total bytes; 16119424 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=false; write_buffer_bytes=16777216; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=16777216; use_buffer=false
+buf_size=1; duration=2.364603481s; num_syscalls=6339144; 2.6 MiB/s; 2680848.6 syscalls/s; short_reads=0
+buf_size=2; duration=1.621188921s; num_syscalls=6217359; 7.3 MiB/s; 3835061.4 syscalls/s; short_reads=0
+buf_size=4; duration=1.998784363s; num_syscalls=7476636; 14.3 MiB/s; 3740591.6 syscalls/s; short_reads=1
+buf_size=8; duration=2.032533221s; num_syscalls=7707724; 28.9 MiB/s; 3792176.1 syscalls/s; short_reads=0
+buf_size=16; duration=2.028492916s; num_syscalls=7639712; 57.5 MiB/s; 3766201.0 syscalls/s; short_reads=0
+buf_size=32; duration=1.61549966s; num_syscalls=6003482; 113.4 MiB/s; 3716176.6 syscalls/s; short_reads=0
+buf_size=64; duration=2.083221574s; num_syscalls=7381437; 216.3 MiB/s; 3543279.8 syscalls/s; short_reads=1
+buf_size=128; duration=2.02100474s; num_syscalls=7110353; 429.5 MiB/s; 3518226.8 syscalls/s; short_reads=0
+buf_size=256; duration=2.070252287s; num_syscalls=7019268; 827.8 MiB/s; 3390537.5 syscalls/s; short_reads=0
+buf_size=512; duration=2.221108916s; num_syscalls=6617696; 1454.8 MiB/s; 2979455.9 syscalls/s; short_reads=0
+buf_size=1024; duration=2.376524304s; num_syscalls=5802316; 2384.3 MiB/s; 2441513.4 syscalls/s; short_reads=0
+buf_size=2048; duration=1.7690054s; num_syscalls=3220301; 3555.5 MiB/s; 1820402.0 syscalls/s; short_reads=0
+buf_size=4096; duration=2.140028375s; num_syscalls=2841798; 5187.2 MiB/s; 1327925.4 syscalls/s; short_reads=0
+buf_size=8192; duration=2.503294177s; num_syscalls=1965180; 6127.1 MiB/s; 785037.6 syscalls/s; short_reads=156091
+buf_size=16384; duration=1.400117402s; num_syscalls=715418; 7976.1 MiB/s; 510970.0 syscalls/s; short_reads=169328
+buf_size=32768; duration=2.47244876s; num_syscalls=625508; 7890.6 MiB/s; 252991.3 syscalls/s; short_reads=308191
+buf_size=65536; duration=1.709028505s; num_syscalls=228039; 8307.0 MiB/s; 133431.9 syscalls/s; short_reads=227057
+buf_size=131072; duration=1.894340057s; num_syscalls=251370; 8285.0 MiB/s; 132695.3 syscalls/s; short_reads=251166
+buf_size=262144; duration=2.029327805s; num_syscalls=266618; 8204.7 MiB/s; 131382.4 syscalls/s; short_reads=266577
+buf_size=524288; duration=2.102355066s; num_syscalls=269858; 8043.3 MiB/s; 128359.9 syscalls/s; short_reads=269713
+buf_size=1048576; duration=2.149849558s; num_syscalls=249888; 7320.8 MiB/s; 116235.1 syscalls/s; short_reads=249812
+buf_size=2097152; duration=1.969945161s; num_syscalls=206241; 6544.3 MiB/s; 104693.8 syscalls/s; short_reads=206239
+buf_size=4194304; duration=1.965812969s; num_syscalls=198279; 6307.7 MiB/s; 100863.6 syscalls/s; short_reads=198279
+buf_size=8388608; duration=2.006280714s; num_syscalls=196164; 6107.1 MiB/s; 97775.0 syscalls/s; short_reads=196164
+buf_size=16777216; duration=1.966170475s; num_syscalls=193258; 6139.9 MiB/s; 98291.6 syscalls/s; short_reads=193258
+  BEST: buf_size=65536 8307.046411589314 ; max no decreases buf_size=16384 7976.1 MiB/s; ignore use_buffer=false sum=0
+
+use_buffer=false; /dev/zero:
+short write 4190912 total bytes; 12586304 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.971387902s; num_syscalls=7226216; 3.5 MiB/s; 3665547.5 syscalls/s; short_reads=0
+buf_size=2; duration=1.992483878s; num_syscalls=8903134; 8.5 MiB/s; 4468359.4 syscalls/s; short_reads=0
+buf_size=4; duration=1.980252721s; num_syscalls=8866821; 17.1 MiB/s; 4477620.9 syscalls/s; short_reads=0
+buf_size=8; duration=1.995394838s; num_syscalls=8923393; 34.1 MiB/s; 4471993.6 syscalls/s; short_reads=0
+buf_size=16; duration=1.974311648s; num_syscalls=8844862; 68.4 MiB/s; 4479972.6 syscalls/s; short_reads=0
+buf_size=32; duration=1.989165342s; num_syscalls=8930565; 137.0 MiB/s; 4489604.2 syscalls/s; short_reads=0
+buf_size=64; duration=2.065309323s; num_syscalls=9178523; 271.2 MiB/s; 4444139.6 syscalls/s; short_reads=0
+buf_size=128; duration=1.967778531s; num_syscalls=8873902; 550.5 MiB/s; 4509604.0 syscalls/s; short_reads=0
+buf_size=256; duration=1.967870581s; num_syscalls=8862106; 1099.5 MiB/s; 4503398.8 syscalls/s; short_reads=0
+buf_size=512; duration=1.9816365s; num_syscalls=8736295; 2152.6 MiB/s; 4408626.4 syscalls/s; short_reads=0
+buf_size=1024; duration=2.205660215s; num_syscalls=8648649; 3829.2 MiB/s; 3921115.7 syscalls/s; short_reads=0
+buf_size=2048; duration=1.3879385s; num_syscalls=5551701; 7812.4 MiB/s; 3999961.8 syscalls/s; short_reads=0
+buf_size=4096; duration=1.973615899s; num_syscalls=8297379; 16422.5 MiB/s; 4204150.9 syscalls/s; short_reads=0
+buf_size=8192; duration=1.982248117s; num_syscalls=7244015; 28550.3 MiB/s; 3654444.1 syscalls/s; short_reads=0
+buf_size=16384; duration=1.984804685s; num_syscalls=5756556; 45317.4 MiB/s; 2900313.6 syscalls/s; short_reads=0
+buf_size=32768; duration=1.937369351s; num_syscalls=3987162; 64313.4 MiB/s; 2058028.8 syscalls/s; short_reads=0
+buf_size=65536; duration=1.862598851s; num_syscalls=1500612; 50353.4 MiB/s; 805655.0 syscalls/s; short_reads=0
+buf_size=131072; duration=1.957064803s; num_syscalls=860271; 54946.5 MiB/s; 439572.1 syscalls/s; short_reads=0
+buf_size=262144; duration=1.885773603s; num_syscalls=433706; 57497.1 MiB/s; 229988.4 syscalls/s; short_reads=0
+buf_size=524288; duration=1.971538525s; num_syscalls=232079; 58857.2 MiB/s; 117714.7 syscalls/s; short_reads=0
+buf_size=1048576; duration=2.043735302s; num_syscalls=103216; 50503.6 MiB/s; 50503.6 syscalls/s; short_reads=0
+buf_size=2097152; duration=2.000560982s; num_syscalls=30198; 30188.9 MiB/s; 15094.8 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.949933363s; num_syscalls=13067; 26804.9 MiB/s; 6701.3 syscalls/s; short_reads=0
+buf_size=8388608; duration=1.7436901s; num_syscalls=5064; 23229.5 MiB/s; 2904.2 syscalls/s; short_reads=0
+buf_size=16777216; duration=1.859421469s; num_syscalls=2058; 17703.3 MiB/s; 1106.8 syscalls/s; short_reads=0
+  BEST: buf_size=32768 64313.39064225274 ; max no decreases buf_size=32768 64313.4 MiB/s; ignore use_buffer=false sum=0
+
+use_buffer=false; /dev/urandom:
+buf_size=1; duration=2.346582955s; num_syscalls=4704111; 1.9 MiB/s; 2004664.3 syscalls/s; short_reads=0
+buf_size=2; duration=2.000495942s; num_syscalls=4669297; 4.5 MiB/s; 2334069.7 syscalls/s; short_reads=0
+buf_size=4; duration=2.000986225s; num_syscalls=4702453; 9.0 MiB/s; 2350067.7 syscalls/s; short_reads=0
+buf_size=8; duration=1.996246983s; num_syscalls=4693624; 17.9 MiB/s; 2351224.1 syscalls/s; short_reads=0
+buf_size=16; duration=2.045921932s; num_syscalls=4816144; 35.9 MiB/s; 2354021.4 syscalls/s; short_reads=0
+buf_size=32; duration=1.975105476s; num_syscalls=4665159; 72.1 MiB/s; 2361979.7 syscalls/s; short_reads=0
+buf_size=64; duration=2.053741298s; num_syscalls=3711540; 110.3 MiB/s; 1807209.1 syscalls/s; short_reads=0
+buf_size=128; duration=2.003822763s; num_syscalls=2884463; 175.7 MiB/s; 1439480.1 syscalls/s; short_reads=0
+buf_size=256; duration=2.003632151s; num_syscalls=2077124; 253.1 MiB/s; 1036679.3 syscalls/s; short_reads=0
+buf_size=512; duration=1.996779938s; num_syscalls=1332446; 325.8 MiB/s; 667297.4 syscalls/s; short_reads=0
+buf_size=1024; duration=2.33065658s; num_syscalls=774906; 324.7 MiB/s; 332484.0 syscalls/s; short_reads=0
+buf_size=2048; duration=2.011597255s; num_syscalls=436822; 424.1 MiB/s; 217151.8 syscalls/s; short_reads=0
+buf_size=4096; duration=2.021661013s; num_syscalls=228057; 440.7 MiB/s; 112806.7 syscalls/s; short_reads=0
+buf_size=8192; duration=2.01078886s; num_syscalls=117275; 455.6 MiB/s; 58322.9 syscalls/s; short_reads=0
+buf_size=16384; duration=2.025409772s; num_syscalls=59642; 460.1 MiB/s; 29446.9 syscalls/s; short_reads=0
+buf_size=32768; duration=2.021749383s; num_syscalls=29993; 463.6 MiB/s; 14835.2 syscalls/s; short_reads=0
+buf_size=65536; duration=1.989447128s; num_syscalls=14847; 466.4 MiB/s; 7462.9 syscalls/s; short_reads=0
+buf_size=131072; duration=2.0058896s; num_syscalls=7485; 466.4 MiB/s; 3731.5 syscalls/s; short_reads=0
+buf_size=262144; duration=2.001342319s; num_syscalls=3746; 467.9 MiB/s; 1871.7 syscalls/s; short_reads=0
+buf_size=524288; duration=2.00933583s; num_syscalls=1867; 464.5 MiB/s; 929.2 syscalls/s; short_reads=0
+buf_size=1048576; duration=2.307308548s; num_syscalls=927; 401.6 MiB/s; 401.8 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.841696898s; num_syscalls=430; 466.8 MiB/s; 233.5 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.991813584s; num_syscalls=233; 467.8 MiB/s; 117.0 syscalls/s; short_reads=0
+buf_size=8388608; duration=1.99969249s; num_syscalls=117; 467.6 MiB/s; 58.5 syscalls/s; short_reads=0
+buf_size=16777216; duration=2.013168751s; num_syscalls=59; 464.8 MiB/s; 29.3 syscalls/s; short_reads=0
+  BEST: buf_size=262144 467.9087626583277 ; max no decreases buf_size=512 325.8 MiB/s; ignore use_buffer=false sum=0
+
+## use_buffer=true; write_buffer_bytes=4096
+use_buffer=true; write_buffer_bytes=4096; type=unix:
+buf_size=1; duration=1.270541491s; num_syscalls=6075887; 4.6 MiB/s; 4782124.0 syscalls/s; short_reads=0
+buf_size=2; duration=1.973749176s; num_syscalls=9385706; 9.1 MiB/s; 4755267.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.03221547s; num_syscalls=9510224; 17.9 MiB/s; 4679732.1 syscalls/s; short_reads=0
+buf_size=8; duration=2.702543308s; num_syscalls=9480021; 26.8 MiB/s; 3507814.6 syscalls/s; short_reads=0
+buf_size=16; duration=2.020258288s; num_syscalls=9427292; 71.2 MiB/s; 4666379.6 syscalls/s; short_reads=0
+buf_size=32; duration=1.808174842s; num_syscalls=8039555; 135.7 MiB/s; 4446226.6 syscalls/s; short_reads=0
+buf_size=64; duration=2.151636115s; num_syscalls=8831582; 250.5 MiB/s; 4104589.0 syscalls/s; short_reads=0
+buf_size=128; duration=2.212987644s; num_syscalls=8250826; 455.1 MiB/s; 3728365.1 syscalls/s; short_reads=1
+buf_size=256; duration=2.599137433s; num_syscalls=7865965; 738.9 MiB/s; 3026375.2 syscalls/s; short_reads=1
+buf_size=512; duration=3.069925633s; num_syscalls=6439358; 1024.2 MiB/s; 2097561.6 syscalls/s; short_reads=0
+buf_size=1024; duration=3.245694453s; num_syscalls=4257132; 1280.9 MiB/s; 1311624.4 syscalls/s; short_reads=1
+buf_size=2048; duration=3.636100329s; num_syscalls=2615474; 1404.9 MiB/s; 719307.4 syscalls/s; short_reads=1
+buf_size=4096; duration=1.902969056s; num_syscalls=766326; 1573.0 MiB/s; 402700.2 syscalls/s; short_reads=1
+buf_size=8192; duration=3.890168396s; num_syscalls=812003; 1630.2 MiB/s; 208732.1 syscalls/s; short_reads=509
+buf_size=16384; duration=4.182886858s; num_syscalls=442898; 1653.3 MiB/s; 105883.3 syscalls/s; short_reads=404
+buf_size=32768; duration=3.857661558s; num_syscalls=205243; 1656.9 MiB/s; 53204.0 syscalls/s; short_reads=1055
+buf_size=65536; duration=3.661447727s; num_syscalls=99469; 1684.4 MiB/s; 27166.6 syscalls/s; short_reads=1363
+buf_size=131072; duration=3.84821368s; num_syscalls=52360; 1664.0 MiB/s; 13606.3 syscalls/s; short_reads=1493
+buf_size=262144; duration=3.767377743s; num_syscalls=25140; 1658.9 MiB/s; 6673.1 syscalls/s; short_reads=455
+buf_size=524288; duration=3.608845038s; num_syscalls=14312; 1619.5 MiB/s; 3965.8 syscalls/s; short_reads=4147
+buf_size=1048576; duration=3.740597468s; num_syscalls=13250; 1537.3 MiB/s; 3542.2 syscalls/s; short_reads=9039
+buf_size=2097152; duration=3.651446491s; num_syscalls=10826; 1545.9 MiB/s; 2964.9 syscalls/s; short_reads=9532
+buf_size=4194304; duration=3.556271019s; num_syscalls=9932; 1560.3 MiB/s; 2792.8 syscalls/s; short_reads=9358
+buf_size=8388608; duration=3.619597258s; num_syscalls=7392; 1543.2 MiB/s; 2042.2 syscalls/s; short_reads=7332
+buf_size=16777216; duration=3.620283723s; num_syscalls=7744; 1540.1 MiB/s; 2139.1 syscalls/s; short_reads=7720
+  BEST: buf_size=65536 1684.424004041697 ; max no decreases buf_size=65536 1684.4 MiB/s; ignore use_buffer=true sum=12277342324393
+ECONNRESET at end of benchmark
+
+use_buffer=true; write_buffer_bytes=4096; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=4096; use_buffer=true
+buf_size=1; duration=979.219298ms; num_syscalls=3715745; 3.6 MiB/s; 3794599.4 syscalls/s; short_reads=0
+buf_size=2; duration=1.524965639s; num_syscalls=5856344; 7.3 MiB/s; 3840312.1 syscalls/s; short_reads=1
+buf_size=4; duration=2.340885328s; num_syscalls=7653452; 12.5 MiB/s; 3269469.0 syscalls/s; short_reads=0
+buf_size=8; duration=1.99681314s; num_syscalls=7633297; 29.2 MiB/s; 3822739.8 syscalls/s; short_reads=1
+buf_size=16; duration=2.009345695s; num_syscalls=7605431; 57.8 MiB/s; 3785028.6 syscalls/s; short_reads=0
+buf_size=32; duration=1.978021561s; num_syscalls=7234582; 111.6 MiB/s; 3657483.9 syscalls/s; short_reads=1
+buf_size=64; duration=2.104510369s; num_syscalls=7231704; 209.7 MiB/s; 3436288.1 syscalls/s; short_reads=0
+buf_size=128; duration=1.995180778s; num_syscalls=6515720; 398.6 MiB/s; 3265729.1 syscalls/s; short_reads=0
+buf_size=256; duration=1.475432706s; num_syscalls=4228241; 699.6 MiB/s; 2865763.4 syscalls/s; short_reads=0
+buf_size=512; duration=2.099770783s; num_syscalls=4708431; 1094.9 MiB/s; 2242354.8 syscalls/s; short_reads=0
+buf_size=1024; duration=1.76629425s; num_syscalls=2763958; 1528.2 MiB/s; 1564834.4 syscalls/s; short_reads=0
+buf_size=2048; duration=1.890223408s; num_syscalls=1708380; 1765.2 MiB/s; 903797.9 syscalls/s; short_reads=0
+buf_size=4096; duration=2.004343714s; num_syscalls=1035229; 2017.5 MiB/s; 516492.8 syscalls/s; short_reads=0
+buf_size=8192; duration=1.927965649s; num_syscalls=529319; 2144.9 MiB/s; 274547.9 syscalls/s; short_reads=0
+buf_size=16384; duration=1.994968747s; num_syscalls=289132; 2264.5 MiB/s; 144930.6 syscalls/s; short_reads=0
+buf_size=32768; duration=2.010942854s; num_syscalls=149973; 2330.6 MiB/s; 74578.4 syscalls/s; short_reads=0
+buf_size=65536; duration=2.023829121s; num_syscalls=76442; 2360.7 MiB/s; 37771.0 syscalls/s; short_reads=0
+buf_size=131072; duration=2.025309366s; num_syscalls=38809; 2395.2 MiB/s; 19162.0 syscalls/s; short_reads=0
+buf_size=262144; duration=1.98516405s; num_syscalls=19291; 2429.3 MiB/s; 9717.6 syscalls/s; short_reads=0
+buf_size=524288; duration=1.953207853s; num_syscalls=9492; 2429.7 MiB/s; 4859.7 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.947329716s; num_syscalls=4560; 2341.6 MiB/s; 2341.7 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.938595318s; num_syscalls=2345; 2341.2 MiB/s; 1209.6 syscalls/s; short_reads=2345
+buf_size=4194304; duration=1.964176233s; num_syscalls=2369; 2334.5 MiB/s; 1206.1 syscalls/s; short_reads=2369
+buf_size=8388608; duration=1.976938264s; num_syscalls=2387; 2337.5 MiB/s; 1207.4 syscalls/s; short_reads=2387
+buf_size=16777216; duration=1.982083437s; num_syscalls=1772; 2347.4 MiB/s; 894.0 syscalls/s; short_reads=1772
+  BEST: buf_size=524288 2429.6568208413078 ; max no decreases buf_size=524288 2429.7 MiB/s; ignore use_buffer=true sum=9436574597438
+
+## use_buffer=true; write_buffer_bytes=8192
+use_buffer=true; write_buffer_bytes=8192; type=unix:
+short write 1605 total bytes; 2491 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.588986315s; num_syscalls=7643506; 4.6 MiB/s; 4810303.2 syscalls/s; short_reads=0
+buf_size=2; duration=2.019966511s; num_syscalls=9733307; 9.2 MiB/s; 4818548.7 syscalls/s; short_reads=0
+buf_size=4; duration=2.352726876s; num_syscalls=9703557; 15.7 MiB/s; 4124387.4 syscalls/s; short_reads=0
+buf_size=8; duration=1.933795155s; num_syscalls=9372072; 37.0 MiB/s; 4846465.8 syscalls/s; short_reads=0
+buf_size=16; duration=2.028531924s; num_syscalls=9691332; 72.9 MiB/s; 4777510.2 syscalls/s; short_reads=0
+buf_size=32; duration=2.096710859s; num_syscalls=9633912; 140.2 MiB/s; 4594773.7 syscalls/s; short_reads=0
+buf_size=64; duration=2.135767459s; num_syscalls=9240010; 264.1 MiB/s; 4326318.4 syscalls/s; short_reads=0
+buf_size=128; duration=1.985637659s; num_syscalls=7877428; 484.3 MiB/s; 3967203.2 syscalls/s; short_reads=1
+buf_size=256; duration=2.352572722s; num_syscalls=7874947; 817.2 MiB/s; 3347376.7 syscalls/s; short_reads=1
+buf_size=512; duration=2.916973704s; num_syscalls=6856125; 1147.7 MiB/s; 2350424.0 syscalls/s; short_reads=0
+buf_size=1024; duration=3.586229985s; num_syscalls=5297313; 1442.5 MiB/s; 1477125.8 syscalls/s; short_reads=1
+buf_size=2048; duration=3.569521867s; num_syscalls=3149557; 1723.3 MiB/s; 882347.0 syscalls/s; short_reads=0
+buf_size=4096; duration=5.028272855s; num_syscalls=2464087; 1914.2 MiB/s; 490046.4 syscalls/s; short_reads=1
+buf_size=8192; duration=2.67356049s; num_syscalls=705727; 2062.2 MiB/s; 263965.2 syscalls/s; short_reads=0
+buf_size=16384; duration=4.476253526s; num_syscalls=612413; 2137.7 MiB/s; 136813.7 syscalls/s; short_reads=0
+buf_size=32768; duration=4.662153133s; num_syscalls=322041; 2158.6 MiB/s; 69075.6 syscalls/s; short_reads=0
+buf_size=65536; duration=4.927499038s; num_syscalls=171440; 2174.4 MiB/s; 34792.5 syscalls/s; short_reads=8
+buf_size=131072; duration=5.173007824s; num_syscalls=88262; 2132.6 MiB/s; 17062.0 syscalls/s; short_reads=10
+buf_size=262144; duration=4.718455317s; num_syscalls=40213; 2129.8 MiB/s; 8522.5 syscalls/s; short_reads=64
+buf_size=524288; duration=4.584663664s; num_syscalls=23949; 2120.0 MiB/s; 5223.7 syscalls/s; short_reads=7679
+buf_size=1048576; duration=5.526696106s; num_syscalls=22432; 1942.6 MiB/s; 4058.8 syscalls/s; short_reads=13482
+buf_size=2097152; duration=5.026965338s; num_syscalls=10338; 1975.3 MiB/s; 2056.5 syscalls/s; short_reads=5914
+buf_size=4194304; duration=4.764545702s; num_syscalls=5963; 1973.9 MiB/s; 1251.5 syscalls/s; short_reads=3821
+buf_size=8388608; duration=4.714932043s; num_syscalls=3428; 1928.5 MiB/s; 727.1 syscalls/s; short_reads=2400
+buf_size=16777216; duration=4.411152442s; num_syscalls=1646; 1939.5 MiB/s; 373.1 syscalls/s; short_reads=1170
+  BEST: buf_size=65536 2174.4395895062707 ; max no decreases buf_size=65536 2174.4 MiB/s; ignore use_buffer=true sum=19081084356704
+ECONNRESET at end of benchmark
+
+use_buffer=true; write_buffer_bytes=8192; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=8192; use_buffer=true
+buf_size=1; duration=1.665569896s; num_syscalls=4995129; 2.9 MiB/s; 2999051.0 syscalls/s; short_reads=0
+buf_size=2; duration=2.026732598s; num_syscalls=7673714; 7.2 MiB/s; 3786248.9 syscalls/s; short_reads=1
+buf_size=4; duration=1.976667219s; num_syscalls=7470492; 14.4 MiB/s; 3779337.2 syscalls/s; short_reads=0
+buf_size=8; duration=2.011870722s; num_syscalls=7442138; 28.2 MiB/s; 3699113.4 syscalls/s; short_reads=0
+buf_size=16; duration=1.959586284s; num_syscalls=7231966; 56.3 MiB/s; 3690557.6 syscalls/s; short_reads=1
+buf_size=32; duration=1.995454695s; num_syscalls=7242179; 110.8 MiB/s; 3629337.7 syscalls/s; short_reads=1
+buf_size=64; duration=2.024307553s; num_syscalls=7015083; 211.5 MiB/s; 3465423.5 syscalls/s; short_reads=1
+buf_size=128; duration=1.902493499s; num_syscalls=6067962; 389.3 MiB/s; 3189478.4 syscalls/s; short_reads=1
+buf_size=256; duration=2.000107229s; num_syscalls=5551855; 677.7 MiB/s; 2775778.7 syscalls/s; short_reads=0
+buf_size=512; duration=2.170579945s; num_syscalls=4592001; 1033.0 MiB/s; 2115564.1 syscalls/s; short_reads=0
+buf_size=1024; duration=2.162113155s; num_syscalls=3153480; 1424.3 MiB/s; 1458517.6 syscalls/s; short_reads=0
+buf_size=2048; duration=1.926480332s; num_syscalls=1756436; 1780.7 MiB/s; 911733.2 syscalls/s; short_reads=0
+buf_size=4096; duration=1.945510308s; num_syscalls=1020539; 2049.1 MiB/s; 524561.1 syscalls/s; short_reads=0
+buf_size=8192; duration=2.021374786s; num_syscalls=570966; 2206.7 MiB/s; 282464.2 syscalls/s; short_reads=0
+buf_size=16384; duration=1.962540631s; num_syscalls=286314; 2279.5 MiB/s; 145889.5 syscalls/s; short_reads=0
+buf_size=32768; duration=2.020960353s; num_syscalls=152887; 2364.1 MiB/s; 75650.7 syscalls/s; short_reads=0
+buf_size=65536; duration=1.965265579s; num_syscalls=75668; 2406.4 MiB/s; 38502.7 syscalls/s; short_reads=0
+buf_size=131072; duration=1.973074602s; num_syscalls=38567; 2443.3 MiB/s; 19546.7 syscalls/s; short_reads=0
+buf_size=262144; duration=1.972647467s; num_syscalls=19603; 2484.3 MiB/s; 9937.4 syscalls/s; short_reads=0
+buf_size=524288; duration=1.974378928s; num_syscalls=9800; 2481.6 MiB/s; 4963.6 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.959631995s; num_syscalls=4660; 2377.7 MiB/s; 2378.0 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.912243814s; num_syscalls=2380; 2409.4 MiB/s; 1244.6 syscalls/s; short_reads=2380
+buf_size=4194304; duration=1.966015014s; num_syscalls=2446; 2407.9 MiB/s; 1244.1 syscalls/s; short_reads=2446
+buf_size=8388608; duration=1.974006939s; num_syscalls=2451; 2402.8 MiB/s; 1241.6 syscalls/s; short_reads=2451
+buf_size=16777216; duration=1.988183717s; num_syscalls=2475; 2409.5 MiB/s; 1244.9 syscalls/s; short_reads=2475
+  BEST: buf_size=262144 2484.295655977393 ; max no decreases buf_size=262144 2484.3 MiB/s; ignore use_buffer=true sum=9666335979473
+
+## use_buffer=true; write_buffer_bytes=16384
+use_buffer=true; write_buffer_bytes=16384; type=unix:
+short write 7000 total bytes; 1192 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.264765315s; num_syscalls=5852573; 4.4 MiB/s; 4627398.4 syscalls/s; short_reads=0
+buf_size=2; duration=2.170594145s; num_syscalls=8710043; 7.7 MiB/s; 4012746.0 syscalls/s; short_reads=0
+buf_size=4; duration=1.990563732s; num_syscalls=9437079; 18.1 MiB/s; 4740907.7 syscalls/s; short_reads=0
+buf_size=8; duration=2.00255956s; num_syscalls=9408666; 35.8 MiB/s; 4698320.2 syscalls/s; short_reads=0
+buf_size=16; duration=2.030321774s; num_syscalls=9390994; 70.6 MiB/s; 4625372.3 syscalls/s; short_reads=0
+buf_size=32; duration=1.655991175s; num_syscalls=7400829; 136.4 MiB/s; 4469123.5 syscalls/s; short_reads=0
+buf_size=64; duration=2.150444331s; num_syscalls=8988765; 255.1 MiB/s; 4179957.1 syscalls/s; short_reads=0
+buf_size=128; duration=2.384893655s; num_syscalls=9102909; 465.9 MiB/s; 3816903.5 syscalls/s; short_reads=0
+buf_size=256; duration=2.633941998s; num_syscalls=8439887; 782.3 MiB/s; 3204279.7 syscalls/s; short_reads=0
+buf_size=512; duration=2.698922656s; num_syscalls=6592393; 1192.7 MiB/s; 2442601.7 syscalls/s; short_reads=1
+buf_size=1024; duration=3.27380062s; num_syscalls=5419467; 1616.6 MiB/s; 1655405.3 syscalls/s; short_reads=0
+buf_size=2048; duration=3.22863519s; num_syscalls=3158012; 1910.4 MiB/s; 978126.0 syscalls/s; short_reads=1
+buf_size=4096; duration=4.216956224s; num_syscalls=2323205; 2152.0 MiB/s; 550919.9 syscalls/s; short_reads=0
+buf_size=8192; duration=5.727003445s; num_syscalls=1675759; 2286.0 MiB/s; 292606.6 syscalls/s; short_reads=1
+buf_size=16384; duration=4.760970402s; num_syscalls=732441; 2403.8 MiB/s; 153842.8 syscalls/s; short_reads=1
+buf_size=32768; duration=4.011513444s; num_syscalls=315010; 2453.7 MiB/s; 78526.5 syscalls/s; short_reads=67
+buf_size=65536; duration=5.600145967s; num_syscalls=221227; 2468.3 MiB/s; 39503.8 syscalls/s; short_reads=81
+buf_size=131072; duration=5.514787297s; num_syscalls=107774; 2434.4 MiB/s; 19542.7 syscalls/s; short_reads=2131
+buf_size=262144; duration=5.83937977s; num_syscalls=56849; 2428.5 MiB/s; 9735.5 syscalls/s; short_reads=1537
+buf_size=524288; duration=5.665251482s; num_syscalls=39318; 2391.9 MiB/s; 6940.2 syscalls/s; short_reads=28487
+buf_size=1048576; duration=6.079263232s; num_syscalls=37779; 2306.0 MiB/s; 6214.4 syscalls/s; short_reads=33894
+buf_size=2097152; duration=5.677159495s; num_syscalls=24466; 2283.7 MiB/s; 4309.5 syscalls/s; short_reads=21508
+buf_size=4194304; duration=5.602890372s; num_syscalls=20130; 2283.5 MiB/s; 3592.8 syscalls/s; short_reads=18921
+buf_size=8388608; duration=5.337052384s; num_syscalls=10801; 2255.6 MiB/s; 2023.8 syscalls/s; short_reads=10043
+buf_size=16777216; duration=5.343124702s; num_syscalls=7144; 2246.3 MiB/s; 1337.0 syscalls/s; short_reads=6814
+  BEST: buf_size=65536 2468.3065499897557 ; max no decreases buf_size=65536 2468.3 MiB/s; ignore use_buffer=true sum=24220782460832
+ECONNRESET at end of benchmark
+
+use_buffer=true; write_buffer_bytes=16384; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=16384; use_buffer=true
+buf_size=1; duration=1.996197664s; num_syscalls=6175889; 3.0 MiB/s; 3093826.4 syscalls/s; short_reads=0
+buf_size=2; duration=1.270936607s; num_syscalls=4916663; 7.4 MiB/s; 3868535.2 syscalls/s; short_reads=1
+buf_size=4; duration=1.997326876s; num_syscalls=7775748; 14.9 MiB/s; 3893077.3 syscalls/s; short_reads=1
+buf_size=8; duration=1.956833099s; num_syscalls=7553156; 29.4 MiB/s; 3859887.7 syscalls/s; short_reads=0
+buf_size=16; duration=2.005010909s; num_syscalls=7688464; 58.5 MiB/s; 3834624.5 syscalls/s; short_reads=1
+buf_size=32; duration=2.063669207s; num_syscalls=7498782; 110.9 MiB/s; 3633713.2 syscalls/s; short_reads=0
+buf_size=64; duration=2.048116619s; num_syscalls=7025926; 209.4 MiB/s; 3430432.6 syscalls/s; short_reads=0
+buf_size=128; duration=2.04405623s; num_syscalls=6657347; 397.6 MiB/s; 3256929.5 syscalls/s; short_reads=0
+buf_size=256; duration=2.042398595s; num_syscalls=5872508; 702.0 MiB/s; 2875299.7 syscalls/s; short_reads=0
+buf_size=512; duration=1.63406095s; num_syscalls=3593826; 1073.9 MiB/s; 2199321.9 syscalls/s; short_reads=0
+buf_size=1024; duration=2.160003057s; num_syscalls=3179095; 1437.3 MiB/s; 1471801.2 syscalls/s; short_reads=0
+buf_size=2048; duration=1.857651506s; num_syscalls=1693595; 1780.6 MiB/s; 911686.1 syscalls/s; short_reads=0
+buf_size=4096; duration=1.884626498s; num_syscalls=995308; 2063.0 MiB/s; 528119.5 syscalls/s; short_reads=0
+buf_size=8192; duration=1.996243974s; num_syscalls=572227; 2239.5 MiB/s; 286651.8 syscalls/s; short_reads=0
+buf_size=16384; duration=2.042242788s; num_syscalls=305278; 2335.6 MiB/s; 149481.7 syscalls/s; short_reads=0
+buf_size=32768; duration=2.044108885s; num_syscalls=156551; 2393.3 MiB/s; 76586.4 syscalls/s; short_reads=0
+buf_size=65536; duration=1.989406101s; num_syscalls=78392; 2462.8 MiB/s; 39404.7 syscalls/s; short_reads=0
+buf_size=131072; duration=2.005422505s; num_syscalls=39855; 2484.2 MiB/s; 19873.6 syscalls/s; short_reads=0
+buf_size=262144; duration=1.993469718s; num_syscalls=20158; 2528.0 MiB/s; 10112.0 syscalls/s; short_reads=0
+buf_size=524288; duration=2.017140475s; num_syscalls=10082; 2499.0 MiB/s; 4998.2 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.95042142s; num_syscalls=4737; 2428.3 MiB/s; 2428.7 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.939369802s; num_syscalls=2330; 2402.5 MiB/s; 1201.4 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.939966198s; num_syscalls=2046; 2469.0 MiB/s; 1054.7 syscalls/s; short_reads=2044
+buf_size=8388608; duration=1.958465893s; num_syscalls=2054; 2472.4 MiB/s; 1048.8 syscalls/s; short_reads=2054
+buf_size=16777216; duration=1.983887447s; num_syscalls=2060; 2474.0 MiB/s; 1038.4 syscalls/s; short_reads=2060
+  BEST: buf_size=262144 2527.973513122876 ; max no decreases buf_size=262144 2528.0 MiB/s; ignore use_buffer=true sum=9788045153019
+
+## use_buffer=true; write_buffer_bytes=32768
+use_buffer=true; write_buffer_bytes=32768; type=unix:
+short write 14476 total bytes; 1908 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.728793522s; num_syscalls=8332986; 4.6 MiB/s; 4820116.4 syscalls/s; short_reads=0
+buf_size=2; duration=1.946957878s; num_syscalls=9360228; 9.2 MiB/s; 4807617.1 syscalls/s; short_reads=0
+buf_size=4; duration=2.285083152s; num_syscalls=9372511; 15.6 MiB/s; 4101606.1 syscalls/s; short_reads=0
+buf_size=8; duration=2.014067708s; num_syscalls=9806325; 37.1 MiB/s; 4868915.3 syscalls/s; short_reads=0
+buf_size=16; duration=1.95589486s; num_syscalls=9413094; 73.4 MiB/s; 4812678.9 syscalls/s; short_reads=0
+buf_size=32; duration=2.012223782s; num_syscalls=9355850; 141.9 MiB/s; 4649507.7 syscalls/s; short_reads=0
+buf_size=64; duration=2.080625388s; num_syscalls=9181894; 269.4 MiB/s; 4413045.3 syscalls/s; short_reads=0
+buf_size=128; duration=2.370299304s; num_syscalls=9486767; 488.6 MiB/s; 4002349.8 syscalls/s; short_reads=1
+buf_size=256; duration=2.587825883s; num_syscalls=9112033; 859.6 MiB/s; 3521115.2 syscalls/s; short_reads=1
+buf_size=512; duration=3.424999602s; num_syscalls=8707768; 1241.4 MiB/s; 2542414.3 syscalls/s; short_reads=1
+buf_size=1024; duration=4.07662926s; num_syscalls=6808975; 1631.1 MiB/s; 1670246.3 syscalls/s; short_reads=1
+buf_size=2048; duration=4.80821922s; num_syscalls=4930360; 2002.7 MiB/s; 1025402.5 syscalls/s; short_reads=1
+buf_size=4096; duration=5.443122646s; num_syscalls=3138979; 2252.7 MiB/s; 576687.2 syscalls/s; short_reads=0
+buf_size=8192; duration=5.500216041s; num_syscalls=1730898; 2458.6 MiB/s; 314696.4 syscalls/s; short_reads=0
+buf_size=16384; duration=4.961303077s; num_syscalls=819703; 2581.5 MiB/s; 165219.3 syscalls/s; short_reads=0
+buf_size=32768; duration=5.340737567s; num_syscalls=443740; 2596.4 MiB/s; 83085.9 syscalls/s; short_reads=0
+buf_size=65536; duration=5.639186435s; num_syscalls=237133; 2627.6 MiB/s; 42050.9 syscalls/s; short_reads=111
+buf_size=131072; duration=5.764929923s; num_syscalls=138124; 2629.8 MiB/s; 23959.4 syscalls/s; short_reads=67267
+buf_size=262144; duration=6.126578808s; num_syscalls=73919; 2639.0 MiB/s; 12065.3 syscalls/s; short_reads=73906
+buf_size=524288; duration=5.520883879s; num_syscalls=66211; 2622.7 MiB/s; 11992.8 syscalls/s; short_reads=66211
+buf_size=1048576; duration=5.643722634s; num_syscalls=68082; 2638.3 MiB/s; 12063.3 syscalls/s; short_reads=68082
+buf_size=2097152; duration=5.479338221s; num_syscalls=66226; 2643.7 MiB/s; 12086.5 syscalls/s; short_reads=66226
+buf_size=4194304; duration=4.90719763s; num_syscalls=59091; 2634.0 MiB/s; 12041.7 syscalls/s; short_reads=59091
+buf_size=8388608; duration=5.142990753s; num_syscalls=61795; 2627.7 MiB/s; 12015.4 syscalls/s; short_reads=61795
+buf_size=16777216; duration=4.776177334s; num_syscalls=57566; 2636.4 MiB/s; 12052.7 syscalls/s; short_reads=57566
+  BEST: buf_size=2097152 2643.7427993667748 ; max no decreases buf_size=262144 2639.0 MiB/s; ignore use_buffer=true sum=27611901210878
+ECONNRESET at end of benchmark
+
+use_buffer=true; write_buffer_bytes=32768; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=32768; use_buffer=true
+buf_size=1; duration=1.785127746s; num_syscalls=6622297; 3.5 MiB/s; 3709704.8 syscalls/s; short_reads=0
+buf_size=2; duration=1.939748682s; num_syscalls=7196315; 7.1 MiB/s; 3709921.3 syscalls/s; short_reads=0
+buf_size=4; duration=2.30483288s; num_syscalls=7282526; 12.1 MiB/s; 3159676.4 syscalls/s; short_reads=0
+buf_size=8; duration=2.010205746s; num_syscalls=7493163; 28.4 MiB/s; 3727560.2 syscalls/s; short_reads=0
+buf_size=16; duration=1.936525718s; num_syscalls=7156148; 56.4 MiB/s; 3695354.0 syscalls/s; short_reads=0
+buf_size=32; duration=1.957656036s; num_syscalls=7059904; 110.1 MiB/s; 3606304.6 syscalls/s; short_reads=0
+buf_size=64; duration=2.004151256s; num_syscalls=6830135; 208.0 MiB/s; 3407993.8 syscalls/s; short_reads=0
+buf_size=128; duration=2.065674254s; num_syscalls=6683822; 395.0 MiB/s; 3235661.2 syscalls/s; short_reads=0
+buf_size=256; duration=2.038462683s; num_syscalls=5782353; 692.5 MiB/s; 2836624.4 syscalls/s; short_reads=0
+buf_size=512; duration=2.17037517s; num_syscalls=4795819; 1078.9 MiB/s; 2209672.8 syscalls/s; short_reads=0
+buf_size=1024; duration=1.955653903s; num_syscalls=3029202; 1512.6 MiB/s; 1548945.9 syscalls/s; short_reads=0
+buf_size=2048; duration=2.113502667s; num_syscalls=1967710; 1818.4 MiB/s; 931018.5 syscalls/s; short_reads=0
+buf_size=4096; duration=2.013406904s; num_syscalls=1070166; 2076.2 MiB/s; 531520.0 syscalls/s; short_reads=0
+buf_size=8192; duration=1.995135187s; num_syscalls=566411; 2217.9 MiB/s; 283896.1 syscalls/s; short_reads=0
+buf_size=16384; duration=1.990708282s; num_syscalls=296689; 2328.7 MiB/s; 149036.9 syscalls/s; short_reads=0
+buf_size=32768; duration=1.976450538s; num_syscalls=151703; 2398.6 MiB/s; 76755.3 syscalls/s; short_reads=0
+buf_size=65536; duration=1.999945159s; num_syscalls=78428; 2450.9 MiB/s; 39215.1 syscalls/s; short_reads=0
+buf_size=131072; duration=2.047540373s; num_syscalls=40641; 2481.1 MiB/s; 19848.7 syscalls/s; short_reads=0
+buf_size=262144; duration=2.040149101s; num_syscalls=20620; 2526.7 MiB/s; 10107.1 syscalls/s; short_reads=0
+buf_size=524288; duration=1.991295901s; num_syscalls=10032; 2518.9 MiB/s; 5037.9 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.944579412s; num_syscalls=4732; 2433.3 MiB/s; 2433.4 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.928091986s; num_syscalls=2455; 2465.0 MiB/s; 1273.3 syscalls/s; short_reads=2455
+buf_size=4194304; duration=1.94955696s; num_syscalls=2476; 2458.0 MiB/s; 1270.0 syscalls/s; short_reads=2476
+buf_size=8388608; duration=1.985488024s; num_syscalls=2527; 2463.5 MiB/s; 1272.7 syscalls/s; short_reads=2527
+buf_size=16777216; duration=1.965185732s; num_syscalls=1645; 2458.9 MiB/s; 837.1 syscalls/s; short_reads=1645
+  BEST: buf_size=262144 2526.6831187342873 ; max no decreases buf_size=262144 2526.7 MiB/s; ignore use_buffer=true sum=9940244875843
+
+## use_buffer=true; write_buffer_bytes=65536
+use_buffer=true; write_buffer_bytes=65536; type=unix:
+short write 30277 total bytes; 2491 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=2.140596771s; num_syscalls=8539709; 3.8 MiB/s; 3989405.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.97327669s; num_syscalls=9527439; 9.2 MiB/s; 4828232.7 syscalls/s; short_reads=0
+buf_size=4; duration=2.01059683s; num_syscalls=9637626; 18.3 MiB/s; 4793415.5 syscalls/s; short_reads=0
+buf_size=8; duration=1.999916398s; num_syscalls=9583593; 36.6 MiB/s; 4791996.8 syscalls/s; short_reads=0
+buf_size=16; duration=2.008482211s; num_syscalls=9525624; 72.4 MiB/s; 4742697.7 syscalls/s; short_reads=0
+buf_size=32; duration=2.0296289s; num_syscalls=9398055; 141.3 MiB/s; 4630430.2 syscalls/s; short_reads=0
+buf_size=64; duration=2.152077039s; num_syscalls=9298001; 263.7 MiB/s; 4320477.8 syscalls/s; short_reads=0
+buf_size=128; duration=2.196449329s; num_syscalls=8542321; 474.7 MiB/s; 3889150.0 syscalls/s; short_reads=3033
+buf_size=256; duration=2.633929739s; num_syscalls=8725512; 808.7 MiB/s; 3312735.3 syscalls/s; short_reads=1300
+buf_size=512; duration=3.237772544s; num_syscalls=7694099; 1160.3 MiB/s; 2376355.6 syscalls/s; short_reads=31
+buf_size=1024; duration=3.626105296s; num_syscalls=5717711; 1539.8 MiB/s; 1576818.8 syscalls/s; short_reads=315
+buf_size=2048; duration=4.844129616s; num_syscalls=5245077; 2114.8 MiB/s; 1082769.7 syscalls/s; short_reads=0
+buf_size=4096; duration=5.897692871s; num_syscalls=3673977; 2433.4 MiB/s; 622951.6 syscalls/s; short_reads=11
+buf_size=8192; duration=6.661399194s; num_syscalls=2088697; 2449.6 MiB/s; 313552.3 syscalls/s; short_reads=21
+buf_size=16384; duration=5.767262344s; num_syscalls=924447; 2504.5 MiB/s; 160292.2 syscalls/s; short_reads=37
+buf_size=32768; duration=5.643163136s; num_syscalls=493787; 2734.4 MiB/s; 87501.8 syscalls/s; short_reads=28
+buf_size=65536; duration=5.988836873s; num_syscalls=258117; 2693.6 MiB/s; 43099.7 syscalls/s; short_reads=34
+buf_size=131072; duration=6.537292646s; num_syscalls=146609; 2463.1 MiB/s; 22426.6 syscalls/s; short_reads=71158
+buf_size=262144; duration=5.958143841s; num_syscalls=74047; 2718.5 MiB/s; 12427.9 syscalls/s; short_reads=74020
+buf_size=524288; duration=5.716625525s; num_syscalls=75039; 2872.2 MiB/s; 13126.5 syscalls/s; short_reads=75030
+buf_size=1048576; duration=6.584851267s; num_syscalls=78034; 2592.5 MiB/s; 11850.5 syscalls/s; short_reads=78034
+buf_size=2097152; duration=6.039983033s; num_syscalls=63959; 2316.7 MiB/s; 10589.3 syscalls/s; short_reads=63959
+buf_size=4194304; duration=5.494146724s; num_syscalls=68839; 2741.6 MiB/s; 12529.5 syscalls/s; short_reads=68839
+buf_size=8388608; duration=5.655292534s; num_syscalls=69657; 2694.9 MiB/s; 12317.1 syscalls/s; short_reads=69657
+buf_size=16777216; duration=6.166279788s; num_syscalls=73829; 2619.3 MiB/s; 11973.0 syscalls/s; short_reads=73829
+  BEST: buf_size=524288 2872.1677674701054 ; max no decreases buf_size=32768 2734.4 MiB/s; ignore use_buffer=true sum=30321242867513
+ECONNRESET at end of benchmark
+
+use_buffer=true; write_buffer_bytes=65536; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=65536; use_buffer=true
+buf_size=1; duration=1.965500768s; num_syscalls=6642973; 3.2 MiB/s; 3379786.5 syscalls/s; short_reads=0
+buf_size=2; duration=1.981537007s; num_syscalls=4966600; 4.8 MiB/s; 2506438.2 syscalls/s; short_reads=1
+buf_size=4; duration=1.461433756s; num_syscalls=4902922; 12.8 MiB/s; 3354871.2 syscalls/s; short_reads=0
+buf_size=8; duration=1.974961668s; num_syscalls=7355646; 28.4 MiB/s; 3724450.0 syscalls/s; short_reads=0
+buf_size=16; duration=1.990928197s; num_syscalls=7325471; 56.1 MiB/s; 3679425.0 syscalls/s; short_reads=0
+buf_size=32; duration=2.120398845s; num_syscalls=7213447; 103.8 MiB/s; 3401929.3 syscalls/s; short_reads=1
+buf_size=64; duration=1.977765181s; num_syscalls=6358694; 196.2 MiB/s; 3215090.5 syscalls/s; short_reads=0
+buf_size=128; duration=1.99456188s; num_syscalls=6134593; 375.4 MiB/s; 3075659.4 syscalls/s; short_reads=0
+buf_size=256; duration=1.865954423s; num_syscalls=4984673; 652.2 MiB/s; 2671379.8 syscalls/s; short_reads=0
+buf_size=512; duration=2.050479382s; num_syscalls=4257494; 1013.8 MiB/s; 2076340.8 syscalls/s; short_reads=0
+buf_size=1024; duration=1.699159092s; num_syscalls=2549070; 1465.0 MiB/s; 1500195.0 syscalls/s; short_reads=0
+buf_size=2048; duration=2.095149009s; num_syscalls=1955493; 1822.9 MiB/s; 933343.2 syscalls/s; short_reads=0
+buf_size=4096; duration=2.314751588s; num_syscalls=1051437; 1774.3 MiB/s; 454233.2 syscalls/s; short_reads=0
+buf_size=8192; duration=2.0101737s; num_syscalls=410475; 1595.3 MiB/s; 204198.8 syscalls/s; short_reads=0
+buf_size=16384; duration=2.046081057s; num_syscalls=219990; 1680.0 MiB/s; 107517.7 syscalls/s; short_reads=0
+buf_size=32768; duration=1.59621109s; num_syscalls=109464; 2143.0 MiB/s; 68577.4 syscalls/s; short_reads=0
+buf_size=65536; duration=2.039862633s; num_syscalls=86191; 2640.8 MiB/s; 42253.3 syscalls/s; short_reads=0
+buf_size=131072; duration=1.963209826s; num_syscalls=42209; 2687.5 MiB/s; 21500.0 syscalls/s; short_reads=0
+buf_size=262144; duration=1.986152985s; num_syscalls=22211; 2795.7 MiB/s; 11182.9 syscalls/s; short_reads=0
+buf_size=524288; duration=2.059602416s; num_syscalls=11031; 2677.8 MiB/s; 5355.9 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.978724594s; num_syscalls=5139; 2596.8 MiB/s; 2597.1 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.911559186s; num_syscalls=2631; 2664.5 MiB/s; 1376.4 syscalls/s; short_reads=2631
+buf_size=4194304; duration=1.98025624s; num_syscalls=2764; 2701.2 MiB/s; 1395.8 syscalls/s; short_reads=2764
+buf_size=8388608; duration=2.11406861s; num_syscalls=2680; 2453.3 MiB/s; 1267.7 syscalls/s; short_reads=2680
+buf_size=16777216; duration=1.994116556s; num_syscalls=2482; 2409.6 MiB/s; 1244.7 syscalls/s; short_reads=2482
+  BEST: buf_size=262144 2795.7052781265484 ; max no decreases buf_size=2048 1822.9 MiB/s; ignore use_buffer=true sum=9711656998721
+
+## use_buffer=true; write_buffer_bytes=131072
+use_buffer=true; write_buffer_bytes=131072; type=unix:
+short write 32733 total bytes; 32803 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=2.222979341s; num_syscalls=8425309; 3.6 MiB/s; 3790097.8 syscalls/s; short_reads=0
+buf_size=2; duration=1.973540329s; num_syscalls=6110415; 5.9 MiB/s; 3096169.3 syscalls/s; short_reads=0
+buf_size=4; duration=1.977009376s; num_syscalls=6097747; 11.8 MiB/s; 3084328.8 syscalls/s; short_reads=0
+buf_size=8; duration=1.940395447s; num_syscalls=6107990; 24.0 MiB/s; 3147806.8 syscalls/s; short_reads=0
+buf_size=16; duration=2.073713356s; num_syscalls=9631128; 70.9 MiB/s; 4644387.3 syscalls/s; short_reads=0
+buf_size=32; duration=2.093703631s; num_syscalls=9335761; 136.1 MiB/s; 4458969.7 syscalls/s; short_reads=0
+buf_size=64; duration=2.056811075s; num_syscalls=8761556; 260.0 MiB/s; 4259776.8 syscalls/s; short_reads=1
+buf_size=128; duration=2.227897681s; num_syscalls=8342350; 457.0 MiB/s; 3744494.2 syscalls/s; short_reads=2741
+buf_size=256; duration=2.397239577s; num_syscalls=7957653; 810.4 MiB/s; 3319506.8 syscalls/s; short_reads=1116
+buf_size=512; duration=2.916204957s; num_syscalls=7465226; 1250.0 MiB/s; 2559911.3 syscalls/s; short_reads=55
+buf_size=1024; duration=4.193846238s; num_syscalls=7258748; 1690.2 MiB/s; 1730809.3 syscalls/s; short_reads=19
+buf_size=2048; duration=4.955850671s; num_syscalls=4981594; 1963.2 MiB/s; 1005194.5 syscalls/s; short_reads=926
+buf_size=4096; duration=1.914676365s; num_syscalls=1294962; 2641.9 MiB/s; 676334.7 syscalls/s; short_reads=7
+buf_size=8192; duration=7.296127296s; num_syscalls=2605778; 2790.1 MiB/s; 357145.4 syscalls/s; short_reads=100
+buf_size=16384; duration=1.342328897s; num_syscalls=249964; 2909.6 MiB/s; 186216.7 syscalls/s; short_reads=9
+buf_size=32768; duration=6.70930449s; num_syscalls=585120; 2725.1 MiB/s; 87210.2 syscalls/s; short_reads=101
+buf_size=65536; duration=5.84058019s; num_syscalls=252548; 2702.4 MiB/s; 43240.2 syscalls/s; short_reads=37
+buf_size=131072; duration=5.786960461s; num_syscalls=142312; 2696.1 MiB/s; 24591.8 syscalls/s; short_reads=69801
+buf_size=262144; duration=6.55916396s; num_syscalls=79112; 2638.3 MiB/s; 12061.3 syscalls/s; short_reads=79101
+buf_size=524288; duration=5.915796069s; num_syscalls=70110; 2592.9 MiB/s; 11851.3 syscalls/s; short_reads=70110
+buf_size=1048576; duration=6.400667358s; num_syscalls=80505; 2751.6 MiB/s; 12577.6 syscalls/s; short_reads=80505
+buf_size=2097152; duration=6.377981594s; num_syscalls=80597; 2764.5 MiB/s; 12636.8 syscalls/s; short_reads=80597
+buf_size=4194304; duration=6.263748973s; num_syscalls=66523; 2323.3 MiB/s; 10620.3 syscalls/s; short_reads=66523
+buf_size=8388608; duration=5.122605202s; num_syscalls=63715; 2721.0 MiB/s; 12438.0 syscalls/s; short_reads=63715
+buf_size=16777216; duration=4.908768138s; num_syscalls=61028; 2719.6 MiB/s; 12432.4 syscalls/s; short_reads=61028
+  BEST: buf_size=16384 2909.585144896853 ; max no decreases buf_size=16384 2909.6 MiB/s; ignore use_buffer=true sum=28501053675792
+short write 36544 total bytes; 94528 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=131072; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=131072; use_buffer=true
+buf_size=1; duration=2.004060542s; num_syscalls=7095469; 3.4 MiB/s; 3540546.2 syscalls/s; short_reads=0
+buf_size=2; duration=1.96401406s; num_syscalls=7020747; 6.8 MiB/s; 3574692.8 syscalls/s; short_reads=1
+buf_size=4; duration=1.948142054s; num_syscalls=6961607; 13.6 MiB/s; 3573459.6 syscalls/s; short_reads=1
+buf_size=8; duration=2.002901112s; num_syscalls=7167432; 27.3 MiB/s; 3578525.1 syscalls/s; short_reads=0
+buf_size=16; duration=2.300538693s; num_syscalls=7119972; 47.2 MiB/s; 3094915.1 syscalls/s; short_reads=1
+buf_size=32; duration=2.043563105s; num_syscalls=4759979; 71.1 MiB/s; 2329254.7 syscalls/s; short_reads=1
+buf_size=64; duration=1.626768947s; num_syscalls=4324231; 162.2 MiB/s; 2658171.6 syscalls/s; short_reads=0
+buf_size=128; duration=2.092760076s; num_syscalls=6436249; 375.4 MiB/s; 3075483.5 syscalls/s; short_reads=0
+buf_size=256; duration=2.10377256s; num_syscalls=5692978; 660.7 MiB/s; 2706080.5 syscalls/s; short_reads=0
+buf_size=512; duration=2.122692366s; num_syscalls=4437444; 1020.7 MiB/s; 2090479.1 syscalls/s; short_reads=0
+buf_size=1024; duration=2.082070368s; num_syscalls=3129597; 1467.9 MiB/s; 1503117.8 syscalls/s; short_reads=0
+buf_size=2048; duration=1.787428797s; num_syscalls=1698947; 1856.4 MiB/s; 950497.7 syscalls/s; short_reads=0
+buf_size=4096; duration=1.889215602s; num_syscalls=1058986; 2189.6 MiB/s; 560542.7 syscalls/s; short_reads=0
+buf_size=8192; duration=2.00634258s; num_syscalls=604438; 2353.6 MiB/s; 301263.6 syscalls/s; short_reads=0
+buf_size=16384; duration=1.964697453s; num_syscalls=312532; 2485.5 MiB/s; 159073.9 syscalls/s; short_reads=0
+buf_size=32768; duration=2.022427376s; num_syscalls=155492; 2402.6 MiB/s; 76883.8 syscalls/s; short_reads=0
+buf_size=65536; duration=1.996719378s; num_syscalls=78109; 2444.9 MiB/s; 39118.7 syscalls/s; short_reads=0
+buf_size=131072; duration=1.976551615s; num_syscalls=38788; 2453.0 MiB/s; 19624.1 syscalls/s; short_reads=0
+buf_size=262144; duration=2.640571471s; num_syscalls=19982; 1891.7 MiB/s; 7567.3 syscalls/s; short_reads=1
+buf_size=524288; duration=1.476521619s; num_syscalls=7229; 2447.8 MiB/s; 4896.0 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.943417402s; num_syscalls=5405; 2780.8 MiB/s; 2781.2 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.994003327s; num_syscalls=2719; 2727.0 MiB/s; 1363.6 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.957017883s; num_syscalls=2252; 2875.9 MiB/s; 1150.7 syscalls/s; short_reads=2252
+buf_size=8388608; duration=1.975044489s; num_syscalls=2278; 2883.2 MiB/s; 1153.4 syscalls/s; short_reads=2278
+buf_size=16777216; duration=2.029031831s; num_syscalls=2296; 2828.5 MiB/s; 1131.6 syscalls/s; short_reads=2296
+  BEST: buf_size=8388608 2883.227305431421 ; max no decreases buf_size=16384 2485.5 MiB/s; ignore use_buffer=true sum=10183215490400
+
+## use_buffer=true; write_buffer_bytes=262144
+use_buffer=true; write_buffer_bytes=262144; type=unix:
+short write 63469 total bytes; 67603 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=2.070106851s; num_syscalls=9691800; 4.5 MiB/s; 4681787.3 syscalls/s; short_reads=0
+buf_size=2; duration=1.975219468s; num_syscalls=9276438; 9.0 MiB/s; 4696408.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.015377674s; num_syscalls=9427737; 17.8 MiB/s; 4677900.9 syscalls/s; short_reads=0
+buf_size=8; duration=2.004699405s; num_syscalls=9406011; 35.8 MiB/s; 4691980.7 syscalls/s; short_reads=0
+buf_size=16; duration=3.023196405s; num_syscalls=9383504; 47.4 MiB/s; 3103835.4 syscalls/s; short_reads=0
+buf_size=32; duration=2.048399146s; num_syscalls=6028818; 89.8 MiB/s; 2943185.2 syscalls/s; short_reads=0
+buf_size=64; duration=1.733920587s; num_syscalls=5892752; 207.4 MiB/s; 3398513.2 syscalls/s; short_reads=0
+buf_size=128; duration=2.476398855s; num_syscalls=9843326; 485.1 MiB/s; 3974854.9 syscalls/s; short_reads=2580
+buf_size=256; duration=2.616407237s; num_syscalls=9023414; 841.9 MiB/s; 3448780.4 syscalls/s; short_reads=1171
+buf_size=512; duration=3.17267431s; num_syscalls=8344140; 1284.2 MiB/s; 2630002.1 syscalls/s; short_reads=56
+buf_size=1024; duration=4.125431228s; num_syscalls=7632737; 1806.8 MiB/s; 1850167.1 syscalls/s; short_reads=42
+buf_size=2048; duration=5.028108746s; num_syscalls=5337754; 2073.4 MiB/s; 1061582.8 syscalls/s; short_reads=15
+buf_size=4096; duration=6.312807141s; num_syscalls=3665448; 2268.1 MiB/s; 580636.8 syscalls/s; short_reads=63
+buf_size=8192; duration=5.208856673s; num_syscalls=1613926; 2420.6 MiB/s; 309842.7 syscalls/s; short_reads=16
+buf_size=16384; duration=6.075378439s; num_syscalls=979638; 2519.5 MiB/s; 161247.2 syscalls/s; short_reads=27
+buf_size=32768; duration=6.010318499s; num_syscalls=490954; 2552.6 MiB/s; 81685.2 syscalls/s; short_reads=29
+buf_size=65536; duration=5.927774935s; num_syscalls=243400; 2565.3 MiB/s; 41060.9 syscalls/s; short_reads=174
+buf_size=131072; duration=5.711247412s; num_syscalls=137449; 2578.2 MiB/s; 24066.4 syscalls/s; short_reads=65651
+buf_size=262144; duration=5.640858988s; num_syscalls=68127; 2587.7 MiB/s; 12077.4 syscalls/s; short_reads=68103
+buf_size=524288; duration=5.114593775s; num_syscalls=65148; 2729.7 MiB/s; 12737.7 syscalls/s; short_reads=65148
+buf_size=1048576; duration=6.180163309s; num_syscalls=82748; 2869.7 MiB/s; 13389.3 syscalls/s; short_reads=82748
+buf_size=2097152; duration=6.218509744s; num_syscalls=84989; 2928.7 MiB/s; 13667.1 syscalls/s; short_reads=84989
+buf_size=4194304; duration=5.982568786s; num_syscalls=70660; 2530.7 MiB/s; 11811.0 syscalls/s; short_reads=70660
+buf_size=8388608; duration=3.406367254s; num_syscalls=44593; 2805.1 MiB/s; 13091.1 syscalls/s; short_reads=44593
+buf_size=16777216; duration=5.819897186s; num_syscalls=79936; 2943.0 MiB/s; 13735.0 syscalls/s; short_reads=79936
+  BEST: buf_size=16777216 2942.9577565687555 ; max no decreases buf_size=2097152 2928.7 MiB/s; ignore use_buffer=true sum=29409317835600
+short write 255808 total bytes; 6336 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=262144; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=262144; use_buffer=true
+buf_size=1; duration=2.073421956s; num_syscalls=7444907; 3.4 MiB/s; 3590637.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.932474296s; num_syscalls=7115919; 7.0 MiB/s; 3682283.9 syscalls/s; short_reads=1
+buf_size=4; duration=1.990072814s; num_syscalls=7344301; 14.1 MiB/s; 3690468.5 syscalls/s; short_reads=0
+buf_size=8; duration=2.006777034s; num_syscalls=7395356; 28.1 MiB/s; 3685190.7 syscalls/s; short_reads=0
+buf_size=16; duration=1.998037261s; num_syscalls=7270085; 55.5 MiB/s; 3638613.3 syscalls/s; short_reads=1
+buf_size=32; duration=2.400742198s; num_syscalls=7204611; 91.6 MiB/s; 3000993.2 syscalls/s; short_reads=0
+buf_size=64; duration=2.004104151s; num_syscalls=6560389; 199.8 MiB/s; 3273477.1 syscalls/s; short_reads=0
+buf_size=128; duration=1.53053845s; num_syscalls=4767467; 380.2 MiB/s; 3114895.3 syscalls/s; short_reads=0
+buf_size=256; duration=2.135920816s; num_syscalls=5890843; 673.3 MiB/s; 2757987.5 syscalls/s; short_reads=0
+buf_size=512; duration=2.063416793s; num_syscalls=4444741; 1051.8 MiB/s; 2154068.4 syscalls/s; short_reads=0
+buf_size=1024; duration=1.679870168s; num_syscalls=2613218; 1519.1 MiB/s; 1555607.1 syscalls/s; short_reads=0
+buf_size=2048; duration=2.163388114s; num_syscalls=2093365; 1889.9 MiB/s; 967632.7 syscalls/s; short_reads=0
+buf_size=4096; duration=1.555460439s; num_syscalls=896950; 2252.5 MiB/s; 576646.0 syscalls/s; short_reads=0
+buf_size=8192; duration=1.855749057s; num_syscalls=580464; 2443.7 MiB/s; 312792.3 syscalls/s; short_reads=0
+buf_size=16384; duration=2.05462779s; num_syscalls=311201; 2366.6 MiB/s; 151463.4 syscalls/s; short_reads=0
+buf_size=32768; duration=2.013358596s; num_syscalls=152926; 2373.6 MiB/s; 75955.7 syscalls/s; short_reads=0
+buf_size=65536; duration=2.015546699s; num_syscalls=78309; 2428.3 MiB/s; 38852.5 syscalls/s; short_reads=0
+buf_size=131072; duration=1.95858539s; num_syscalls=38313; 2445.2 MiB/s; 19561.6 syscalls/s; short_reads=0
+buf_size=262144; duration=2.043528298s; num_syscalls=20087; 2457.3 MiB/s; 9829.6 syscalls/s; short_reads=0
+buf_size=524288; duration=1.948093631s; num_syscalls=9727; 2496.4 MiB/s; 4993.1 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.947035267s; num_syscalls=4683; 2404.8 MiB/s; 2405.2 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.947878983s; num_syscalls=2431; 2415.2 MiB/s; 1248.0 syscalls/s; short_reads=2431
+buf_size=4194304; duration=1.953995384s; num_syscalls=2444; 2421.0 MiB/s; 1250.8 syscalls/s; short_reads=2444
+buf_size=8388608; duration=1.98230884s; num_syscalls=2489; 2430.1 MiB/s; 1255.6 syscalls/s; short_reads=2489
+buf_size=16777216; duration=2.000869461s; num_syscalls=2500; 2418.0 MiB/s; 1249.5 syscalls/s; short_reads=2500
+  BEST: buf_size=524288 2496.409346914819 ; max no decreases buf_size=8192 2443.7 MiB/s; ignore use_buffer=true sum=9717749248155
+
+## use_buffer=true; write_buffer_bytes=524288
+use_buffer=true; write_buffer_bytes=524288; type=unix:
+short write 222684 total bytes; 39460 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.422551391s; num_syscalls=6738771; 4.5 MiB/s; 4737102.0 syscalls/s; short_reads=0
+buf_size=2; duration=1.983601061s; num_syscalls=9390994; 9.0 MiB/s; 4734315.9 syscalls/s; short_reads=0
+buf_size=4; duration=2.155018614s; num_syscalls=8584797; 15.2 MiB/s; 3983630.1 syscalls/s; short_reads=0
+buf_size=8; duration=1.996757755s; num_syscalls=9418857; 36.0 MiB/s; 4717075.5 syscalls/s; short_reads=0
+buf_size=16; duration=1.875541631s; num_syscalls=8685080; 70.7 MiB/s; 4630705.0 syscalls/s; short_reads=1
+buf_size=32; duration=2.044385635s; num_syscalls=9086779; 135.6 MiB/s; 4444748.0 syscalls/s; short_reads=0
+buf_size=64; duration=2.090826437s; num_syscalls=8722959; 254.6 MiB/s; 4172014.9 syscalls/s; short_reads=0
+buf_size=128; duration=2.152992153s; num_syscalls=8137255; 461.4 MiB/s; 3779509.8 syscalls/s; short_reads=454
+buf_size=256; duration=2.70862963s; num_syscalls=8927925; 804.7 MiB/s; 3296104.0 syscalls/s; short_reads=1091
+buf_size=512; duration=2.806265918s; num_syscalls=7104073; 1236.1 MiB/s; 2531503.9 syscalls/s; short_reads=53
+buf_size=1024; duration=3.546562373s; num_syscalls=5877734; 1618.4 MiB/s; 1657304.6 syscalls/s; short_reads=94
+buf_size=2048; duration=1.135385185s; num_syscalls=1141736; 1964.0 MiB/s; 1005593.5 syscalls/s; short_reads=2
+buf_size=4096; duration=6.17507101s; num_syscalls=3374123; 2134.2 MiB/s; 546410.4 syscalls/s; short_reads=619
+buf_size=8192; duration=2.239918003s; num_syscalls=762324; 2658.8 MiB/s; 340335.7 syscalls/s; short_reads=29
+buf_size=16384; duration=5.47755872s; num_syscalls=953066; 2718.6 MiB/s; 173994.7 syscalls/s; short_reads=22
+buf_size=32768; duration=3.696849931s; num_syscalls=339159; 2866.9 MiB/s; 91742.7 syscalls/s; short_reads=23
+buf_size=65536; duration=6.381380199s; num_syscalls=264299; 2576.0 MiB/s; 41417.2 syscalls/s; short_reads=11198
+buf_size=131072; duration=5.804426034s; num_syscalls=139166; 2568.3 MiB/s; 23975.8 syscalls/s; short_reads=57496
+buf_size=262144; duration=5.777353193s; num_syscalls=69461; 2576.2 MiB/s; 12023.0 syscalls/s; short_reads=69424
+buf_size=524288; duration=5.78928022s; num_syscalls=69783; 2582.8 MiB/s; 12053.8 syscalls/s; short_reads=69781
+buf_size=1048576; duration=5.439487887s; num_syscalls=65225; 2569.2 MiB/s; 11991.0 syscalls/s; short_reads=65224
+buf_size=2097152; duration=4.849938736s; num_syscalls=58414; 2581.0 MiB/s; 12044.3 syscalls/s; short_reads=58413
+buf_size=4194304; duration=4.775215924s; num_syscalls=57376; 2574.6 MiB/s; 12015.4 syscalls/s; short_reads=57376
+buf_size=8388608; duration=4.857469984s; num_syscalls=58182; 2566.8 MiB/s; 11977.8 syscalls/s; short_reads=58182
+buf_size=16777216; duration=4.823950106s; num_syscalls=58006; 2576.7 MiB/s; 12024.6 syscalls/s; short_reads=58006
+  BEST: buf_size=32768 2866.8763844785067 ; max no decreases buf_size=32768 2866.9 MiB/s; ignore use_buffer=true sum=24760519132448
+short write 292352 total bytes; 231936 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=524288; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=524288; use_buffer=true
+buf_size=1; duration=1.837012552s; num_syscalls=6961849; 3.6 MiB/s; 3789766.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.94890544s; num_syscalls=7433563; 7.3 MiB/s; 3814224.6 syscalls/s; short_reads=1
+buf_size=4; duration=2.368872911s; num_syscalls=7679902; 12.4 MiB/s; 3242006.8 syscalls/s; short_reads=1
+buf_size=8; duration=1.956815056s; num_syscalls=7360248; 28.7 MiB/s; 3761340.6 syscalls/s; short_reads=0
+buf_size=16; duration=2.008370869s; num_syscalls=7510891; 57.1 MiB/s; 3739792.8 syscalls/s; short_reads=0
+buf_size=32; duration=2.03291581s; num_syscalls=7438263; 111.7 MiB/s; 3658913.5 syscalls/s; short_reads=1
+buf_size=64; duration=2.120702369s; num_syscalls=7132668; 205.3 MiB/s; 3363351.7 syscalls/s; short_reads=0
+buf_size=128; duration=2.02951916s; num_syscalls=6472911; 389.3 MiB/s; 3189381.6 syscalls/s; short_reads=0
+buf_size=256; duration=2.042672983s; num_syscalls=5722461; 683.9 MiB/s; 2801457.2 syscalls/s; short_reads=0
+buf_size=512; duration=1.94884879s; num_syscalls=4214608; 1056.0 MiB/s; 2162614.2 syscalls/s; short_reads=0
+buf_size=1024; duration=2.085733912s; num_syscalls=3139373; 1469.9 MiB/s; 1505164.7 syscalls/s; short_reads=0
+buf_size=2048; duration=1.868265694s; num_syscalls=1706092; 1783.6 MiB/s; 913195.6 syscalls/s; short_reads=0
+buf_size=4096; duration=1.960922463s; num_syscalls=1024948; 2041.7 MiB/s; 522686.7 syscalls/s; short_reads=0
+buf_size=8192; duration=1.940465854s; num_syscalls=541999; 2182.1 MiB/s; 279313.9 syscalls/s; short_reads=0
+buf_size=16384; duration=1.566104327s; num_syscalls=209363; 2088.8 MiB/s; 133683.9 syscalls/s; short_reads=0
+buf_size=32768; duration=1.973604667s; num_syscalls=170507; 2699.8 MiB/s; 86393.7 syscalls/s; short_reads=0
+buf_size=65536; duration=1.906792274s; num_syscalls=85019; 2786.7 MiB/s; 44587.4 syscalls/s; short_reads=0
+buf_size=131072; duration=2.038502558s; num_syscalls=43742; 2682.2 MiB/s; 21457.9 syscalls/s; short_reads=0
+buf_size=262144; duration=1.942418347s; num_syscalls=22003; 2831.8 MiB/s; 11327.6 syscalls/s; short_reads=0
+buf_size=524288; duration=1.977712914s; num_syscalls=11162; 2821.9 MiB/s; 5643.9 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.964166451s; num_syscalls=5203; 2648.5 MiB/s; 2649.0 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.937175642s; num_syscalls=2664; 2662.3 MiB/s; 1375.2 syscalls/s; short_reads=2664
+buf_size=4194304; duration=2.050995167s; num_syscalls=2700; 2547.7 MiB/s; 1316.4 syscalls/s; short_reads=2700
+buf_size=8388608; duration=1.967408925s; num_syscalls=2455; 2414.8 MiB/s; 1247.8 syscalls/s; short_reads=2455
+buf_size=16777216; duration=1.987951365s; num_syscalls=2464; 2399.0 MiB/s; 1239.5 syscalls/s; short_reads=2464
+  BEST: buf_size=262144 2831.800050356768 ; max no decreases buf_size=8192 2182.1 MiB/s; ignore use_buffer=true sum=10070181949588
+
+## use_buffer=true; write_buffer_bytes=1048576
+use_buffer=true; write_buffer_bytes=1048576; type=unix:
+short write 112542 total bytes; 411746 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.857942203s; num_syscalls=8682816; 4.5 MiB/s; 4673351.0 syscalls/s; short_reads=0
+buf_size=2; duration=1.489634792s; num_syscalls=6933611; 8.9 MiB/s; 4654571.1 syscalls/s; short_reads=0
+buf_size=4; duration=1.307738479s; num_syscalls=4630916; 13.5 MiB/s; 3541163.7 syscalls/s; short_reads=0
+buf_size=8; duration=1.356289518s; num_syscalls=6378365; 35.9 MiB/s; 4702804.9 syscalls/s; short_reads=0
+buf_size=16; duration=1.495715802s; num_syscalls=6917065; 70.6 MiB/s; 4624585.1 syscalls/s; short_reads=0
+buf_size=32; duration=1.450516769s; num_syscalls=6500049; 136.8 MiB/s; 4481195.3 syscalls/s; short_reads=0
+buf_size=64; duration=1.604889995s; num_syscalls=6749233; 256.7 MiB/s; 4205417.8 syscalls/s; short_reads=0
+buf_size=128; duration=1.804078995s; num_syscalls=6949512; 470.2 MiB/s; 3852110.7 syscalls/s; short_reads=0
+buf_size=256; duration=2.080952553s; num_syscalls=6833102; 801.7 MiB/s; 3283641.4 syscalls/s; short_reads=320
+buf_size=512; duration=3.034323596s; num_syscalls=7796984; 1254.7 MiB/s; 2569595.4 syscalls/s; short_reads=27
+buf_size=1024; duration=4.066632259s; num_syscalls=7189332; 1726.4 MiB/s; 1767883.5 syscalls/s; short_reads=0
+buf_size=2048; duration=4.684642405s; num_syscalls=4668450; 1946.4 MiB/s; 996543.5 syscalls/s; short_reads=58
+buf_size=4096; duration=5.775080455s; num_syscalls=3305076; 2235.5 MiB/s; 572299.6 syscalls/s; short_reads=1
+buf_size=8192; duration=5.111288563s; num_syscalls=1574586; 2406.7 MiB/s; 308060.5 syscalls/s; short_reads=9
+buf_size=16384; duration=4.718913163s; num_syscalls=790744; 2618.1 MiB/s; 167569.1 syscalls/s; short_reads=81
+buf_size=32768; duration=6.090998216s; num_syscalls=561816; 2882.4 MiB/s; 92237.1 syscalls/s; short_reads=22
+buf_size=65536; duration=5.982065015s; num_syscalls=271811; 2713.7 MiB/s; 45437.7 syscalls/s; short_reads=63890
+buf_size=131072; duration=7.090522014s; num_syscalls=164116; 2425.5 MiB/s; 23145.8 syscalls/s; short_reads=71209
+buf_size=262144; duration=6.332256072s; num_syscalls=82218; 2782.0 MiB/s; 12984.0 syscalls/s; short_reads=82212
+buf_size=524288; duration=5.692635706s; num_syscalls=78143; 2941.4 MiB/s; 13727.0 syscalls/s; short_reads=78142
+buf_size=1048576; duration=6.390788868s; num_syscalls=80278; 2691.3 MiB/s; 12561.5 syscalls/s; short_reads=80278
+buf_size=2097152; duration=7.351588942s; num_syscalls=66747; 1945.3 MiB/s; 9079.3 syscalls/s; short_reads=66747
+buf_size=4194304; duration=5.66357818s; num_syscalls=75271; 2847.0 MiB/s; 13290.4 syscalls/s; short_reads=75271
+buf_size=8388608; duration=5.686770991s; num_syscalls=73454; 2767.3 MiB/s; 12916.6 syscalls/s; short_reads=73454
+buf_size=16777216; duration=6.166732469s; num_syscalls=78613; 2731.6 MiB/s; 12747.9 syscalls/s; short_reads=78613
+  BEST: buf_size=524288 2941.424094485933 ; max no decreases buf_size=32768 2882.4 MiB/s; ignore use_buffer=true sum=30251045329040
+short write 36544 total bytes; 1012032 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=1048576; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=1048576; use_buffer=true
+buf_size=1; duration=1.895476067s; num_syscalls=6675344; 3.4 MiB/s; 3521724.2 syscalls/s; short_reads=0
+buf_size=2; duration=1.973149334s; num_syscalls=4871039; 4.7 MiB/s; 2468662.1 syscalls/s; short_reads=0
+buf_size=4; duration=1.982354742s; num_syscalls=4905448; 9.4 MiB/s; 2474556.1 syscalls/s; short_reads=1
+buf_size=8; duration=1.587869394s; num_syscalls=4756809; 22.9 MiB/s; 2995718.0 syscalls/s; short_reads=0
+buf_size=16; duration=2.032360452s; num_syscalls=7420049; 55.7 MiB/s; 3650951.3 syscalls/s; short_reads=0
+buf_size=32; duration=2.058072104s; num_syscalls=7338373; 108.8 MiB/s; 3565654.0 syscalls/s; short_reads=0
+buf_size=64; duration=1.654548137s; num_syscalls=5500399; 202.9 MiB/s; 3324411.6 syscalls/s; short_reads=0
+buf_size=128; duration=2.01253964s; num_syscalls=6351828; 385.3 MiB/s; 3156125.7 syscalls/s; short_reads=0
+buf_size=256; duration=2.095025164s; num_syscalls=5723935; 667.0 MiB/s; 2732155.7 syscalls/s; short_reads=0
+buf_size=512; duration=1.634790765s; num_syscalls=3472826; 1037.3 MiB/s; 2124324.5 syscalls/s; short_reads=0
+buf_size=1024; duration=1.668021953s; num_syscalls=2588193; 1515.3 MiB/s; 1551654.0 syscalls/s; short_reads=0
+buf_size=2048; duration=2.188385197s; num_syscalls=2095887; 1870.6 MiB/s; 957732.2 syscalls/s; short_reads=0
+buf_size=4096; duration=2.084719302s; num_syscalls=1111544; 2082.8 MiB/s; 533186.4 syscalls/s; short_reads=0
+buf_size=8192; duration=2.038282518s; num_syscalls=571516; 2190.6 MiB/s; 280391.0 syscalls/s; short_reads=0
+buf_size=16384; duration=1.983630516s; num_syscalls=286637; 2257.8 MiB/s; 144501.2 syscalls/s; short_reads=0
+buf_size=32768; duration=2.024447263s; num_syscalls=150574; 2324.3 MiB/s; 74377.8 syscalls/s; short_reads=0
+buf_size=65536; duration=1.987281931s; num_syscalls=75249; 2366.6 MiB/s; 37865.3 syscalls/s; short_reads=0
+buf_size=131072; duration=2.046611245s; num_syscalls=39247; 2397.0 MiB/s; 19176.6 syscalls/s; short_reads=0
+buf_size=262144; duration=1.996158548s; num_syscalls=19464; 2437.6 MiB/s; 9750.7 syscalls/s; short_reads=0
+buf_size=524288; duration=1.984206715s; num_syscalls=9692; 2442.3 MiB/s; 4884.6 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.987190388s; num_syscalls=4606; 2317.6 MiB/s; 2317.8 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.913614042s; num_syscalls=2317; 2343.1 MiB/s; 1210.8 syscalls/s; short_reads=2317
+buf_size=4194304; duration=1.970288594s; num_syscalls=2387; 2345.2 MiB/s; 1211.5 syscalls/s; short_reads=2387
+buf_size=8388608; duration=1.980356926s; num_syscalls=2397; 2342.5 MiB/s; 1210.4 syscalls/s; short_reads=2397
+buf_size=16777216; duration=1.982511016s; num_syscalls=2404; 2347.2 MiB/s; 1212.6 syscalls/s; short_reads=2404
+  BEST: buf_size=524288 2442.2732811134993 ; max no decreases buf_size=524288 2442.3 MiB/s; ignore use_buffer=true sum=9564368718363
+
+## use_buffer=true; write_buffer_bytes=2097152
+use_buffer=true; write_buffer_bytes=2097152; type=unix:
+short write 1024716 total bytes; 23860 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.787119285s; num_syscalls=8429926; 4.5 MiB/s; 4717047.2 syscalls/s; short_reads=0
+buf_size=2; duration=1.957094393s; num_syscalls=9149131; 8.9 MiB/s; 4674854.2 syscalls/s; short_reads=0
+buf_size=4; duration=1.609601355s; num_syscalls=6094403; 14.4 MiB/s; 3786281.0 syscalls/s; short_reads=0
+buf_size=8; duration=1.979339256s; num_syscalls=9304923; 35.9 MiB/s; 4701024.8 syscalls/s; short_reads=0
+buf_size=16; duration=1.948184769s; num_syscalls=9075234; 71.1 MiB/s; 4658302.5 syscalls/s; short_reads=0
+buf_size=32; duration=2.010969749s; num_syscalls=9087605; 137.9 MiB/s; 4519016.3 syscalls/s; short_reads=0
+buf_size=64; duration=2.108136631s; num_syscalls=8955358; 259.3 MiB/s; 4247997.0 syscalls/s; short_reads=0
+buf_size=128; duration=2.467272988s; num_syscalls=9580256; 474.0 MiB/s; 3882933.1 syscalls/s; short_reads=670
+buf_size=256; duration=2.447179633s; num_syscalls=8138594; 811.9 MiB/s; 3325703.6 syscalls/s; short_reads=1139
+buf_size=512; duration=3.342262106s; num_syscalls=8364041; 1221.9 MiB/s; 2502509.0 syscalls/s; short_reads=60
+buf_size=1024; duration=3.957985323s; num_syscalls=6083391; 1500.8 MiB/s; 1536991.8 syscalls/s; short_reads=1262
+buf_size=2048; duration=4.043984616s; num_syscalls=3536497; 1707.9 MiB/s; 874508.0 syscalls/s; short_reads=982
+buf_size=4096; duration=6.667777241s; num_syscalls=4135776; 2422.9 MiB/s; 620263.1 syscalls/s; short_reads=82
+buf_size=8192; duration=5.769734482s; num_syscalls=1936833; 2622.5 MiB/s; 335688.4 syscalls/s; short_reads=129
+buf_size=16384; duration=5.738945367s; num_syscalls=902569; 2457.3 MiB/s; 157270.9 syscalls/s; short_reads=13
+buf_size=32768; duration=4.94407555s; num_syscalls=379641; 2399.5 MiB/s; 76787.1 syscalls/s; short_reads=36
+buf_size=65536; duration=5.519681168s; num_syscalls=221499; 2431.9 MiB/s; 40128.9 syscalls/s; short_reads=55646
+buf_size=131072; duration=5.491041197s; num_syscalls=133279; 2433.1 MiB/s; 24272.1 syscalls/s; short_reads=72479
+buf_size=262144; duration=4.749833463s; num_syscalls=56344; 2485.3 MiB/s; 11862.3 syscalls/s; short_reads=52849
+buf_size=524288; duration=5.057494901s; num_syscalls=58724; 2474.7 MiB/s; 11611.3 syscalls/s; short_reads=58720
+buf_size=1048576; duration=4.901561656s; num_syscalls=57151; 2489.1 MiB/s; 11659.8 syscalls/s; short_reads=57151
+buf_size=2097152; duration=4.710827392s; num_syscalls=54704; 2486.8 MiB/s; 11612.4 syscalls/s; short_reads=54704
+buf_size=4194304; duration=4.544714532s; num_syscalls=52590; 2482.1 MiB/s; 11571.7 syscalls/s; short_reads=52590
+buf_size=8388608; duration=4.527794115s; num_syscalls=52427; 2491.0 MiB/s; 11578.9 syscalls/s; short_reads=52427
+buf_size=16777216; duration=4.545731305s; num_syscalls=53228; 2515.0 MiB/s; 11709.4 syscalls/s; short_reads=53228
+  BEST: buf_size=8192 2622.473140723769 ; max no decreases buf_size=8192 2622.5 MiB/s; ignore use_buffer=true sum=25036811881440
+short write 1279040 total bytes; 818112 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=2097152; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=2097152; use_buffer=true
+buf_size=1; duration=2.597184364s; num_syscalls=6906077; 2.5 MiB/s; 2659063.1 syscalls/s; short_reads=0
+buf_size=2; duration=1.985280865s; num_syscalls=4969809; 4.8 MiB/s; 2503327.9 syscalls/s; short_reads=1
+buf_size=4; duration=1.984803166s; num_syscalls=4958105; 9.5 MiB/s; 2498033.6 syscalls/s; short_reads=1
+buf_size=8; duration=1.924224444s; num_syscalls=4921866; 19.5 MiB/s; 2557844.0 syscalls/s; short_reads=1
+buf_size=16; duration=2.055475767s; num_syscalls=7726483; 57.4 MiB/s; 3758975.5 syscalls/s; short_reads=1
+buf_size=32; duration=2.073071821s; num_syscalls=7260847; 106.9 MiB/s; 3502458.0 syscalls/s; short_reads=1
+buf_size=64; duration=1.93673706s; num_syscalls=6426942; 202.5 MiB/s; 3318438.1 syscalls/s; short_reads=0
+buf_size=128; duration=2.105581314s; num_syscalls=6629102; 384.3 MiB/s; 3148347.7 syscalls/s; short_reads=0
+buf_size=256; duration=2.083972803s; num_syscalls=5719515; 670.0 MiB/s; 2744524.8 syscalls/s; short_reads=0
+buf_size=512; duration=2.069728333s; num_syscalls=4411992; 1040.9 MiB/s; 2131676.9 syscalls/s; short_reads=0
+buf_size=1024; duration=2.119699756s; num_syscalls=3283318; 1512.7 MiB/s; 1548954.3 syscalls/s; short_reads=0
+buf_size=2048; duration=2.065989046s; num_syscalls=1950326; 1843.8 MiB/s; 944015.7 syscalls/s; short_reads=0
+buf_size=4096; duration=2.013013488s; num_syscalls=1046951; 2031.6 MiB/s; 520091.4 syscalls/s; short_reads=0
+buf_size=8192; duration=2.075344561s; num_syscalls=572291; 2154.3 MiB/s; 275757.1 syscalls/s; short_reads=0
+buf_size=16384; duration=1.937140071s; num_syscalls=276705; 2231.9 MiB/s; 142842.0 syscalls/s; short_reads=0
+buf_size=32768; duration=2.007255377s; num_syscalls=147839; 2301.6 MiB/s; 73652.3 syscalls/s; short_reads=0
+buf_size=65536; duration=2.026972142s; num_syscalls=75324; 2322.5 MiB/s; 37160.8 syscalls/s; short_reads=3
+buf_size=131072; duration=2.005043457s; num_syscalls=38099; 2375.2 MiB/s; 19001.6 syscalls/s; short_reads=0
+buf_size=262144; duration=2.004402728s; num_syscalls=19413; 2421.2 MiB/s; 9685.2 syscalls/s; short_reads=0
+buf_size=524288; duration=1.982342127s; num_syscalls=9571; 2414.0 MiB/s; 4828.1 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.930159286s; num_syscalls=4419; 2289.4 MiB/s; 2289.4 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.952215326s; num_syscalls=2227; 2281.0 MiB/s; 1140.8 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.961249333s; num_syscalls=1581; 2320.8 MiB/s; 806.1 syscalls/s; short_reads=1581
+buf_size=8388608; duration=1.998438974s; num_syscalls=1603; 2301.2 MiB/s; 802.1 syscalls/s; short_reads=1603
+buf_size=16777216; duration=1.985842974s; num_syscalls=1584; 2342.3 MiB/s; 797.6 syscalls/s; short_reads=1584
+  BEST: buf_size=262144 2421.193956514041 ; max no decreases buf_size=262144 2421.2 MiB/s; ignore use_buffer=true sum=9548831256386
+
+## use_buffer=true; write_buffer_bytes=4194304
+use_buffer=true; write_buffer_bytes=4194304; type=unix:
+short write 1964490 total bytes; 132662 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.765858482s; num_syscalls=8466325; 4.6 MiB/s; 4794452.7 syscalls/s; short_reads=0
+buf_size=2; duration=2.27742287s; num_syscalls=9460738; 7.9 MiB/s; 4154142.0 syscalls/s; short_reads=0
+buf_size=4; duration=1.980242196s; num_syscalls=6090505; 11.7 MiB/s; 3075636.4 syscalls/s; short_reads=0
+buf_size=8; duration=1.683409448s; num_syscalls=6116208; 27.7 MiB/s; 3633226.6 syscalls/s; short_reads=0
+buf_size=16; duration=2.017413225s; num_syscalls=9667440; 73.1 MiB/s; 4791997.9 syscalls/s; short_reads=0
+buf_size=32; duration=2.069146876s; num_syscalls=9621861; 141.9 MiB/s; 4650158.5 syscalls/s; short_reads=0
+buf_size=64; duration=2.099831698s; num_syscalls=9188643; 267.1 MiB/s; 4375895.0 syscalls/s; short_reads=0
+buf_size=128; duration=2.276265793s; num_syscalls=9094895; 487.7 MiB/s; 3995533.0 syscalls/s; short_reads=530
+buf_size=256; duration=2.606522891s; num_syscalls=9081695; 850.6 MiB/s; 3484218.4 syscalls/s; short_reads=1376
+buf_size=512; duration=3.139674663s; num_syscalls=8411506; 1308.2 MiB/s; 2679101.1 syscalls/s; short_reads=25
+buf_size=1024; duration=3.681739493s; num_syscalls=6142526; 1629.3 MiB/s; 1668376.1 syscalls/s; short_reads=46
+buf_size=2048; duration=4.995757295s; num_syscalls=4931455; 1928.0 MiB/s; 987128.6 syscalls/s; short_reads=8
+buf_size=4096; duration=5.895510115s; num_syscalls=3334518; 2209.4 MiB/s; 565603.0 syscalls/s; short_reads=34
+buf_size=8192; duration=7.431053773s; num_syscalls=2201585; 2314.6 MiB/s; 296268.2 syscalls/s; short_reads=59
+buf_size=16384; duration=6.745953155s; num_syscalls=1032933; 2392.5 MiB/s; 153118.9 syscalls/s; short_reads=19
+buf_size=32768; duration=5.407892939s; num_syscalls=415681; 2402.0 MiB/s; 76865.6 syscalls/s; short_reads=25
+buf_size=65536; duration=4.465882806s; num_syscalls=174010; 2364.2 MiB/s; 38964.3 syscalls/s; short_reads=38665
+buf_size=131072; duration=5.100294885s; num_syscalls=119776; 2408.5 MiB/s; 23484.1 syscalls/s; short_reads=61389
+buf_size=262144; duration=5.297155125s; num_syscalls=65432; 2471.9 MiB/s; 12352.3 syscalls/s; short_reads=64645
+buf_size=524288; duration=4.904600221s; num_syscalls=60678; 2474.1 MiB/s; 12371.7 syscalls/s; short_reads=60678
+buf_size=1048576; duration=5.026042643s; num_syscalls=62427; 2483.9 MiB/s; 12420.7 syscalls/s; short_reads=62427
+buf_size=2097152; duration=4.726537235s; num_syscalls=58093; 2458.0 MiB/s; 12290.8 syscalls/s; short_reads=58093
+buf_size=4194304; duration=4.378253382s; num_syscalls=53666; 2451.6 MiB/s; 12257.4 syscalls/s; short_reads=53666
+buf_size=8388608; duration=4.514738652s; num_syscalls=55963; 2479.1 MiB/s; 12395.6 syscalls/s; short_reads=55963
+buf_size=16777216; duration=4.564089518s; num_syscalls=56255; 2465.1 MiB/s; 12325.6 syscalls/s; short_reads=56255
+  BEST: buf_size=1048576 2483.935640428952 ; max no decreases buf_size=32768 2402.0 MiB/s; ignore use_buffer=true sum=25202199657872
+short write 511616 total bytes; 3682688 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=4194304; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=4194304; use_buffer=true
+buf_size=1; duration=2.074797559s; num_syscalls=6535520; 3.0 MiB/s; 3149955.5 syscalls/s; short_reads=0
+buf_size=2; duration=1.992996036s; num_syscalls=7693787; 7.4 MiB/s; 3860412.6 syscalls/s; short_reads=0
+buf_size=4; duration=1.979457363s; num_syscalls=7627766; 14.7 MiB/s; 3853463.1 syscalls/s; short_reads=1
+buf_size=8; duration=2.04452727s; num_syscalls=7795448; 29.1 MiB/s; 3812836.4 syscalls/s; short_reads=0
+buf_size=16; duration=1.993434725s; num_syscalls=7523040; 57.6 MiB/s; 3773908.4 syscalls/s; short_reads=1
+buf_size=32; duration=1.607519951s; num_syscalls=5738881; 108.9 MiB/s; 3570021.6 syscalls/s; short_reads=0
+buf_size=64; duration=1.98495374s; num_syscalls=6709609; 206.3 MiB/s; 3380234.4 syscalls/s; short_reads=0
+buf_size=128; duration=1.694772744s; num_syscalls=5380394; 387.5 MiB/s; 3174699.4 syscalls/s; short_reads=0
+buf_size=256; duration=2.010866499s; num_syscalls=5685534; 690.3 MiB/s; 2827405.0 syscalls/s; short_reads=0
+buf_size=512; duration=2.182069896s; num_syscalls=4564022; 1021.3 MiB/s; 2091602.1 syscalls/s; short_reads=0
+buf_size=1024; duration=2.14528384s; num_syscalls=3066450; 1395.9 MiB/s; 1429391.3 syscalls/s; short_reads=0
+buf_size=2048; duration=2.232359695s; num_syscalls=1958922; 1713.9 MiB/s; 877511.8 syscalls/s; short_reads=0
+buf_size=4096; duration=2.036542553s; num_syscalls=1018969; 1954.5 MiB/s; 500342.6 syscalls/s; short_reads=0
+buf_size=8192; duration=2.054626413s; num_syscalls=556716; 2116.9 MiB/s; 270957.3 syscalls/s; short_reads=0
+buf_size=16384; duration=2.019044333s; num_syscalls=286822; 2219.7 MiB/s; 142058.3 syscalls/s; short_reads=0
+buf_size=32768; duration=1.990305403s; num_syscalls=144817; 2273.8 MiB/s; 72761.2 syscalls/s; short_reads=0
+buf_size=65536; duration=2.004092551s; num_syscalls=74518; 2323.9 MiB/s; 37182.9 syscalls/s; short_reads=0
+buf_size=131072; duration=2.017515916s; num_syscalls=38024; 2355.8 MiB/s; 18846.9 syscalls/s; short_reads=0
+buf_size=262144; duration=1.961473994s; num_syscalls=18699; 2383.2 MiB/s; 9533.1 syscalls/s; short_reads=0
+buf_size=524288; duration=1.964201964s; num_syscalls=9291; 2365.0 MiB/s; 4730.2 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.946540352s; num_syscalls=4421; 2271.1 MiB/s; 2271.2 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.96516612s; num_syscalls=2211; 2250.2 MiB/s; 1125.1 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.973233284s; num_syscalls=1584; 2284.3 MiB/s; 802.7 syscalls/s; short_reads=1584
+buf_size=8388608; duration=1.989930874s; num_syscalls=1597; 2284.4 MiB/s; 802.5 syscalls/s; short_reads=1597
+buf_size=16777216; duration=1.994454248s; num_syscalls=1598; 2280.4 MiB/s; 801.2 syscalls/s; short_reads=1598
+  BEST: buf_size=262144 2383.233436737137 ; max no decreases buf_size=262144 2383.2 MiB/s; ignore use_buffer=true sum=9439092364811
+
+## use_buffer=true; write_buffer_bytes=8388608
+use_buffer=true; write_buffer_bytes=8388608; type=unix:
+short write 2029973 total bytes; 2164331 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=1.243702937s; num_syscalls=4589261; 3.5 MiB/s; 3689997.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.337821162s; num_syscalls=6105379; 8.7 MiB/s; 4563673.5 syscalls/s; short_reads=0
+buf_size=4; duration=1.967476243s; num_syscalls=9425959; 18.3 MiB/s; 4790888.3 syscalls/s; short_reads=0
+buf_size=8; duration=2.035241128s; num_syscalls=9681480; 36.3 MiB/s; 4756920.4 syscalls/s; short_reads=0
+buf_size=16; duration=1.978346753s; num_syscalls=9294977; 71.7 MiB/s; 4698355.8 syscalls/s; short_reads=0
+buf_size=32; duration=2.101836881s; num_syscalls=9550643; 138.7 MiB/s; 4543950.6 syscalls/s; short_reads=0
+buf_size=64; duration=2.155337793s; num_syscalls=9322707; 264.0 MiB/s; 4325404.1 syscalls/s; short_reads=1
+buf_size=128; duration=2.108917889s; num_syscalls=8222860; 476.0 MiB/s; 3899089.7 syscalls/s; short_reads=380
+buf_size=256; duration=2.572718603s; num_syscalls=8852878; 840.0 MiB/s; 3441059.6 syscalls/s; short_reads=1166
+buf_size=512; duration=2.998482852s; num_syscalls=7129368; 1161.0 MiB/s; 2377658.4 syscalls/s; short_reads=7
+buf_size=1024; duration=3.8563268s; num_syscalls=5899708; 1494.0 MiB/s; 1529877.6 syscalls/s; short_reads=5
+buf_size=2048; duration=673.631539ms; num_syscalls=707493; 2051.3 MiB/s; 1050267.0 syscalls/s; short_reads=8
+buf_size=4096; duration=6.77634223s; num_syscalls=4084962; 2354.7 MiB/s; 602827.0 syscalls/s; short_reads=156
+buf_size=8192; duration=5.408669665s; num_syscalls=1816115; 2623.1 MiB/s; 335778.5 syscalls/s; short_reads=294
+buf_size=16384; duration=3.105611885s; num_syscalls=469322; 2361.2 MiB/s; 151120.6 syscalls/s; short_reads=35
+buf_size=32768; duration=3.660818954s; num_syscalls=265609; 2267.2 MiB/s; 72554.5 syscalls/s; short_reads=36
+buf_size=65536; duration=3.160693186s; num_syscalls=137790; 2654.7 MiB/s; 43594.9 syscalls/s; short_reads=31476
+buf_size=131072; duration=5.11583267s; num_syscalls=137677; 2794.7 MiB/s; 26911.9 syscalls/s; short_reads=62553
+buf_size=262144; duration=4.829159305s; num_syscalls=65477; 2775.1 MiB/s; 13558.7 syscalls/s; short_reads=65375
+buf_size=524288; duration=5.326203777s; num_syscalls=68438; 2632.5 MiB/s; 12849.3 syscalls/s; short_reads=68438
+buf_size=1048576; duration=5.008625728s; num_syscalls=59259; 2424.6 MiB/s; 11831.4 syscalls/s; short_reads=59259
+buf_size=2097152; duration=4.041931024s; num_syscalls=46666; 2367.1 MiB/s; 11545.5 syscalls/s; short_reads=46666
+buf_size=4194304; duration=4.441739928s; num_syscalls=51822; 2392.2 MiB/s; 11667.0 syscalls/s; short_reads=51822
+buf_size=8388608; duration=4.478218968s; num_syscalls=52301; 2394.2 MiB/s; 11679.0 syscalls/s; short_reads=52301
+buf_size=16777216; duration=4.506522448s; num_syscalls=52616; 2393.1 MiB/s; 11675.5 syscalls/s; short_reads=52616
+  BEST: buf_size=131072 2794.6839892340467 ; max no decreases buf_size=8192 2623.1 MiB/s; ignore use_buffer=true sum=22067164961120
+short write 511616 total bytes; 7876992 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=8388608; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=8388608; use_buffer=true
+buf_size=1; duration=2.643036472s; num_syscalls=6578081; 2.4 MiB/s; 2488834.7 syscalls/s; short_reads=0
+buf_size=2; duration=1.959846841s; num_syscalls=4873176; 4.7 MiB/s; 2486508.6 syscalls/s; short_reads=1
+buf_size=4; duration=1.81817919s; num_syscalls=4996003; 10.5 MiB/s; 2747805.6 syscalls/s; short_reads=0
+buf_size=8; duration=2.03569972s; num_syscalls=7611509; 28.5 MiB/s; 3739013.6 syscalls/s; short_reads=0
+buf_size=16; duration=1.995957868s; num_syscalls=7427214; 56.8 MiB/s; 3721127.6 syscalls/s; short_reads=0
+buf_size=32; duration=1.979803118s; num_syscalls=7210846; 111.2 MiB/s; 3642203.6 syscalls/s; short_reads=0
+buf_size=64; duration=2.133866988s; num_syscalls=7209806; 206.2 MiB/s; 3378751.4 syscalls/s; short_reads=0
+buf_size=128; duration=2.07441602s; num_syscalls=6540437; 384.9 MiB/s; 3152905.2 syscalls/s; short_reads=0
+buf_size=256; duration=2.068279245s; num_syscalls=5676014; 670.0 MiB/s; 2744317.1 syscalls/s; short_reads=0
+buf_size=512; duration=2.073249813s; num_syscalls=4465981; 1051.8 MiB/s; 2154096.9 syscalls/s; short_reads=0
+buf_size=1024; duration=1.797523325s; num_syscalls=2702995; 1468.5 MiB/s; 1503732.9 syscalls/s; short_reads=0
+buf_size=2048; duration=1.760437573s; num_syscalls=1560367; 1731.2 MiB/s; 886351.8 syscalls/s; short_reads=0
+buf_size=4096; duration=2.014278318s; num_syscalls=1019130; 1976.4 MiB/s; 505952.9 syscalls/s; short_reads=0
+buf_size=8192; duration=2.034929888s; num_syscalls=549895; 2111.2 MiB/s; 270228.0 syscalls/s; short_reads=0
+buf_size=16384; duration=2.071259135s; num_syscalls=291606; 2199.8 MiB/s; 140786.8 syscalls/s; short_reads=0
+buf_size=32768; duration=2.029015499s; num_syscalls=146383; 2254.5 MiB/s; 72144.8 syscalls/s; short_reads=0
+buf_size=65536; duration=2.003198145s; num_syscalls=73550; 2294.7 MiB/s; 36716.3 syscalls/s; short_reads=0
+buf_size=131072; duration=2.04562397s; num_syscalls=38211; 2334.9 MiB/s; 18679.4 syscalls/s; short_reads=0
+buf_size=262144; duration=1.996571055s; num_syscalls=18833; 2358.0 MiB/s; 9432.7 syscalls/s; short_reads=0
+buf_size=524288; duration=1.965669298s; num_syscalls=9247; 2352.1 MiB/s; 4704.3 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.9550739s; num_syscalls=4407; 2254.0 MiB/s; 2254.1 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.9753135s; num_syscalls=2204; 2230.7 MiB/s; 1115.8 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.937689707s; num_syscalls=2156; 2292.5 MiB/s; 1112.7 syscalls/s; short_reads=2156
+buf_size=8388608; duration=1.970937964s; num_syscalls=2197; 2296.3 MiB/s; 1114.7 syscalls/s; short_reads=2197
+buf_size=16777216; duration=1.987378053s; num_syscalls=2216; 2297.0 MiB/s; 1115.0 syscalls/s; short_reads=2216
+  BEST: buf_size=262144 2358.0432213039476 ; max no decreases buf_size=262144 2358.0 MiB/s; ignore use_buffer=true sum=9211652275519
+
+## use_buffer=true; write_buffer_bytes=16777216
+use_buffer=true; write_buffer_bytes=16777216; type=unix:
+short write 6541516 total bytes; 1847092 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+buf_size=1; duration=2.125072812s; num_syscalls=8457732; 3.8 MiB/s; 3979972.8 syscalls/s; short_reads=0
+buf_size=2; duration=1.930901819s; num_syscalls=9202595; 9.1 MiB/s; 4765957.0 syscalls/s; short_reads=0
+buf_size=4; duration=1.935912714s; num_syscalls=9197940; 18.1 MiB/s; 4751216.3 syscalls/s; short_reads=0
+buf_size=8; duration=1.991567307s; num_syscalls=9414866; 36.1 MiB/s; 4727365.2 syscalls/s; short_reads=0
+buf_size=16; duration=2.021520843s; num_syscalls=9405569; 71.0 MiB/s; 4652719.3 syscalls/s; short_reads=1
+buf_size=32; duration=2.001589382s; num_syscalls=9097940; 138.7 MiB/s; 4545357.8 syscalls/s; short_reads=1
+buf_size=64; duration=2.148981994s; num_syscalls=9337505; 265.2 MiB/s; 4345082.9 syscalls/s; short_reads=0
+buf_size=128; duration=2.454885679s; num_syscalls=9533106; 474.0 MiB/s; 3883319.7 syscalls/s; short_reads=435
+buf_size=256; duration=2.666240174s; num_syscalls=8746779; 800.9 MiB/s; 3280566.8 syscalls/s; short_reads=1114
+buf_size=512; duration=3.481534088s; num_syscalls=8113007; 1137.8 MiB/s; 2330296.6 syscalls/s; short_reads=110
+buf_size=1024; duration=4.073193415s; num_syscalls=6393045; 1532.8 MiB/s; 1569541.2 syscalls/s; short_reads=1
+buf_size=2048; duration=5.320474816s; num_syscalls=4988671; 1831.3 MiB/s; 937636.4 syscalls/s; short_reads=32
+buf_size=4096; duration=6.096990839s; num_syscalls=3261155; 2089.4 MiB/s; 534879.4 syscalls/s; short_reads=1
+buf_size=8192; duration=5.320387129s; num_syscalls=1522457; 2235.6 MiB/s; 286155.3 syscalls/s; short_reads=9
+buf_size=16384; duration=4.743134624s; num_syscalls=702211; 2313.1 MiB/s; 148047.9 syscalls/s; short_reads=115
+buf_size=32768; duration=5.484409007s; num_syscalls=408330; 2326.0 MiB/s; 74452.9 syscalls/s; short_reads=218
+buf_size=65536; duration=5.750982912s; num_syscalls=216397; 2295.5 MiB/s; 37627.8 syscalls/s; short_reads=51681
+buf_size=131072; duration=4.393376302s; num_syscalls=98573; 2345.9 MiB/s; 22436.7 syscalls/s; short_reads=36097
+buf_size=262144; duration=4.087734541s; num_syscalls=46757; 2376.6 MiB/s; 11438.4 syscalls/s; short_reads=46750
+buf_size=524288; duration=4.368887715s; num_syscalls=49585; 2358.3 MiB/s; 11349.6 syscalls/s; short_reads=49583
+buf_size=1048576; duration=4.488657711s; num_syscalls=51229; 2371.1 MiB/s; 11413.0 syscalls/s; short_reads=51229
+buf_size=2097152; duration=4.10013914s; num_syscalls=46848; 2373.7 MiB/s; 11426.0 syscalls/s; short_reads=46848
+buf_size=4194304; duration=4.092772272s; num_syscalls=46777; 2374.8 MiB/s; 11429.2 syscalls/s; short_reads=46777
+buf_size=8388608; duration=3.996299943s; num_syscalls=45687; 2375.4 MiB/s; 11432.3 syscalls/s; short_reads=45687
+buf_size=16777216; duration=4.036048348s; num_syscalls=45715; 2353.4 MiB/s; 11326.7 syscalls/s; short_reads=45715
+  BEST: buf_size=262144 2376.6323787540755 ; max no decreases buf_size=32768 2326.0 MiB/s; ignore use_buffer=true sum=22017333284432
+short write 1498304 total bytes; 15278912 bytes short; expecting EPIPE on next write ...
+EPIPE at end of benchmark after partial write
+
+use_buffer=true; write_buffer_bytes=16777216; type=TCP; SO_RCVBUF=131072; writer_addr=127.0.0.1:39475:
+TCP writer stared; SO_SNDBUF=2626560; write_buffer_bytes=16777216; use_buffer=true
+buf_size=1; duration=1.457788852s; num_syscalls=4554459; 3.0 MiB/s; 3124224.1 syscalls/s; short_reads=0
+buf_size=2; duration=1.360649101s; num_syscalls=4861567; 6.8 MiB/s; 3572976.3 syscalls/s; short_reads=1
+buf_size=4; duration=1.998416305s; num_syscalls=7586103; 14.5 MiB/s; 3796057.4 syscalls/s; short_reads=0
+buf_size=8; duration=1.928881686s; num_syscalls=7250843; 28.7 MiB/s; 3759091.6 syscalls/s; short_reads=0
+buf_size=16; duration=2.009797463s; num_syscalls=7510328; 57.0 MiB/s; 3736858.1 syscalls/s; short_reads=1
+buf_size=32; duration=2.083693829s; num_syscalls=7358081; 107.8 MiB/s; 3531267.8 syscalls/s; short_reads=0
+buf_size=64; duration=1.942733062s; num_syscalls=6508934; 204.5 MiB/s; 3350400.6 syscalls/s; short_reads=0
+buf_size=128; duration=1.939368946s; num_syscalls=6206555; 390.7 MiB/s; 3200296.2 syscalls/s; short_reads=0
+buf_size=256; duration=2.009175261s; num_syscalls=5627779; 683.8 MiB/s; 2801039.4 syscalls/s; short_reads=0
+buf_size=512; duration=1.995387278s; num_syscalls=4301353; 1052.6 MiB/s; 2155648.2 syscalls/s; short_reads=0
+buf_size=1024; duration=2.219964722s; num_syscalls=3139225; 1380.9 MiB/s; 1414087.8 syscalls/s; short_reads=0
+buf_size=2048; duration=2.189752468s; num_syscalls=1948008; 1737.5 MiB/s; 889601.9 syscalls/s; short_reads=0
+buf_size=4096; duration=1.928323803s; num_syscalls=970177; 1965.3 MiB/s; 503119.3 syscalls/s; short_reads=0
+buf_size=8192; duration=2.153317513s; num_syscalls=581592; 2110.1 MiB/s; 270091.1 syscalls/s; short_reads=0
+buf_size=16384; duration=1.967140399s; num_syscalls=280590; 2228.7 MiB/s; 142638.5 syscalls/s; short_reads=0
+buf_size=32768; duration=2.041525646s; num_syscalls=148417; 2271.8 MiB/s; 72699.1 syscalls/s; short_reads=0
+buf_size=65536; duration=2.04829501s; num_syscalls=75778; 2312.2 MiB/s; 36995.6 syscalls/s; short_reads=0
+buf_size=131072; duration=2.04290234s; num_syscalls=37997; 2324.9 MiB/s; 18599.5 syscalls/s; short_reads=0
+buf_size=262144; duration=1.960805485s; num_syscalls=18702; 2384.4 MiB/s; 9537.9 syscalls/s; short_reads=0
+buf_size=524288; duration=1.961734019s; num_syscalls=9318; 2374.9 MiB/s; 4749.9 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.953351298s; num_syscalls=4448; 2276.8 MiB/s; 2277.1 syscalls/s; short_reads=0
+buf_size=2097152; duration=1.967429198s; num_syscalls=2219; 2255.0 MiB/s; 1127.9 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.966580735s; num_syscalls=1734; 2313.6 MiB/s; 881.7 syscalls/s; short_reads=1734
+buf_size=8388608; duration=1.97613883s; num_syscalls=1574; 2289.2 MiB/s; 796.5 syscalls/s; short_reads=1574
+buf_size=16777216; duration=1.988505645s; num_syscalls=1585; 2290.7 MiB/s; 797.1 syscalls/s; short_reads=1585
+  BEST: buf_size=262144 2384.433192399941 ; max no decreases buf_size=262144 2384.4 MiB/s; ignore use_buffer=true sum=9391142122463
+short write 248364 total bytes; 16528852 bytes short; expecting EPIPE on next write ...
+ECONNRESET at end of benchmark after partial write
+
+use_buffer=true; /dev/zero:
+buf_size=1; duration=2.023432901s; num_syscalls=7427489; 3.5 MiB/s; 3670736.5 syscalls/s; short_reads=0
+buf_size=2; duration=1.977094634s; num_syscalls=8826904; 8.5 MiB/s; 4464583.5 syscalls/s; short_reads=0
+buf_size=4; duration=1.993478922s; num_syscalls=8944944; 17.1 MiB/s; 4487102.4 syscalls/s; short_reads=0
+buf_size=8; duration=2.000209451s; num_syscalls=8913054; 34.0 MiB/s; 4456060.3 syscalls/s; short_reads=0
+buf_size=16; duration=1.982538858s; num_syscalls=8839389; 68.0 MiB/s; 4458620.8 syscalls/s; short_reads=0
+buf_size=32; duration=1.971765002s; num_syscalls=8637071; 133.7 MiB/s; 4380375.4 syscalls/s; short_reads=0
+buf_size=64; duration=1.992224707s; num_syscalls=8419990; 258.0 MiB/s; 4226425.8 syscalls/s; short_reads=0
+buf_size=128; duration=1.981471297s; num_syscalls=7801530; 480.6 MiB/s; 3937241.0 syscalls/s; short_reads=0
+buf_size=256; duration=2.018415075s; num_syscalls=7063145; 854.3 MiB/s; 3499352.1 syscalls/s; short_reads=0
+buf_size=512; duration=1.988597883s; num_syscalls=5610099; 1377.5 MiB/s; 2821132.9 syscalls/s; short_reads=0
+buf_size=1024; duration=2.345667323s; num_syscalls=4075894; 1696.9 MiB/s; 1737626.6 syscalls/s; short_reads=0
+buf_size=2048; duration=1.2289538s; num_syscalls=1654069; 2628.7 MiB/s; 1345916.3 syscalls/s; short_reads=0
+buf_size=4096; duration=1.997160726s; num_syscalls=1600436; 3130.3 MiB/s; 801355.6 syscalls/s; short_reads=0
+buf_size=8192; duration=1.993334377s; num_syscalls=865940; 3393.9 MiB/s; 434417.8 syscalls/s; short_reads=0
+buf_size=16384; duration=1.959598955s; num_syscalls=445849; 3555.0 MiB/s; 227520.5 syscalls/s; short_reads=0
+buf_size=32768; duration=1.852634935s; num_syscalls=215779; 3639.7 MiB/s; 116471.4 syscalls/s; short_reads=0
+buf_size=65536; duration=2.004710326s; num_syscalls=113792; 3547.6 MiB/s; 56762.3 syscalls/s; short_reads=0
+buf_size=131072; duration=1.999572623s; num_syscalls=56886; 3556.1 MiB/s; 28449.1 syscalls/s; short_reads=0
+buf_size=262144; duration=2.002569687s; num_syscalls=28514; 3559.6 MiB/s; 14238.7 syscalls/s; short_reads=0
+buf_size=524288; duration=1.95969472s; num_syscalls=14146; 3609.2 MiB/s; 7218.5 syscalls/s; short_reads=0
+buf_size=1048576; duration=2.105205038s; num_syscalls=7105; 3374.9 MiB/s; 3375.0 syscalls/s; short_reads=0
+buf_size=2097152; duration=2.337592609s; num_syscalls=3250; 2780.3 MiB/s; 1390.3 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.995336598s; num_syscalls=1710; 3427.4 MiB/s; 857.0 syscalls/s; short_reads=0
+buf_size=8388608; duration=1.985627056s; num_syscalls=830; 3341.5 MiB/s; 418.0 syscalls/s; short_reads=0
+buf_size=16777216; duration=2.00057323s; num_syscalls=396; 3162.9 MiB/s; 197.9 syscalls/s; short_reads=0
+  BEST: buf_size=32768 3639.7207331483855 ; max no decreases buf_size=32768 3639.7 MiB/s; ignore use_buffer=true sum=0
+
+use_buffer=true; /dev/urandom:
+buf_size=1; duration=2.244664483s; num_syscalls=5186184; 2.2 MiB/s; 2310449.5 syscalls/s; short_reads=0
+buf_size=2; duration=1.923864689s; num_syscalls=4460403; 4.4 MiB/s; 2318459.8 syscalls/s; short_reads=0
+buf_size=4; duration=2.001465034s; num_syscalls=4663744; 8.9 MiB/s; 2330165.1 syscalls/s; short_reads=0
+buf_size=8; duration=2.002649665s; num_syscalls=4667445; 17.8 MiB/s; 2330634.8 syscalls/s; short_reads=0
+buf_size=16; duration=2.011396731s; num_syscalls=4649974; 35.3 MiB/s; 2311813.4 syscalls/s; short_reads=0
+buf_size=32; duration=1.971699993s; num_syscalls=4532578; 70.2 MiB/s; 2298817.3 syscalls/s; short_reads=0
+buf_size=64; duration=2.299600472s; num_syscalls=3422021; 90.8 MiB/s; 1488093.7 syscalls/s; short_reads=0
+buf_size=128; duration=1.964090571s; num_syscalls=2683484; 166.8 MiB/s; 1366273.0 syscalls/s; short_reads=0
+buf_size=256; duration=1.998465716s; num_syscalls=1942050; 237.2 MiB/s; 971770.5 syscalls/s; short_reads=0
+buf_size=512; duration=1.987262891s; num_syscalls=1214359; 298.4 MiB/s; 611071.1 syscalls/s; short_reads=0
+buf_size=1024; duration=2.045063193s; num_syscalls=723221; 345.4 MiB/s; 353642.4 syscalls/s; short_reads=0
+buf_size=2048; duration=1.978507303s; num_syscalls=382156; 377.3 MiB/s; 193153.7 syscalls/s; short_reads=0
+buf_size=4096; duration=1.967345563s; num_syscalls=198312; 393.8 MiB/s; 100801.8 syscalls/s; short_reads=0
+buf_size=8192; duration=1.971606787s; num_syscalls=101749; 403.2 MiB/s; 51607.1 syscalls/s; short_reads=0
+buf_size=16384; duration=1.965533448s; num_syscalls=51389; 408.5 MiB/s; 26145.1 syscalls/s; short_reads=0
+buf_size=32768; duration=2.015100877s; num_syscalls=26575; 412.1 MiB/s; 13187.9 syscalls/s; short_reads=0
+buf_size=65536; duration=2.353728585s; num_syscalls=13101; 347.9 MiB/s; 5566.1 syscalls/s; short_reads=0
+buf_size=131072; duration=2.129574682s; num_syscalls=7047; 413.6 MiB/s; 3309.1 syscalls/s; short_reads=0
+buf_size=262144; duration=1.98660256s; num_syscalls=3267; 411.0 MiB/s; 1644.5 syscalls/s; short_reads=0
+buf_size=524288; duration=1.990427451s; num_syscalls=1640; 411.8 MiB/s; 823.9 syscalls/s; short_reads=0
+buf_size=1048576; duration=1.998409319s; num_syscalls=824; 412.0 MiB/s; 412.3 syscalls/s; short_reads=0
+buf_size=2097152; duration=2.009690902s; num_syscalls=413; 410.2 MiB/s; 205.5 syscalls/s; short_reads=0
+buf_size=4194304; duration=1.993680656s; num_syscalls=206; 412.3 MiB/s; 103.3 syscalls/s; short_reads=0
+buf_size=8388608; duration=1.999754666s; num_syscalls=103; 410.2 MiB/s; 51.5 syscalls/s; short_reads=0
+buf_size=16777216; duration=1.858344197s; num_syscalls=48; 405.4 MiB/s; 25.8 syscalls/s; short_reads=0
+  BEST: buf_size=131072 413.62676779020825 ; max no decreases buf_size=32768 412.1 MiB/s; ignore use_buffer=true sum=1863377333235
+shutting down TCP acceptor ...
+tcp acceptor: EINVAL; assuming this means we should exit
