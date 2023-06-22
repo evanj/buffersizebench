@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"fmt"
+	"html/template"
 	"io"
 	"os"
 	"path/filepath"
@@ -63,7 +64,6 @@ func main() {
 	table := newTable(headers)
 nextRow:
 	for {
-
 		row, err := input.Read()
 		if err != nil {
 			if err == io.EOF {
@@ -97,13 +97,19 @@ nextRow:
 		fmt.Printf("  %s\n", label)
 	}
 
-	err = writeGnuplot(chartDetails{
+	chart := chartDetails{
 		title:      "example title",
 		xLabel:     xAxisHeader,
 		yLabel:     yAxisHeader,
 		plots:      plots,
 		pathPrefix: "results/plot",
-	})
+	}
+	err = writeGnuplot(chart)
+	if err != nil {
+		panic(err)
+	}
+
+	err = writePlotlyHTML(chart)
 	if err != nil {
 		panic(err)
 	}
@@ -285,3 +291,81 @@ func numericStringLess(i string, j string) bool {
 
 	return iInt < jInt
 }
+
+type plotlyTrace struct {
+	Name string    `json:"name"`
+	X    []int64   `json:"x"`
+	Y    []float64 `json:"y"`
+}
+
+type plotlyPlot struct {
+	Title  string
+	XLabel string
+	YLabel string
+	Traces []*plotlyTrace
+}
+
+func writePlotlyHTML(chart chartDetails) error {
+	plotly := &plotlyPlot{
+		Title:  chart.title,
+		XLabel: chart.xLabel,
+		YLabel: chart.yLabel,
+	}
+	for label, dataPoints := range chart.plots {
+		trace := &plotlyTrace{Name: label}
+		for _, dataPoint := range dataPoints {
+			ival, err := strconv.ParseInt(dataPoint.x, 10, 64)
+			if err != nil {
+				return err
+			}
+			trace.X = append(trace.X, ival)
+			fval, err := strconv.ParseFloat(dataPoint.y, 64)
+			if err != nil {
+				return err
+			}
+			trace.Y = append(trace.Y, fval)
+		}
+		plotly.Traces = append(plotly.Traces, trace)
+	}
+
+	outF, err := os.OpenFile(chart.pathPrefix+".html", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0600)
+	if err != nil {
+		return err
+	}
+	defer outF.Close()
+	err = htmlPlotTemplate.Execute(outF, plotly)
+	if err != nil {
+		return err
+	}
+	return outF.Close()
+}
+
+var htmlPlotTemplate = template.Must(template.New("html").Parse(`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{.Title}}</title>
+<script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+<script>
+function onLoad() {
+	var data = {{.Traces}};
+	var layout = {
+		title: {{.Title}},
+		xaxis: {
+			title: {{.XLabel}},
+		},
+		yaxis: {
+			title: {{.YLabel}},
+		}
+	}
+
+	Plotly.newPlot("plot", data, layout);
+}
+window.addEventListener("load", onLoad);
+</script>
+</head>
+<body>
+<div id="plot" style="width: 100%; height: 800px;"></div>
+</body>
+</html>
+`))

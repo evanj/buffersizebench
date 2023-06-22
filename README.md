@@ -9,7 +9,7 @@ Results are from a 16 core GCP T2D instance with Kernel 6.2.0-1005-gcp from Ubun
 
 ## Results summary
 
-* Larger buffers do decrease system call overhead, and generally improve throughput. Eventually, throughput decreases, maybe due to cache effects?
+* Larger buffers do decrease system call overhead, and generally improve throughput. However, past a certain point, throughput seems to decrease. Maybe the CPU cache gets tool large.
 * The "best" buffer size depends on the system call, but a buffer of about 16 kiB is probably enough.
 * Mac OS X: The default Unix socket buffer is 8192 and results in low throughput. Localhost TCP sockets are ~3X faster by default. Calling `setsockopt(sock, SOL_SOCKET, SO_SNDBUF, ...)` to increase the buffer size makes local Unix sockets work much more efficiently. TODO: include some results.
 * Manually tuning the SO_SNDBUF and SO_RCVBUF settings for localhost TCP sockets doesn't seem to help.

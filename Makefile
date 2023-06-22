@@ -17,6 +17,10 @@ all:
 		#-A clippy::missing-errors-doc \
 		#-A clippy::len-without-is-empty
 
+	go test ./...
+	go vet ./...
+	staticcheck -checks=all ./...
+
 profile:
 	cargo build --release
 	sudo perf record --call-graph dwarf -F 999 target/release/buffersizebench
