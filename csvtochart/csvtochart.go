@@ -34,13 +34,30 @@ func (t *table) getRowValue(row []string, columnName string) string {
 	panic("could not find column: " + columnName)
 }
 
+// dimensionAssignment contains a assignment of dimensions and values, which is used to
+// identify a single row or experiment.
+type dimensionAssignment struct {
+	names  []string
+	values []string
+}
+
+// dimensionDictionary contains all the values ever seen for a single dimension.
+type dimensionDictionary struct {
+	name   string
+	values stringSet
+}
+
+func newDimensionDictionary(name string) *dimensionDictionary {
+	return &dimensionDictionary{name, *newStringSet()}
+}
+
 func main() {
 	fmt.Println("reading csv from stdin...")
 
 	const xAxisHeader = "read_buffer_bytes"
 	const yAxisHeader = "throughput (MiB/s)"
 
-	dimensions := []string{
+	dimensionNames := []string{
 		"machine_configuration", "use_buffer", "write_buffer_bytes", "connection_type",
 	}
 
@@ -59,7 +76,12 @@ func main() {
 		panic(err)
 	}
 
-	plots := map[string][]dataPoint{}
+	plots := map[dimensionAssignment][]dataPoint{}
+
+	dimensionDictionaries := make([]*dimensionDictionary, len(dimensionNames))
+	for i, dimensionName := range dimensionNames {
+		dimensionDictionaries[i] = newDimensionDictionary(dimensionName)
+	}
 
 	table := newTable(headers)
 nextRow:
@@ -80,7 +102,7 @@ nextRow:
 		}
 
 		label := ""
-		for _, dimension := range dimensions {
+		for _, dimension := range dimensionNames {
 			if len(label) > 0 {
 				label += " "
 			}
