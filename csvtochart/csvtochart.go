@@ -2,9 +2,12 @@ package main
 
 import (
 	"encoding/csv"
+	"errors"
+	"flag"
 	"fmt"
 	"html/template"
 	"io"
+	"io/fs"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -41,6 +44,52 @@ type dimensionAssignment struct {
 	values []string
 }
 
+var permittedDimensionValue = regexp.MustCompile(`^[A-Za-z0-9/_-]+$`)
+
+func newDimensionAssignment(names []string) *dimensionAssignment {
+	return &dimensionAssignment{names: names, values: make([]string, len(names))}
+}
+
+func (d *dimensionAssignment) assign(name string, value string) {
+	if !permittedDimensionValue.MatchString(value) {
+		panic("dimension value is not permitted: " + value)
+	}
+
+	for i, dimensionName := range d.names {
+		if name == dimensionName {
+			d.values[i] = value
+			return
+		}
+	}
+	panic(name + " not found")
+}
+
+// dimensionAssignmentKey exists to provide type checking for map keys.
+type dimensionAssignmentKey struct {
+	key string
+}
+
+func (d *dimensionAssignment) mapKey() dimensionAssignmentKey {
+	for _, dimensionValue := range d.values {
+		if dimensionValue == "" {
+			panic("BUG: unassigned dimension value")
+		}
+	}
+	return dimensionAssignmentKey{strings.Join(d.values, ",")}
+}
+
+func parseDimensionAssignmentKey(names []string, mapKey dimensionAssignmentKey) *dimensionAssignment {
+	parts := strings.Split(mapKey.key, ",")
+	if len(parts) != len(names) {
+		panic("BUG: mismatched sizes")
+	}
+	assignment := newDimensionAssignment(names)
+	for i, name := range names {
+		assignment.assign(name, parts[i])
+	}
+	return assignment
+}
+
 // dimensionDictionary contains all the values ever seen for a single dimension.
 type dimensionDictionary struct {
 	name   string
@@ -52,6 +101,18 @@ func newDimensionDictionary(name string) *dimensionDictionary {
 }
 
 func main() {
+	outputDir := flag.String("outputDir", "", "directory to write plots and data files")
+	flag.Parse()
+
+	if *outputDir == "" {
+		fmt.Fprintf(os.Stderr, "Error: must specify --outputDir=output directory)\n")
+		os.Exit(1)
+	}
+	err := os.Mkdir(*outputDir, 0777)
+	if err != nil && !errors.Is(err, fs.ErrExist) {
+		panic(err)
+	}
+
 	fmt.Println("reading csv from stdin...")
 
 	const xAxisHeader = "read_buffer_bytes"
@@ -61,14 +122,14 @@ func main() {
 		"machine_configuration", "use_buffer", "write_buffer_bytes", "connection_type",
 	}
 
-	filters := []struct {
-		columnName string
-		value      string
-	}{
-		{"machine_configuration", "intel_i5_11thgen_localhost"},
-		{"use_buffer", "false"},
-		{"connection_type", "unix"},
-	}
+	// filters := []struct {
+	// 	columnName string
+	// 	value      string
+	// }{
+	// 	{"machine_configuration", "intel_i5_11thgen_localhost"},
+	// 	{"use_buffer", "false"},
+	// 	{"connection_type", "unix"},
+	// }
 
 	input := csv.NewReader(os.Stdin)
 	headers, err := input.Read()
@@ -76,7 +137,7 @@ func main() {
 		panic(err)
 	}
 
-	plots := map[dimensionAssignment][]dataPoint{}
+	plots := map[dimensionAssignmentKey][]dataPoint{}
 
 	dimensionDictionaries := make([]*dimensionDictionary, len(dimensionNames))
 	for i, dimensionName := range dimensionNames {
@@ -84,7 +145,7 @@ func main() {
 	}
 
 	table := newTable(headers)
-nextRow:
+	// nextRow:
 	for {
 		row, err := input.Read()
 		if err != nil {
@@ -94,47 +155,81 @@ nextRow:
 			panic(err)
 		}
 
-		for _, filter := range filters {
-			v := table.getRowValue(row, filter.columnName)
-			if v != filter.value {
-				continue nextRow
-			}
-		}
+		// for _, filter := range filters {
+		// 	v := table.getRowValue(row, filter.columnName)
+		// 	if v != filter.value {
+		// 		continue nextRow
+		// 	}
+		// }
 
-		label := ""
-		for _, dimension := range dimensionNames {
-			if len(label) > 0 {
-				label += " "
-			}
-			label += fmt.Sprintf("%s=%s", dimension, table.getRowValue(row, dimension))
+		rowDimensions := newDimensionAssignment(dimensionNames)
+		for i, dimension := range dimensionNames {
+			dimensionValue := table.getRowValue(row, dimension)
+			rowDimensions.assign(dimension, dimensionValue)
+
+			dimensionDictionaries[i].values.add(dimensionValue)
 		}
 
 		xValue := table.getRowValue(row, xAxisHeader)
 		yValue := table.getRowValue(row, yAxisHeader)
-		plots[label] = append(plots[label], dataPoint{xValue, yValue})
+
+		dimensionsKey := rowDimensions.mapKey()
+		values := append(plots[dimensionsKey], dataPoint{xValue, yValue})
+		plots[dimensionsKey] = values
 	}
 
 	fmt.Printf("%d distinct data sets\n", len(plots))
-	for label := range plots {
-		fmt.Printf("  %s\n", label)
+
+	type plotWithLabel struct {
+		label string
+		plot  []dataPoint
 	}
 
-	chart := chartDetails{
-		title:      "example title",
-		xLabel:     xAxisHeader,
-		yLabel:     yAxisHeader,
-		plots:      plots,
-		pathPrefix: "results/plot",
-	}
-	err = writeGnuplot(chart)
-	if err != nil {
-		panic(err)
+	for excludedDimensionIndex, excludedDimensionName := range dimensionNames {
+		fmt.Printf("plots where dimension=%s varies and the rest are held constant ...\n",
+			excludedDimensionName)
+
+		// create a *new* dimension assignment that is missing excludedDimensionName
+		dimensionNamesMinusOne := append([]string(nil), dimensionNames[0:excludedDimensionIndex]...)
+		dimensionNamesMinusOne = append(dimensionNamesMinusOne, dimensionNames[excludedDimensionIndex+1:]...)
+
+		groupedPlots := map[dimensionAssignmentKey][]plotWithLabel{}
+		for originalDimensionsKey, plot := range plots {
+			originalAssignment := parseDimensionAssignmentKey(dimensionNames, originalDimensionsKey)
+			dimensionsAssignmentMinusOne := newDimensionAssignment(dimensionNamesMinusOne)
+			var excludedDimensionValue string
+			for i, name := range dimensionNames {
+				if i == excludedDimensionIndex {
+					excludedDimensionValue = originalAssignment.values[i]
+					continue
+				}
+				dimensionsAssignmentMinusOne.assign(name, originalAssignment.values[i])
+			}
+
+			key := dimensionsAssignmentMinusOne.mapKey()
+			groupedPlots[key] = append(groupedPlots[key], plotWithLabel{excludedDimensionValue, plot})
+		}
+
+		fmt.Printf("  %d groups of plots\n", len(groupedPlots))
+		panic("todo: plot the grouped plots on separate plots!")
 	}
 
-	err = writePlotlyHTML(chart)
-	if err != nil {
-		panic(err)
-	}
+	// chart := chartDetails{
+	// 	title:      "example title",
+	// 	xLabel:     xAxisHeader,
+	// 	yLabel:     yAxisHeader,
+	// 	plots:      plots,
+	// 	pathPrefix: "results/plot",
+	// }
+	// err = writeGnuplot(chart)
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// err = writePlotlyHTML(chart)
+	// if err != nil {
+	// 	panic(err)
+	// }
 }
 
 type dataPoint struct {
