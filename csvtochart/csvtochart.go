@@ -64,6 +64,22 @@ func (d *dimensionAssignment) assign(name string, value string) {
 	panic(name + " not found")
 }
 
+func (d *dimensionAssignment) combined() string {
+	out := &strings.Builder{}
+	for i, name := range d.names {
+		if i > 0 {
+			out.WriteString(", ")
+		}
+		fmt.Fprintf(out, "%s=%s", name, d.values[i])
+	}
+	return out.String()
+}
+
+func (d *dimensionAssignment) combinedPath() string {
+	replacer := strings.NewReplacer(",", "_", "/", "_")
+	return replacer.Replace(d.combined())
+}
+
 // dimensionAssignmentKey exists to provide type checking for map keys.
 type dimensionAssignmentKey struct {
 	key string
@@ -211,25 +227,41 @@ func main() {
 		}
 
 		fmt.Printf("  %d groups of plots\n", len(groupedPlots))
-		panic("todo: plot the grouped plots on separate plots!")
+
+		excludedPath := filepath.Join(*outputDir, excludedDimensionName)
+		err = os.MkdirAll(excludedPath, 0700)
+		for dimensionAssignmentKey, labelledPlots := range groupedPlots {
+			dimensionAssignment := parseDimensionAssignmentKey(dimensionNamesMinusOne, dimensionAssignmentKey)
+
+			chartPath := filepath.Join(excludedPath, dimensionAssignment.combinedPath())
+
+			if err != nil {
+				panic(err)
+			}
+
+			labelledPlotsMaps := map[string][]dataPoint{}
+			for _, labelledPlot := range labelledPlots {
+				labelledPlotsMaps[labelledPlot.label] = labelledPlot.plot
+			}
+
+			chart := chartDetails{
+				title:      dimensionAssignment.combined(),
+				xLabel:     xAxisHeader,
+				yLabel:     yAxisHeader,
+				plots:      labelledPlotsMaps,
+				pathPrefix: chartPath,
+			}
+			err = writeGnuplot(chart)
+			if err != nil {
+				panic(err)
+			}
+			err = writePlotlyHTML(chart)
+			if err != nil {
+				panic(fmt.Sprintf("error excluded=%s dimensionAssignment=%s: %s",
+					excludedDimensionName, dimensionAssignment.combined(), err.Error()))
+			}
+		}
 	}
-
-	// chart := chartDetails{
-	// 	title:      "example title",
-	// 	xLabel:     xAxisHeader,
-	// 	yLabel:     yAxisHeader,
-	// 	plots:      plots,
-	// 	pathPrefix: "results/plot",
-	// }
-	// err = writeGnuplot(chart)
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// err = writePlotlyHTML(chart)
-	// if err != nil {
-	// 	panic(err)
-	// }
 }
 
 type dataPoint struct {
