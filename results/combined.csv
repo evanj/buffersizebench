@@ -1391,7 +1391,6 @@ gcp_amd_localhost,true,0,file_/dev/urandom,2097152,2.007432019,366,0,364.5
 gcp_amd_localhost,true,0,file_/dev/urandom,4194304,2.00950695,183,0,363.9
 gcp_amd_localhost,true,0,file_/dev/urandom,8388608,2.011301349,91,0,359.2
 gcp_amd_localhost,true,0,file_/dev/urandom,16777216,2.019330709,45,0,351.9
-machine_configuration,use_buffer,write_buffer_bytes,connection_type,read_buffer_bytes,duration_sec,num_syscalls,short_reads,throughput (MiB/s)
 gcp_amd_remote,false,4096,unix,1,1.566899261,6379585,0,3.9
 gcp_amd_remote,false,4096,unix,2,1.945255783,7858546,0,7.7
 gcp_amd_remote,false,4096,unix,4,2.024279486,8223684,0,15.5
@@ -2784,7 +2783,6 @@ gcp_amd_remote,true,0,file_/dev/urandom,2097152,2.016361555,358,0,354.7
 gcp_amd_remote,true,0,file_/dev/urandom,4194304,2.719380014,164,0,239.9
 gcp_amd_remote,true,0,file_/dev/urandom,8388608,2.273615742,43,0,149
 gcp_amd_remote,true,0,file_/dev/urandom,16777216,1.882494147,20,0,162.4
-machine_configuration,use_buffer,write_buffer_bytes,connection_type,read_buffer_bytes,duration_sec,num_syscalls,short_reads,throughput (MiB/s)
 intel_i5_11thgen_localhost,false,4096,unix,1,2.089699285,10702627,0,4.9
 intel_i5_11thgen_localhost,false,4096,unix,2,1.981285349,10205644,0,9.8
 intel_i5_11thgen_localhost,false,4096,unix,4,1.806831051,9648319,0,20.4
