@@ -14,8 +14,10 @@ use std::{
 use argh::FromArgs;
 use nix::sys::socket::{GetSockOpt, SetSockOpt};
 
-const MAX_BUFFER_BYTES: usize = 16 * 1024 * 1024;
+// Args.write_buffer_bytes_end default must match
+const MAX_BUFFER_BYTES: usize = 2 * 1024 * 1024;
 const TARGET_TIMING: Duration = Duration::from_secs(2);
+const INITIAL_READ_BUFFER_BYTES: usize = 1024;
 
 #[derive(FromArgs)]
 /// buffersizebench benchmarks system calls with different buffer sizes.
@@ -42,7 +44,7 @@ struct Args {
     #[argh(
         option,
         description = "write buffer size in bytes to end (inclusive)",
-        default = "16777216"
+        default = "2097152"
     )]
     write_buffer_bytes_end: usize,
 }
@@ -51,6 +53,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     let args: Args = argh::from_env();
     assert!(args.write_buffer_bytes_start <= args.write_buffer_bytes_end);
     assert!(args.write_buffer_bytes_end <= MAX_BUFFER_BYTES);
+
+    // ensure the defaults on Args are correct: they are literal strings that must match the const
+    let args_default = Args::from_args(&[], &[]).expect("BUG: empty args must parse");
+    assert!(args_default.write_buffer_bytes_end == MAX_BUFFER_BYTES);
 
     let mut read_buffer = vec![1; MAX_BUFFER_BYTES];
 
@@ -256,7 +262,7 @@ fn run_benchmark<R: Read>(
     // run a first timing loop to "warm up" everything: the first calls to a unix socket are slow
     _ = time_reads(f, &mut buffer[0..1024], 1024 * 4, use_buffer)?;
 
-    let mut buf_size = 1;
+    let mut buf_size = INITIAL_READ_BUFFER_BYTES;
     let mut highest_mib_per_sec = 0.0;
     let mut highest_mib_per_sec_buffer = 0;
     let mut throughput_increasing = true;
@@ -284,26 +290,29 @@ fn run_benchmark<R: Read>(
         //     estimate_results.duration
         // );
 
-        let results = time_reads(f, sized_buf, measure_bytes, use_buffer)?;
-        let mib_per_sec =
-            (results.total_bytes) as f64 / 1024. / 1024. / results.duration.as_secs_f64();
-        let syscalls_per_sec = results.num_syscalls as f64 / results.duration.as_secs_f64();
-        println!("buf_size={buf_size}; duration={:?}; num_syscalls={}; {mib_per_sec:.1} MiB/s; {syscalls_per_sec:.1} syscalls/s; short_reads={}",
-            results.duration, results.num_syscalls, results.short_reads);
-        byte_sum += results.byte_sum;
+        for _ in 0..3 {
+            let results = time_reads(f, sized_buf, measure_bytes, use_buffer)?;
+            let mib_per_sec =
+                (results.total_bytes) as f64 / 1024. / 1024. / results.duration.as_secs_f64();
+            let syscalls_per_sec = results.num_syscalls as f64 / results.duration.as_secs_f64();
+            println!("buf_size={buf_size}; duration={:?}; num_syscalls={}; {mib_per_sec:.1} MiB/s; {syscalls_per_sec:.1} syscalls/s; short_reads={} {:.1}%",
+                results.duration, results.num_syscalls, results.short_reads,
+                results.short_reads as f64/results.num_syscalls as f64 * 100.0);
+            byte_sum += results.byte_sum;
 
-        if highest_mib_per_sec < mib_per_sec {
-            if throughput_increasing {
-                highest_mib_per_sec = mib_per_sec;
-                highest_mib_per_sec_buffer = buf_size;
+            if highest_mib_per_sec < mib_per_sec {
+                if throughput_increasing {
+                    highest_mib_per_sec = mib_per_sec;
+                    highest_mib_per_sec_buffer = buf_size;
+                }
+            } else {
+                // throughput went down!
+                throughput_increasing = false;
             }
-        } else {
-            // throughput went down!
-            throughput_increasing = false;
-        }
-        if abs_max_mib_per_sec < mib_per_sec {
-            abs_max_mib_per_sec = mib_per_sec;
-            abs_max_mib_per_sec_buffer = buf_size;
+            if abs_max_mib_per_sec < mib_per_sec {
+                abs_max_mib_per_sec = mib_per_sec;
+                abs_max_mib_per_sec_buffer = buf_size;
+            }
         }
 
         buf_size *= 2;
