@@ -2,18 +2,22 @@
 
 This is attempting to determine how much the buffer size passed to the `read()` system call matters for different data sources on a "bulk transfer" workload. I did very little tuning, so this should represent "out of the box" performance, but the results will vary substantially from kernel to kernel and machine to machine.
 
-*Rough Conclusion*: Read buffers: 16 KiB is a reasonable default. 8 KiB might even be enough. Write buffers: Bigger seems better. Waiting on more data.
+*Rough Conclusion*: Read buffers: 32 KiB is a reasonable default, and 16 KiB might even be enough. Write buffers: 256 KiB is probably good.
 
 Results are from a 16 core GCP T2D instance with Kernel 6.2.0-1005-gcp from Ubuntu 23.04
 /proc/cpuinfo reports "AMD EPYC 7B13 MHz: 2449.998"
 
+See [my blog post for more details](https://www.evanjones.ca/read-write-buffer-size.html).
+
+
 ## Results summary
 
 * Larger buffers do decrease system call overhead, and generally improve throughput. However, past a certain point, throughput seems to decrease. Maybe the CPU cache gets tool large.
-* The "best" buffer size depends on the system call, but a buffer of about 16 kiB is probably enough.
-* Mac OS X: The default Unix socket buffer is 8192 and results in low throughput. Localhost TCP sockets are ~3X faster by default. Calling `setsockopt(sock, SOL_SOCKET, SO_SNDBUF, ...)` to increase the buffer size makes local Unix sockets work much more efficiently. TODO: include some results.
+* The "best" buffer size depends, but a buffer of about 32 kiB is probably enough.
+* Mac OS X: The default Unix socket buffer is 8192 and results in low throughput. Localhost TCP sockets are ~3X faster by default. Calling `setsockopt(sock, SOL_SOCKET, SO_SNDBUF, ...)` to increase the buffer size makes local Unix sockets work much more efficiently. TODO: include some results?
 * Manually tuning the SO_SNDBUF and SO_RCVBUF settings for localhost TCP sockets doesn't seem to help.
 * The results vary a lot for sender/receiver pairs at high throughput. I suspect the kernel scheduling has a very large impact. You can see this in the "short reads" counts. If the kernel happens to schedule things so the read() call returns full payloads, throughput is good. If it returns smaller payloads, throughput is less good.
+* TODO: Try SO_RCVLOWAT with read() to see if it improves the performance of larger buffers.
 
 
 ## GCP Network Bandwidth
