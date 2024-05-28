@@ -11,7 +11,6 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
-	"sort"
 	"strconv"
 	"strings"
 )
@@ -417,28 +416,6 @@ func newStringSet() *stringSet {
 
 func (s *stringSet) add(str string) {
 	s.set[str] = struct{}{}
-}
-
-func (s *stringSet) list() []string {
-	out := make([]string, 0, len(s.set))
-	for str := range s.set {
-		out = append(out, str)
-	}
-	sort.Strings(out)
-	return out
-}
-
-func numericStringLess(i string, j string) bool {
-	iInt, err := strconv.Atoi(i)
-	if err != nil {
-		panic(err)
-	}
-	jInt, err := strconv.Atoi(j)
-	if err != nil {
-		panic(err)
-	}
-
-	return iInt < jInt
 }
 
 type plotlyTrace struct {

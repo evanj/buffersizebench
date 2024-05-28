@@ -10,5 +10,6 @@ edition = "2021"
 debug = 1
 
 [dependencies]
-nix = "0"
 argh = "0"
+nix = {version="0", features=["socket"]}
+

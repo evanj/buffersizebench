@@ -98,8 +98,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                     "Calling setsockopt(SO_SNDBUF, {}) for local unix socket ...",
                     args.unix_so_sndbuf
                 );
-                nix::sys::socket::sockopt::SndBuf
-                    .set(writer_sock.as_raw_fd(), &args.unix_so_sndbuf)?;
+                nix::sys::socket::sockopt::SndBuf.set(&writer_sock, &args.unix_so_sndbuf)?;
             }
 
             let writer_thread = std::thread::spawn(move || {
@@ -112,7 +111,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
             let mut reader_sock = TcpStream::connect(tcp_writer_addr)?;
             let rcvbuf = nix::sys::socket::sockopt::RcvBuf
-                .get(reader_sock.as_raw_fd())
+                .get(&reader_sock)
                 .expect("BUG");
             // write the buffer size and use_buffer args we want the sender to use
             let mut tcp_args_serialized: [u8; 5] = [0u8; 5];
@@ -172,7 +171,7 @@ fn tcp_write_acceptor(tcp_listener: TcpListener) {
 
 fn tcp_writer(mut tcp_stream: TcpStream) {
     let sndbuf = nix::sys::socket::sockopt::SndBuf
-        .get(tcp_stream.as_raw_fd())
+        .get(&tcp_stream)
         .expect("BUG");
     // nix::sys::socket::sockopt::SndBuf
     //     .set(stream.as_raw_fd(), &1048576)
